@@ -10,7 +10,7 @@ import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
-import dao.VerificaLogin;
+import dao.VerificaDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -30,7 +30,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-    VerificaLogin verifica = new VerificaLogin();
+    VerificaDao verifica = new VerificaDao();
     boolean retorno;
 
     @FXML

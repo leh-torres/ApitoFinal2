@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
  */
-package tela.pkg07.cadastrartime;
+package tela7_CadastrarTime;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

@@ -7,14 +7,14 @@ import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
-public class VerificaLogin {
+public class VerificaDao {
     
     Connection conn  = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
     Conexao conexaoBanco = new Conexao();
 
-    public VerificaLogin(){
+    public VerificaDao(){
 
     }
 

@@ -76,12 +76,12 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="emailTxt" layoutX="90.0" layoutY="316.0" prefHeight="42.0" prefWidth="482.0" style="-fx-background-color: #EBF2F5;">
+            <TextField layoutX="90.0" layoutY="316.0" prefHeight="42.0" prefWidth="482.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
             </TextField>
-            <Button layoutX="230.0" layoutY="472.0" mnemonicParsing="false" onAction="#botaoEntrar" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Entrar" textFill="WHITE">
+            <Button layoutX="230.0" layoutY="472.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Entrar" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="19.0" />
                </font>
@@ -99,7 +99,7 @@
                   <Font name="Corbel Bold" size="19.0" />
                </font>
             </Label>
-            <PasswordField fx:id="senhaPass" layoutX="91.0" layoutY="399.0" prefHeight="42.0" prefWidth="482.0" style="-fx-background-color: #EBF2F5;">
+            <PasswordField layoutX="91.0" layoutY="399.0" prefHeight="42.0" prefWidth="482.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
