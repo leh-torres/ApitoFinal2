@@ -12,13 +12,11 @@ public class VerificaDao {
     Connection conn  = null;
     PreparedStatement pst = null;
     ResultSet rs = null;
-    Conexao conexaoBanco = new Conexao();
 
-    public VerificaDao(){
-
-    }
+    public VerificaDao(){}
 
     public boolean verificaLogin(String email, String senha){
+        Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();
         String SQL = "SELECT * FROM usuario WHERE email_user = ? AND senha_user = ?";
 
@@ -30,15 +28,47 @@ public class VerificaDao {
 
             rs = pst.executeQuery();
             if(rs.next()){
+                conn.close();
                 conexaoBanco.closeConexao();
                 return true;
             } else{
                 JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos" );
             }
         } catch (SQLException ex){
-            JOptionPane.showMessageDialog(null, ex);
+            JOptionPane.showMessageDialog(null, "Erro no verificaLogin: " + ex);
+            return false;
         }
         return false;
     }
     
+
+   public boolean verificaCapeonato(int id){
+       
+       Conexao conexaoBanco = new Conexao();
+       conn = conexaoBanco.getConnection();
+       String SQL = "SELECT * FROM competicao WHERE fk_usuario = ?";
+
+       try {
+           pst = (PreparedStatement)conn.prepareStatement(SQL);
+
+                pst.setInt(1, id);
+
+            rs = pst.executeQuery();
+
+            if(rs.next()){
+                conn.close();
+                conexaoBanco.closeConexao();
+                return true;
+            } else{
+                System.out.println("+----------------------------------+");
+                System.out.println("|   Nenhuma competicao cadastrada  |");
+                System.out.println("+----------------------------------+");
+                return false;      
+            }
+       } catch (Exception e) {
+           JOptionPane.showMessageDialog(null, "Erro no verificaCampeonto:" + e);
+       }
+
+       return false;
+   }
 }
