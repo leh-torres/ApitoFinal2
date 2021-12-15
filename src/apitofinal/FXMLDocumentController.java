@@ -14,6 +14,7 @@ import classes.Usuario;
 import dao.UsuarioDao;
 import dao.VerificaDao;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.PasswordField;
@@ -73,13 +74,50 @@ public class FXMLDocumentController implements Initializable {
 
 
                 }
-
         }
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        //TODO fazer a interação  com o ENTER
+        senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
+            try {
+                if(event.getCode() == KeyCode.ENTER){
+                    retorno = verifica.verificaLogin(emailTxt.getText(), senhaPass.getText());
+                    if(retorno == true){
+                        usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
+                        usuario.setEmail(emailTxt.getText());
+                        usuario.setSenha(senhaPass.getText());
+                            
+                        retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+            
+                            if(retorno2 == true){
+                                Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
+                                fecha();
+                                try {
+                                    tela10.start(new Stage());
+                                } catch (Exception e) {
+                                   JOptionPane.showMessageDialog(null, "Tela 10 não iniciada " + e);
+                                }
+                               
+            
+                            } else{
+                                Tela04CriarCampeonato tela04 = new Tela04CriarCampeonato();
+                                fecha();
+            
+                                try {
+                                    tela04.start(new Stage());
+                                } catch (Exception e) {
+                                    JOptionPane.showMessageDialog(null, "Tela 04 não iniciada " + e);
+                                }
+            
+            
+                            }
+                    }
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Erro no ENTRE:" + e);
+            }
+        });
     }  
     
     /**
