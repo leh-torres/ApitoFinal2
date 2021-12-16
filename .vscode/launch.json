@@ -6,6 +6,54 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tela12SelecionarPartida",
+            "request": "launch",
+            "mainClass": "tela12_SelecionarPartida.Tela12SelecionarPartida",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela10SelecionarCampeonato",
+            "request": "launch",
+            "mainClass": "tela10_SelecionarCampeonato.Tela10SelecionarCampeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela07CadastrarTime",
+            "request": "launch",
+            "mainClass": "tela7_CadastrarTime.Tela07CadastrarTime",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela06SelecaoTimes",
+            "request": "launch",
+            "mainClass": "tela6_SelecaoTimes.Tela06SelecaoTimes",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela05CadastrarCampeonato",
+            "request": "launch",
+            "mainClass": "tela5_CadastrarCampeonato.Tela05CadastrarCampeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela04CriarCampeonato",
+            "request": "launch",
+            "mainClass": "tela4_CriarCampeonato.Tela04CriarCampeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",
