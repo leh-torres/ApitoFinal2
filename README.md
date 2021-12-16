@@ -7,7 +7,7 @@
 #### 🚧  Apito Final - Em construção...  🚧
 
 ![Série](https://img.shields.io/badge/ApitoFinal-ProjetoIntegrador-blue)
-[![licence mit](https://img.shields.io/badge/licence-MIT-orange.svg)](https://github.com/zairobastos/BancoInter/blob/main/LICENSE)
+[![licence mit](https://img.shields.io/badge/licence-MIT-orange.svg)](https://github.com/leh-torres/ApitoFinal2/blob/main/LICENSE)
 
 > Atividades esportivas são importantes para a saúde, ajudando na prevenção e no combate de várias doenças como a depressão. É muito comum a realização de práticas esportivas em grupo, as vezes os amigos gostam de competir para tornar a atividade esportiva mais interessante. A organização e o acompanhamento de uma competição esportiva pode ser mais prática com um programa para gerenciar o torneio, partindo desses principios surge o **Apito Final**.
 
@@ -50,4 +50,4 @@ As seguintes ferramentas foram usadas na construção do projeto:
 </table>
 
 ### Lincença
-[MIT]()
+[MIT](https://github.com/leh-torres/ApitoFinal2/blob/main/LICENSE)
