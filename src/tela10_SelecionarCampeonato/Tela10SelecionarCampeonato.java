@@ -35,8 +35,6 @@ public class Tela10SelecionarCampeonato extends Application {
     public static void setStage(Stage stage) {
         Tela10SelecionarCampeonato.stage = stage;
     } 
-
-
     /**
      * @param args the command line arguments
      */

@@ -49,6 +49,8 @@ public class FXMLDocumentController implements Initializable {
             usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
             usuario.setEmail(emailTxt.getText());
             usuario.setSenha(senhaPass.getText());
+            usuario.setImagem(userDao.getImagem());
+            usuario.setNome(userDao.getNome());
                 
             retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
 
@@ -87,6 +89,8 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
                         usuario.setEmail(emailTxt.getText());
                         usuario.setSenha(senhaPass.getText());
+                        usuario.setImagem(userDao.getImagem());
+                        usuario.setNome(userDao.getNome());
                             
                         retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
             

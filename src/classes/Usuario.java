@@ -1,11 +1,14 @@
 package classes;
 
+import javafx.scene.image.Image;
+
 public class Usuario {
     private static int    id_usuario;
     private static String nome;
     private static String sobrenome;
     private static String email;
     private static String senha;
+    private static Image imagem;
 
     public Usuario(){
 
@@ -51,5 +54,12 @@ public class Usuario {
         Usuario.id_usuario = id_usuario;
     }
 
+    public Image getImagem() {
+        return imagem;
+    }
+
+    public void setImagem(Image imagem) {
+        Usuario.imagem = imagem;
+    }  
     
 }
