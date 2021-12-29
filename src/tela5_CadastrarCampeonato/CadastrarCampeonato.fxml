@@ -17,12 +17,12 @@
                   <Font name="Nunito Bold" size="50.0" />
                </font>
             </Label>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/Ellipse%208.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
+            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
                <font>
                   <Font name="Nunito ExtraBold" size="18.0" />
                </font>

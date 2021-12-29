@@ -4,15 +4,12 @@
  */
 package tela10_SelecionarCampeonato;
 
-import apitofinal.FXMLDocumentController;
 import classes.Competicao;
 import classes.Usuario;
 import dao.BuscaCompeticaoDao;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -20,6 +17,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
 /**
@@ -87,15 +85,15 @@ public class SelecionarCampeonatoController implements Initializable {
     ArrayList<Competicao> listaComp = new ArrayList<>();
     BuscaCompeticaoDao competicao = new BuscaCompeticaoDao();
     
-    public void funcaoBtnCad(ActionEvent event) {
+    @FXML
+    private void funcaoBtnCad(ActionEvent event) {
         Tela05CadastrarCampeonato tela = new Tela05CadastrarCampeonato();
-            fecha();
-
-            try {
-                tela.start(new Stage());
-            } catch (Exception ex) {
-                Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        fecha();
+        try {
+            tela.start(new Stage());
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "Tela 5 não iniciada" + ex);
+        }
     }
     /*
     @FXML
@@ -721,7 +719,7 @@ public class SelecionarCampeonatoController implements Initializable {
         }    
     }
     
-    public void fecha(){
+    private void fecha(){
         Tela10SelecionarCampeonato.getStage().close();
     }
     

@@ -26,6 +26,7 @@ public class Tela10SelecionarCampeonato extends Application {
         
         stage.setScene(scene);
         stage.show();
+        setStage(stage);
     }
 
     public static Stage getStage() {
