@@ -47,7 +47,7 @@
                   <Font name="Nunito SemiBold" size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="60.0" layoutY="198.0" prefHeight="39.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
+            <TextField fx:id="nome_campeonato" layoutX="60.0" layoutY="198.0" prefHeight="39.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
             <Label layoutX="60.0" layoutY="241.0" text="Campo Obrigatório" textFill="#cd3232">
                <font>
                   <Font name="Nunito SemiBold" size="12.0" />
@@ -58,7 +58,7 @@
                   <Font name="Nunito SemiBold" size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="60.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
+            <TextField fx:id="premiacao" layoutX="60.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
             <Label layoutX="61.0" layoutY="332.0" text="Campo Obrigatório" textFill="#cd3232">
                <font>
                   <Font name="Nunito SemiBold" size="12.0" />
@@ -69,7 +69,7 @@
                   <Font name="Nunito SemiBold" size="16.0" />
                </font>
             </Label>
-            <TextField layoutX="330.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
+            <TextField fx:id="quantidade_times" layoutX="330.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
             <Label layoutX="331.0" layoutY="332.0" text="Campo Obrigatório" textFill="#cd3232">
                <font>
                   <Font name="Nunito SemiBold" size="12.0" />
@@ -80,13 +80,13 @@
                   <Font name="Nunito SemiBold" size="16.0" />
                </font>
             </Label>
-            <TextField alignment="TOP_LEFT" layoutX="60.0" layoutY="380.0" prefHeight="100.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
-            <Button layoutX="61.0" layoutY="496.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #3CDC8C; -fx-border-width: 3;" text="Voltar" textFill="#3cdc8c">
+            <TextField fx:id="descricao_campeonato" alignment="TOP_LEFT" layoutX="60.0" layoutY="380.0" prefHeight="100.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
+            <Button fx:id="btn_voltar" layoutX="61.0" layoutY="496.0" mnemonicParsing="false" onAction="#acaoBtnVoltar" prefHeight="39.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #3CDC8C; -fx-border-width: 3;" text="Voltar" textFill="#3cdc8c">
                <font>
                   <Font name="Nunito ExtraBold" size="22.0" />
                </font>
             </Button>
-            <Button layoutX="314.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" style="-fx-background-color: #3CDC8C;" text="Avançar" textFill="WHITE">
+            <Button fx:id="btn_avancar" layoutX="314.0" layoutY="496.0" mnemonicParsing="false" onAction="#acaoBtnAvancar" prefHeight="45.0" prefWidth="230.0" style="-fx-background-color: #3CDC8C;" text="Avançar" textFill="WHITE">
                <font>
                   <Font name="Nunito ExtraBold" size="24.0" />
                </font>
