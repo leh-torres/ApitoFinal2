@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -7,35 +8,86 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #ebf2f5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
    <children>
-      <Pane prefHeight="87.1" prefWidth="1360.0" style="-fx-background-color: fff;">
+      <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Label layoutX="76.0" prefHeight="87.0" prefWidth="280.0" text="Apito Final" textFill="#4d6f80">
+            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Nunito Bold" size="50.0" />
+                  <Font name="Corbel" size="20.0" />
                </font>
             </Label>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="86.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../resources/Ellipse%208.png" />
+                  <Image url="@../resources/Logotype.jpg" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
+            <Label layoutX="100.0" layoutY="12.0" prefHeight="64.0" prefWidth="274.0" text="Apito Final" textFill="WHITE">
                <font>
-                  <Font name="Nunito ExtraBold" size="18.0" />
+                  <Font name="Eras Demi ITC" size="50.0" />
                </font>
             </Label>
-         </children></Pane>
-      <Pane layoutY="87.1" prefHeight="1.0" prefWidth="1360.0" style="-fx-background-color: D3E2E5;" />
-      <ImageView accessibleText="IMAGEM" fitHeight="341.0" fitWidth="559.0" layoutX="400.0" layoutY="189.0" pickOnBounds="true" smooth="false">
-         <image>
-            <Image url="@../resources/Rectangle%2025.png" />
-         </image></ImageView>
-      <Button id="buttonCreateCampeonato" fx:id="buttonCriarCampeonato" accessibleText="Criar Campeonato" alignment="CENTER" layoutX="434.0" layoutY="516.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="491.0" style="-fx-background-color: #3CDC8C; -fx-border-radius: 40px;" styleClass="buttonCreateCampeonato" text="Criar Campeonato" textFill="WHITE">
-         <font>
-            <Font name="Nunito ExtraBold" size="32.0" />
-         </font>
-      </Button>
+            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1130.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Telas/resources/Ellipse%208.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="35.0" layoutY="123.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 0 0 10 10; -fx-background-radius: 0 0 10 10;">
+         <children>
+            <Button fx:id="btn_cad" layoutX="527.0" layoutY="355.0" mnemonicParsing="false" onAction="#funcaoBtnCad" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text=" Cadastrar Campeonato   ❯" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="19.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Label layoutX="547.0" layoutY="81.0" text="Bem vindo ao" textFill="#4d6f80">
+               <font>
+                  <Font name="Eras Demi ITC" size="45.0" />
+               </font>
+            </Label>
+            <Label layoutX="545.0" layoutY="126.0" text="Apito Final" textFill="#3ddb8c">
+               <font>
+                  <Font name="Eras Bold ITC" size="45.0" />
+               </font>
+            </Label>
+            <Label layoutX="526.0" layoutY="189.0" prefHeight="50.0" prefWidth="43.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="43.0" />
+               </font>
+            </Label>
+            <Label layoutX="650.0" layoutY="189.0" prefHeight="50.0" prefWidth="43.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="43.0" />
+               </font>
+            </Label>
+            <Label layoutX="777.0" layoutY="189.0" prefHeight="50.0" prefWidth="43.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="43.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="392.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Logotype(4).jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="403.0" layoutY="247.0" text="Infelizmente, você não possui nenhum campeonato cadastrado" textFill="#aeb3b5">
+               <font>
+                  <Font name="Corbel" size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="354.0" layoutY="270.0" text="no sistema. Clique no botão de &quot;Cadastrar Campeonato&quot; e inicie sua jogada!" textFill="#aeb3b5">
+               <font>
+                  <Font name="Corbel" size="19.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </Pane>

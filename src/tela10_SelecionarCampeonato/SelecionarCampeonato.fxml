@@ -234,7 +234,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btn_cad" layoutX="881.0" layoutY="396.0" mnemonicParsing="false" onAction="#funcaoBtnCad" prefHeight="64.0" prefWidth="232.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" text="Cadastrar Campeonato" textFill="WHITE">
+            <Button fx:id="btn_cad" layoutX="881.0" layoutY="396.0" mnemonicParsing="false" onAction="#funcaoBtnCad" prefHeight="64.0" prefWidth="232.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Cadastrar Campeonato" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="19.0" />
                </font>
