@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
+   <children>
+      <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
+         <children>
+            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="44.0" radius="40.0" stroke="WHITE" strokeType="INSIDE" />
+            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="Corbel" size="20.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="99.0" fitWidth="86.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Logotype.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="100.0" layoutY="12.0" prefHeight="64.0" prefWidth="274.0" text="Apito Final" textFill="WHITE">
+               <font>
+                  <Font name="Eras Demi ITC" size="50.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1130.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Telas/resources/Ellipse%208.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="35.0" layoutY="126.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" />
+   </children>
+</Pane>
