@@ -7,13 +7,14 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
+            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="44.0" radius="40.0" stroke="WHITE" strokeType="INSIDE" />
             <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Corbel" size="20.0" />
@@ -39,21 +40,15 @@
             </ImageView>
          </children>
       </Pane>
-      <Pane layoutX="35.0" layoutY="126.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10; -fx-border-color: white;">
+      <Pane layoutX="35.0" layoutY="126.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
             <Pane layoutX="316.0" layoutY="6.0" prefHeight="482.0" prefWidth="599.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
                <children>
-                  <ImageView fitHeight="100.0" fitWidth="105.0" layoutX="97.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/Logotype(4).jpg" />
-                     </image>
-                  </ImageView>
-                  <Label layoutX="197.0" layoutY="56.0" text="Cadastrar Campeonato" textFill="#3ddb8c">
+                  <Label layoutX="146.0" layoutY="47.0" text="Cadastrar Campeonato" textFill="#3ddb8c">
                      <font>
                         <Font name="Eras Demi ITC" size="28.0" />
                      </font>
                   </Label>
-                  <Line endX="455.0" layoutX="77.0" layoutY="107.0" startX="-10.0" stroke="#cbd1d3" strokeLineCap="ROUND" />
                   <TextField layoutX="66.0" layoutY="159.0" prefHeight="33.0" prefWidth="466.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
@@ -85,7 +80,7 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button layoutX="300.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar" textFill="WHITE">
+                  <Button layoutX="305.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -93,7 +88,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="96.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="185.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
+                  <Button layoutX="67.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="❮   Voltar" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -119,6 +114,21 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
+                  <Label layoutX="280.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="329.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="231.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
                </children>
             </Pane>
          </children>
