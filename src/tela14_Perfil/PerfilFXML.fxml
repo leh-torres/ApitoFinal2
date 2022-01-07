@@ -59,6 +59,7 @@
                   <Font name="Corbel" size="17.0" />
                </font>
             </TextField>
-         </children></Pane>
+         </children>
+      </Pane>
    </children>
 </Pane>
