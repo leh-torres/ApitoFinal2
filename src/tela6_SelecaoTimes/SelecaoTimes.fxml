@@ -14,7 +14,12 @@
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="47.0" radius="40.0" stroke="WHITE" strokeType="INSIDE" />
+            <Label layoutX="1153.0" layoutY="28.0" text="👤" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="35.0" />
+               </font>
+            </Label>
+            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="47.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
             <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Corbel" size="20.0" />
@@ -30,10 +35,7 @@
                   <Font name="Eras Demi ITC" size="50.0" />
                </font>
             </Label>
-            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1130.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Telas/resources/Ellipse%208.png" />
-               </image>
+            <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
