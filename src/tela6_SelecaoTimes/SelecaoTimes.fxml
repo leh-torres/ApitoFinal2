@@ -44,6 +44,12 @@
          <children>
             <Pane layoutX="172.0" layoutY="8.0" prefHeight="482.0" prefWidth="887.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
                <children>
+                  <Label layoutX="267.0" layoutY="241.0" prefHeight="59.0" prefWidth="50.0" text="⚽" textFill="#3ddb8c">
+                     <font>
+                        <Font name="Corbel Bold" size="50.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="267.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
                   <TextField layoutX="267.0" layoutY="128.0" prefHeight="33.0" prefWidth="323.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
@@ -53,11 +59,6 @@
                      </cursor>
                   </TextField>
                   <Label layoutX="317.0" layoutY="182.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="267.0" layoutY="241.0" prefHeight="59.0" prefWidth="50.0" text="⚽" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="50.0" />
                      </font>
@@ -126,7 +127,6 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="267.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="time2" fitHeight="50.0" fitWidth="50.0" layoutX="317.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="time3" fitHeight="50.0" fitWidth="50.0" layoutX="317.0" layoutY="300.0" pickOnBounds="true" preserveRatio="true" />
                   <ImageView fx:id="time4" fitHeight="50.0" fitWidth="50.0" layoutX="367.0" layoutY="241.0" pickOnBounds="true" preserveRatio="true" />
