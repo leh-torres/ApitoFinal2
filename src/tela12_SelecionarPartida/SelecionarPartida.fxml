@@ -31,20 +31,12 @@
                         <Font name="Eras Demi ITC" size="30.0" />
                      </font>
                   </Label>
-                  <Button layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #34b974; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
+                  <Button layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #34b974; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
-                     <font>
-                        <Font name="Corbel Bold" size="17.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutY="301.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                  <Button layoutY="301.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -52,7 +44,15 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
+                  <Button layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutY="399.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -271,6 +271,14 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
+            <Button layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
          </children>
       </Pane>
    </children>
