@@ -44,130 +44,99 @@
       </Pane>
       <Pane layoutX="35.0" layoutY="126.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
-            <Pane layoutX="245.0" layoutY="78.0" prefHeight="402.0" prefWidth="740.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10; -fx-border-color: #3ddb8c;">
+            <Pane layoutX="245.0" layoutY="55.0" prefHeight="395.0" prefWidth="740.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10; -fx-border-color: #3ddb8c;">
                <children>
-                  <Label layoutX="191.0" layoutY="25.0" text="Definir Resultado da Partida" textFill="#3ddb8c">
+                  <Label layoutX="184.0" layoutY="25.0" text="Definir Estatísticas da Partida" textFill="#3ddb8c">
                      <font>
                         <Font name="Eras Demi ITC" size="27.0" />
                      </font>
                   </Label>
+                  <Button layoutX="272.0" layoutY="330.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                   <Label layoutX="353.0" layoutY="57.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
                      <font>
                         <Font name="Corbel" size="35.0" />
                      </font>
                   </Label>
-                  <Label layoutX="484.0" layoutY="57.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                  <Label layoutX="418.0" layoutY="57.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
                      <font>
                         <Font name="Corbel" size="35.0" />
                      </font>
                   </Label>
-                  <Label layoutX="222.0" layoutY="57.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                  <Label layoutX="285.0" layoutY="57.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
                      <font>
                         <Font name="Corbel" size="35.0" />
                      </font>
                   </Label>
-                  <Label layoutX="64.0" layoutY="98.0" text="Selecione o jogador que fez o gol nas barras de pesquisa abaixo, e informe o tempo" textFill="#aeb3b5">
+                  <Label layoutX="141.0" layoutY="98.0" text="Informe o número de ocorrências das seguintes estatísticas e," textFill="#aeb3b5">
                      <font>
                         <Font name="Corbel" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="143.0" layoutY="120.0" text="da partida no qual o jogador efetuou o gol. Após definir todos" textFill="#aeb3b5">
+                  <TextField layoutX="272.0" layoutY="238.0" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Eras Bold ITC" size="17.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="126.0" layoutY="201.0" text="Cartão Amarelo:" textFill="#aeb3b5">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="432.0" layoutY="243.0" text="🚫 Bloqueios:" textFill="#aeb3b5">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="401.0" layoutY="200.0" text="🥅 Chutes ao Gol:" textFill="#aeb3b5">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="254.0" layoutY="120.0" text="em seguida, clique em &quot;salvar&quot;!" textFill="#aeb3b5">
                      <font>
                         <Font name="Corbel" size="18.0" />
                      </font>
                   </Label>
-                  <Label layoutX="232.0" layoutY="142.0" text="os momentos dos gols, clique em &quot;❯&quot;!" textFill="#aeb3b5">
+                  <TextField layoutX="272.0" layoutY="195.0" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #EBF2F5;">
                      <font>
-                        <Font name="Corbel" size="18.0" />
-                     </font>
-                  </Label>
-                  <TextField layoutX="65.0" layoutY="248.0" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
-                     <font>
-                        <Font name="Corbel" size="17.0" />
+                        <Font name="Eras Bold ITC" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="392.0" layoutY="248.0" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
+                  <Label layoutX="116.0" layoutY="243.0" text="Cartão Vermelho:" textFill="#aeb3b5">
                      <font>
-                        <Font name="Corbel" size="17.0" />
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="89.0" layoutY="243.0" text="💳" textFill="#f03737">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="98.0" layoutY="200.0" text="💳" textFill="#e8f037">
+                     <font>
+                        <Font name="Corbel Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="555.0" layoutY="195.0" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Eras Bold ITC" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="392.0" layoutY="313.0" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField layoutX="555.0" layoutY="238.0" prefHeight="33.0" prefWidth="46.0" style="-fx-background-color: #EBF2F5;">
                      <font>
-                        <Font name="Corbel" size="17.0" />
+                        <Font name="Eras Bold ITC" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField layoutX="64.0" layoutY="313.0" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: #EBF2F5;">
-                     <font>
-                        <Font name="Corbel" size="17.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="65.0" layoutY="226.0" text="🏃Nome do Jogador" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="392.0" layoutY="291.0" text="⌚Tempo" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="392.0" layoutY="226.0" text="🏃Nome do Jogador" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="64.0" layoutY="291.0" text="⌚Tempo" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                  </Label>
-                  <Button layoutX="305.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="🔍" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="635.0" layoutY="248.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="🔍" textFill="#aeb3b5">
-                     <font>
-                        <Font name="Corbel Bold" size="18.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="191.0" layoutY="313.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
-                     <font>
-                        <Font name="Corbel Bold" size="17.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Button layoutX="519.0" layoutY="313.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
-                     <font>
-                        <Font name="Corbel Bold" size="17.0" />
-                     </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
-                  </Button>
-                  <Label layoutX="64.0" layoutY="142.0" prefHeight="59.0" prefWidth="52.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="623.0" layoutY="142.0" prefHeight="59.0" prefWidth="52.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel" size="50.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="65.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
-                  <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="624.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </Pane>
-            <Pane layoutX="473.0" layoutY="37.0" prefHeight="41.0" prefWidth="284.0" style="-fx-background-color: white; -fx-shape: &quot;M 0 4 L 2 7 L 17 7 L 19 4&quot;;">
+            <Pane layoutX="473.0" layoutY="14.0" prefHeight="41.0" prefWidth="284.0" style="-fx-background-color: white; -fx-shape: &quot;M 0 4 L 2 7 L 17 7 L 19 4&quot;;">
                <children>
                   <Pane layoutX="99.0" layoutY="-11.0" prefHeight="50.0" prefWidth="86.0" style="-fx-background-color: #34b974; -fx-shape: &quot;M 0 4 L 2 7 L 17 7 L 19 4&quot;;">
                      <children>
@@ -200,15 +169,7 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="131.0" layoutY="222.0" mnemonicParsing="false" prefHeight="88.0" prefWidth="114.0" style="-fx-background-color: transparent;" text="❮" textAlignment="CENTER" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="62.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Button layoutX="985.0" layoutY="222.0" mnemonicParsing="false" prefHeight="104.0" prefWidth="114.0" style="-fx-background-color: transparent;" text="❯" textFill="WHITE">
+            <Button layoutX="118.0" layoutY="195.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="❮ " textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="62.0" />
                </font>
