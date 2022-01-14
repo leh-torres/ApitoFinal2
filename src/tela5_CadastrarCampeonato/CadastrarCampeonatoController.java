@@ -6,7 +6,7 @@ package tela5_CadastrarCampeonato;
 
 import classes.Competicao;
 import classes.Usuario;
-import dao.CompeticaoDao;
+import dao.CampeonatoDao;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -41,10 +41,12 @@ public class CadastrarCampeonatoController implements Initializable {
     private TextField premiacao;
     
     @FXML
-    private TextField quantidade_times;
+    private Label quantidade_times;
     
     @FXML
     private TextField descricao_campeonato;
+    
+    CampeonatoDao campeonatoDao = new CampeonatoDao();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -69,11 +71,11 @@ public class CadastrarCampeonatoController implements Initializable {
         Competicao competicao = new Competicao();
         competicao.setNome_comp(nome_campeonato.getText());
         competicao.setPremiacao_comp(premiacao.getText());
-        competicao.setQuantidade_times_comp(Integer.parseInt(quantidade_times.getText()));
+        competicao.setQuantidade_times_comp(8);
         competicao.setDescricao_comp(descricao_campeonato.getText());
         
-        CompeticaoDao competicaoDao = new CompeticaoDao();
-        competicaoDao.cadastrarComp(competicao);
+        
+        campeonatoDao.cadastrarComp(competicao);
         
         Tela06SelecaoTimes tela = new Tela06SelecaoTimes();
         fecha();

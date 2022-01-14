@@ -6,7 +6,7 @@ package tela10_SelecionarCampeonato;
 
 import classes.Competicao;
 import classes.Usuario;
-import dao.BuscaCompeticaoDao;
+import dao.CampeonatoDao;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -83,7 +83,7 @@ public class SelecionarCampeonatoController implements Initializable {
     private Button btn_cad;
     
     ArrayList<Competicao> listaComp = new ArrayList<>();
-    BuscaCompeticaoDao competicao = new BuscaCompeticaoDao();
+    CampeonatoDao competicao = new CampeonatoDao();
     
     @FXML
     private void funcaoBtnCad(ActionEvent event) {

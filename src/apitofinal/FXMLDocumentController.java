@@ -11,8 +11,8 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
+import dao.CampeonatoDao;
 import dao.UsuarioDao;
-import dao.VerificaDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -35,14 +35,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-    VerificaDao verifica = new VerificaDao();
+    CampeonatoDao verificaCampeonato = new CampeonatoDao();
     Usuario usuario = new Usuario();
     UsuarioDao userDao = new UsuarioDao();
     boolean retorno, retorno2;
 
     @FXML
     private void botaoEntrar(ActionEvent event) {
-        retorno = verifica.verificaLogin(emailTxt.getText(), senhaPass.getText());
+        retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
 
         if(retorno == true){
             usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
@@ -52,7 +52,7 @@ public class FXMLDocumentController implements Initializable {
             usuario.setImagem(userDao.getImagem());
             usuario.setNome(userDao.getNome());
                 
-            retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+            retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
 
                 if(retorno2 == true){
                     Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -84,7 +84,7 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
-                    retorno = verifica.verificaLogin(emailTxt.getText(), senhaPass.getText());
+                    retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
                     if(retorno == true){
                         usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
                         usuario.setEmail(emailTxt.getText());
@@ -92,7 +92,7 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setImagem(userDao.getImagem());
                         usuario.setNome(userDao.getNome());
                             
-                        retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+                        retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
             
                             if(retorno2 == true){
                                 Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
