@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
@@ -34,20 +35,19 @@ public class CadastrarCampeonatoController implements Initializable {
     private ImageView logo_usuario;
     
     @FXML
-    private Label nome_campeonato;
+    private TextField nome_campeonato;
     
     @FXML
-    private Label premiacao;
+    private TextField premiacao;
     
     @FXML
-    private Label quantidade_times;
+    private TextField quantidade_times;
     
     @FXML
-    private Label descricao_campeonato;
+    private TextField descricao_campeonato;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
     }    
