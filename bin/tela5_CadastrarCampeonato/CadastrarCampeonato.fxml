@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela5_CadastrarCampeonato.CadastrarCampeonatoController">
    <children>
       <Pane prefHeight="87.1" prefWidth="1360.0" style="-fx-background-color: fff;">
          <children>
@@ -17,12 +17,12 @@
                   <Font name="Nunito Bold" size="50.0" />
                </font>
             </Label>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/Ellipse%208.png" />
                </image>
             </ImageView>
-            <Label alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
+            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
                <font>
                   <Font name="Nunito ExtraBold" size="18.0" />
                </font>
