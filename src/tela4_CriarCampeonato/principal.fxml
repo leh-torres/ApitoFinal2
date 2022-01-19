@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #ebf2f5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #ebf2f5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela4_CriarCampeonato.principalController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -43,7 +43,7 @@
       </Pane>
       <Pane layoutX="35.0" layoutY="123.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 0 0 10 10; -fx-background-radius: 0 0 10 10;">
          <children>
-            <Button fx:id="btn_cad" layoutX="527.0" layoutY="355.0" mnemonicParsing="false" onAction="#funcaoBtnCad" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text=" Cadastrar Campeonato   ❯" textFill="WHITE">
+            <Button fx:id="btn_cad" layoutX="527.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text=" Cadastrar Campeonato   ❯" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="19.0" />
                </font>

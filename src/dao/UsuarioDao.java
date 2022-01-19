@@ -105,6 +105,31 @@ public class UsuarioDao {
 
         return null;
     }
+
+    public boolean verificaLogin(String email, String senha){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        String SQL = "SELECT * FROM usuario WHERE email_user = ? AND senha_user = ?";
+
+        try{
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+
+                pst.setString(1, email);
+                pst.setString(2, senha);
+
+            rs = pst.executeQuery();
+            if(rs.next()){
+                conn.close();
+                conexaoBanco.closeConexao();
+                return true;
+            } else{
+                return false;
+            }
+        } catch (SQLException ex){
+            JOptionPane.showMessageDialog(null, "Erro no verificaLogin: " + ex);
+            return false;
+        }
+    }
     
     
  }

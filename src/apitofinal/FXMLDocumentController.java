@@ -11,8 +11,10 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
+import dao.CompeticaoDao;
 import dao.UsuarioDao;
 import dao.VerificaDao;
+import javafx.animation.Animation;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -38,21 +40,34 @@ public class FXMLDocumentController implements Initializable {
     VerificaDao verifica = new VerificaDao();
     Usuario usuario = new Usuario();
     UsuarioDao userDao = new UsuarioDao();
+    CompeticaoDao compDao = new CompeticaoDao();
     boolean retorno, retorno2;
 
     @FXML
     private void botaoEntrar(ActionEvent event) {
-        retorno = verifica.verificaLogin(emailTxt.getText(), senhaPass.getText());
+
+        if(emailTxt.getText().length() == 0 ){
+            emailTxt.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");    
+        }else{
+            emailTxt.setStyle(null);
+        }
+
+        if(senhaPass.getText().length() == 0){
+            senhaPass.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+        } else{
+            senhaPass.setStyle(null);
+        }
+       
+        retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
 
         if(retorno == true){
             usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
-            //TODO  pegar nome do usuario
             usuario.setEmail(emailTxt.getText());
             usuario.setSenha(senhaPass.getText());
             usuario.setImagem(userDao.getImagem());
             usuario.setNome(userDao.getNome());
                 
-            retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+            retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
 
                 if(retorno2 == true){
                     Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -60,7 +75,7 @@ public class FXMLDocumentController implements Initializable {
                     try {
                         tela10.start(new Stage());
                     } catch (Exception e) {
-                       JOptionPane.showMessageDialog(null, "Tela 10 não iniciada " + e);
+                       System.out.println("Tela 10 não iniciada" + e);;
                     }
                    
 
@@ -71,11 +86,15 @@ public class FXMLDocumentController implements Initializable {
                     try {
                         tela04.start(new Stage());
                     } catch (Exception e) {
-                        JOptionPane.showMessageDialog(null, "Tela 04 não iniciada " + e);
+                        System.out.println( "Tela 04 não iniciada " + e);
                     }
 
 
                 }
+        } else{
+            emailTxt.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+            senhaPass.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+            JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
         }
     }
     
@@ -84,7 +103,20 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
-                    retorno = verifica.verificaLogin(emailTxt.getText(), senhaPass.getText());
+                    
+                    if(emailTxt.getText().length() == 0 ){
+                        emailTxt.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");    
+                    }else{
+                        emailTxt.setStyle(null);
+                    }
+            
+                    if(senhaPass.getText().length() == 0){
+                        senhaPass.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+                    } else{
+                        senhaPass.setStyle(null);
+                    }
+
+                    retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
                     if(retorno == true){
                         usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
                         usuario.setEmail(emailTxt.getText());
@@ -92,7 +124,7 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setImagem(userDao.getImagem());
                         usuario.setNome(userDao.getNome());
                             
-                        retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+                        retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
             
                             if(retorno2 == true){
                                 Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -116,6 +148,11 @@ public class FXMLDocumentController implements Initializable {
             
             
                             }
+                    } else{
+                        emailTxt.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+                        senhaPass.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+                        JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos");
+        
                     }
                 }
             } catch (Exception e) {

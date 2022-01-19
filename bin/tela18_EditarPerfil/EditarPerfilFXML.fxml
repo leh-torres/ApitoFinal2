@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="639.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane layoutX="21.0" layoutY="24.0" prefHeight="650.0" prefWidth="598.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Label layoutX="222.0" layoutY="32.0" text="Editar Perfil" textFill="#3ddb8c">
+               <font>
+                  <Font name="Eras Demi ITC" size="28.0" />
+               </font>
+            </Label>
+            <TextField layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </TextField>
+            <TextField layoutX="72.0" layoutY="308.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </TextField>
+            <Button layoutX="217.0" layoutY="587.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Salvar" textFill="WHITE">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <PasswordField layoutX="72.0" layoutY="384.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </PasswordField>
+            <Label layoutX="43.0" layoutY="113.0" text="Por favor, selecione os campos respectivos cujas informações você deseja" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="99.0" layoutY="136.0" text="que sejam alteradas. Em seguida, edite as informações" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </Label>
+            <Label layoutX="196.0" layoutY="157.0" text="e clique no botão de &quot;Salvar&quot;!" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="72.0" layoutY="211.0" mnemonicParsing="false" text="Editar 👤Nome" textFill="#bac0c3">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="73.0" layoutY="284.0" mnemonicParsing="false" text="Editar 📧Email" textFill="#bac0c3">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+            </CheckBox>
+            <CheckBox layoutX="73.0" layoutY="361.0" mnemonicParsing="false" text="Editar 🔒Senha" textFill="#bac0c3">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+            </CheckBox>
+            <Label layoutX="281.0" layoutY="72.0" prefHeight="35.0" prefWidth="36.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="358.0" layoutY="72.0" prefHeight="35.0" prefWidth="36.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="35.0" />
+               </font>
+            </Label>
+            <Label layoutX="208.0" layoutY="72.0" prefHeight="35.0" prefWidth="36.0" text="⚽" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="35.0" />
+               </font>
+            </Label>
+            <CheckBox layoutX="73.0" layoutY="430.0" mnemonicParsing="false" text="📷Foto do Perfil" textFill="#bac0c3">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+            </CheckBox>
+            <Pane layoutX="242.0" layoutY="454.0" prefHeight="113.0" prefWidth="113.0" style="-fx-background-color: #EBF2F5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+               <children>
+                  <ImageView fitHeight="113.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button layoutX="36.0" layoutY="40.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="42.0" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Button>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
+</Pane>
