@@ -10,7 +10,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela7_CadastrarTime.CadastrarTimeController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -37,7 +37,6 @@
             </Label>
             <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
-                  <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
          </children>
@@ -51,20 +50,18 @@
                         <Font name="Eras Demi ITC" size="28.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="62.0" layoutY="159.0" prefHeight="33.0" prefWidth="326.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="nome_time" layoutX="62.0" layoutY="159.0" prefHeight="33.0" prefWidth="326.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
-                  <TextField layoutX="410.0" layoutY="159.0" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="abreviacao_time" layoutX="410.0" layoutY="159.0" prefHeight="33.0" prefWidth="125.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
                   <Label layoutX="62.0" layoutY="138.0" text="🚩Nome do Time" textFill="#bac0c3">
@@ -77,20 +74,18 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button layoutX="305.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
+                  <Button fx:id="btn_avancar" layoutX="305.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBotaoAvancar" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="67.0" layoutY="420.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="❮   Voltar" textFill="#3ddb8c">
+                  <Button fx:id="btn_voltar" layoutX="67.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBotaoVoltar" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="❮   Voltar" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                   <Label layoutX="226.0" layoutY="211.0" text="🔰Escudo do Time" textFill="#bac0c3">
@@ -115,13 +110,12 @@
                   </Label>
                   <Pane layoutX="224.0" layoutY="232.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #EBF2F5; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5;">
                      <children>
-                        <ImageView fitHeight="150.0" fitWidth="150.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
-                        <Button layoutX="56.0" layoutY="59.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
+                        <ImageView fx:id="escudo_time" fitHeight="150.0" fitWidth="150.0" layoutY="1.0" onMouseClicked="#importarImagem" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="btn_imagem" layoutX="56.0" layoutY="59.0" mnemonicParsing="false" onAction="#importarImagem" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
                            <font>
                               <Font name="Corbel Bold" size="17.0" />
                            </font>
                            <cursor>
-                              <Cursor fx:constant="HAND" />
                            </cursor>
                         </Button>
                      </children>
