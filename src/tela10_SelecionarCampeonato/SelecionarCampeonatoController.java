@@ -292,9 +292,7 @@ public class SelecionarCampeonatoController implements Initializable {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
         listaComp = competicao.verificaCampeonatoAberto();
-       
-        JOptionPane.showMessageDialog(null, "Lista na tela:"+ listaComp.get(0).getNome_comp() + listaComp.get(0).getNome_comp() + listaComp.get(0).getNome_comp());
-       
+              
         switch (listaComp.size()) {
             case 15:                
                 btn15.setText(listaComp.get(14).getNome_comp());

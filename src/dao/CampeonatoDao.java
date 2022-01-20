@@ -106,11 +106,9 @@ public class CampeonatoDao {
                 competicao.setFk_usuario(rs.getInt("fk_usuario"));
                 
                 listaComp.add(competicao);
-                JOptionPane.showMessageDialog(null, listaComp.get(cont).getNome_comp());
                 cont ++;
                 }
                 conexaoBanco.closeConexao();
-                JOptionPane.showMessageDialog(null,"Lista no Dao"+ listaComp.get(0).getNome_comp() + listaComp.get(1).getNome_comp() + listaComp.get(2).getNome_comp());
                 return listaComp;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
