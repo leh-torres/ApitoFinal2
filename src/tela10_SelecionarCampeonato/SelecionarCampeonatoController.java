@@ -82,8 +82,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     private Button btn_cad;
     
-    ArrayList<Competicao> listaComp = new ArrayList<>();
-    CampeonatoDao competicao = new CampeonatoDao();
+    private ArrayList<Competicao> listaComp = new ArrayList<>();
+    private CampeonatoDao competicao = new CampeonatoDao();
     
     @FXML
     private void funcaoBtnCad(ActionEvent event) {
@@ -292,7 +292,9 @@ public class SelecionarCampeonatoController implements Initializable {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
         listaComp = competicao.verificaCampeonatoAberto();
-        
+       
+        JOptionPane.showMessageDialog(null, "Lista na tela:"+ listaComp.get(0).getNome_comp() + listaComp.get(0).getNome_comp() + listaComp.get(0).getNome_comp());
+       
         switch (listaComp.size()) {
             case 15:                
                 btn15.setText(listaComp.get(14).getNome_comp());

@@ -19,11 +19,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
 import tela6_SelecaoTimes.Tela06SelecaoTimes;
+import tela8_CadastrarJogadores.Tela08CadastrarJogadores;
 
 /**
  *
@@ -60,12 +62,10 @@ public class CadastrarTimeController implements Initializable{
     private File image;
     private boolean verifica;
     private FileChooser fc; 
-    Usuario usuario = new Usuario();
-    TimeDao time = new TimeDao();
+    private Usuario usuario = new Usuario();
+    private TimeDao time = new TimeDao();
     
     private Boolean cadastrar() throws FileNotFoundException{
-        image = new File(path);
-        fis = new FileInputStream(image);
         verifica = time.inserirTime(nome_time.getText(), fis, abreviacao_time.getText(),usuario.getId_usuario());
         if(verifica){
             JOptionPane.showMessageDialog(null, "Cadastrado com sucesso");
@@ -78,7 +78,7 @@ public class CadastrarTimeController implements Initializable{
     }
     
     @FXML
-    private void importarImagem(ActionEvent event){
+    private void importarImagem(ActionEvent event) throws FileNotFoundException{
         FileChooser fc = new FileChooser();
         File seletedFile = fc.showOpenDialog(null);
         
@@ -90,25 +90,26 @@ public class CadastrarTimeController implements Initializable{
         System.out.println(image);
         
         path = seletedFile.getAbsolutePath();
+        image = new File(path);
+        fis = new FileInputStream(image);
+        Image imagem = new Image(fis);
+        
+        escudo_time.setImage(imagem);
     }
     
     @FXML
     private void acaoBotaoAvancar(ActionEvent event) throws FileNotFoundException{
-        if(cadastrar() == true){
-            trocarTela();
+        Tela08CadastrarJogadores tela = new Tela08CadastrarJogadores();
+        fecha();
+        try {
+            tela.start(new Stage());
+        } catch (Exception ex) {
+            Logger.getLogger(CadastrarTimeController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
     @FXML
     private void acaoBotaoVoltar(ActionEvent event){
-        trocarTela();
-    }
-    
-    private void fecha(){
-        Tela07CadastrarTime.getStage().close();
-    }
-    
-    private void trocarTela(){
         Tela06SelecaoTimes tela = new Tela06SelecaoTimes();
         fecha();
         try {
@@ -116,6 +117,10 @@ public class CadastrarTimeController implements Initializable{
         } catch (Exception ex) {
             Logger.getLogger(CadastrarTimeController.class.getName()).log(Level.SEVERE, null, ex);
         }
+    }
+    
+    private void fecha(){
+        Tela07CadastrarTime.getStage().close();
     }
 
     @Override

@@ -20,12 +20,12 @@ import javax.swing.JOptionPane;
  */
 public class CampeonatoDao {
     
-    Connection conn = null; 
-    PreparedStatement ps = null; 
-    ResultSet rs = null; 
+    private Connection conn = null; 
+    private PreparedStatement ps = null; 
+    private ResultSet rs = null; 
     private int retUpdate;
-    Usuario usuario = new Usuario();
-    ArrayList<Competicao> listaComp = new ArrayList<>();
+    private Usuario usuario = new Usuario();
+    private ArrayList<Competicao> listaComp = new ArrayList<>();
     
     public boolean cadastrarComp(Competicao competicao){
         Conexao conexaoBanco = new Conexao();
@@ -80,9 +80,11 @@ public class CampeonatoDao {
         
     }
     
-    public ArrayList verificaCampeonatoAberto(){
+    public ArrayList<Competicao> verificaCampeonatoAberto(){
         Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();
+        
+        int cont = 0;
         
         String SQL = "SELECT * FROM competicao WHERE fk_usuario=?";
         try {
@@ -102,9 +104,13 @@ public class CampeonatoDao {
                 competicao.setSituacao_comp(rs.getString("situacao_comp"));
                 competicao.setQuantidade_times_comp(rs.getInt("quantidade_times_comp"));
                 competicao.setFk_usuario(rs.getInt("fk_usuario"));
+                
                 listaComp.add(competicao);
+                JOptionPane.showMessageDialog(null, listaComp.get(cont).getNome_comp());
+                cont ++;
                 }
                 conexaoBanco.closeConexao();
+                JOptionPane.showMessageDialog(null,"Lista no Dao"+ listaComp.get(0).getNome_comp() + listaComp.get(1).getNome_comp() + listaComp.get(2).getNome_comp());
                 return listaComp;
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);

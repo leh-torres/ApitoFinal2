@@ -5,7 +5,10 @@
  */
 package classes;
 
-import java.sql.Blob;
+import java.util.ArrayList;
+import javafx.scene.image.Image;
+
+
 
 /**
  *
@@ -14,7 +17,7 @@ import java.sql.Blob;
 public class Time {
     private int id_time;
     private String nome_time;
-    private Blob imagem_time;
+    private Image imagem_time;
     private String abreviacao_time;
     private int fk_usuario;
     private int fk_competidor;
@@ -35,11 +38,11 @@ public class Time {
         this.nome_time = nome_time;
     }
 
-    public Blob getImagem_time() {
+    public Image getImagem_time() {
         return imagem_time;
     }
 
-    public void setImagem_time(Blob imagem_time) {
+    public void setImagem_time(Image imagem_time) {
         this.imagem_time = imagem_time;
     }
 

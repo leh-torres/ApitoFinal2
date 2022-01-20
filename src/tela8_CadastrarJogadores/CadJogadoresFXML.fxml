@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela8_CadastrarJogadores.CadJogadoresFXMLController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -38,7 +38,6 @@
             </Label>
             <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
-                  <Cursor fx:constant="HAND" />
                </cursor>
             </ImageView>
          </children>
@@ -47,7 +46,6 @@
          <children>
             <ListView layoutX="780.0" layoutY="61.0" prefHeight="395.0" prefWidth="211.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5;">
                <cursor>
-                  <Cursor fx:constant="CROSSHAIR" />
                </cursor>
             </ListView>
             <Pane layoutX="227.0" layoutY="6.0" prefHeight="481.0" prefWidth="546.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
@@ -62,7 +60,6 @@
                         <Font name="Corbel" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
                   <Label layoutX="39.0" layoutY="220.0" text="🏃Nome do Jogador" textFill="#bac0c3">
@@ -100,7 +97,6 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                   <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
@@ -108,7 +104,6 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                      <cursor>
-                        <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
                </children>
