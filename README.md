@@ -31,6 +31,11 @@ Os requisítos para rodar o projeto no seu computador de forma correta, são:
 - [x] Cadastrar Time
 - [x] Selecionar Campeonato
 - [x] Partidas
+
+### Links extras
+- [Diagrama UML](https://drive.google.com/drive/u/2/folders/19lr1ObBU4ttlNEZp5q1sKDbzoo64AHk1)
+- [Diagrama do Banco de Dados](https://drive.google.com/drive/u/2/folders/1umx6lOUSFbz543qr8jgCKt5qRFCWtKKd)
+- [Link do drive com algumas telas](https://drive.google.com/drive/folders/1BrZTD0Nn3nANPlK7eNpI3yWyeuWHy0xY)
   
 ### 🛠 Tecnologias
 
