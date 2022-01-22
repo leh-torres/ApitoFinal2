@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela2_Cadastro.FXMLCadastroController">
+<AnchorPane id="AnchorPane" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela3_Cadastro.FXMLCadastroController">
    <children>
       <Pane layoutX="63.0" layoutY="52.0" prefHeight="547.0" prefWidth="1175.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 15 15 15 15; -fx-background-radius: 15 15 15 15; -fx-border-color: white;">
          <children>
