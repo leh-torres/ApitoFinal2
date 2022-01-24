@@ -82,7 +82,7 @@
                   <Font name="Corbel" size="43.0" />
                </font>
             </Label>
-            <Label layoutX="779.0" layoutY="89.0" prefHeight="50.0" prefWidth="43.0" text="⚽" textFill="#c4cacd">
+            <Label layoutX="774.0" layoutY="89.0" prefHeight="50.0" prefWidth="43.0" text="⚽" textFill="#c4cacd">
                <font>
                   <Font name="Corbel" size="43.0" />
                </font>
@@ -110,7 +110,7 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="603.0" layoutY="160.0" text="seu campeonato de futebol!" textFill="#c4cacd">
+            <Label layoutX="537.0" layoutY="161.0" text="seu campeonato de futebol! Ou em &quot;🏆&quot; para" textFill="#c4cacd">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
@@ -194,6 +194,11 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
+            <Label layoutX="628.0" layoutY="186.0" text="mais funcionalidades!" textFill="#c4cacd">
+               <font>
+                  <Font name="Corbel" size="19.0" />
+               </font>
+            </Label>
          </children>
       </Pane>
    </children>
