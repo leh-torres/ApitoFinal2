@@ -53,7 +53,7 @@
                      </font>
                   </Label>
                   <Line endX="455.0" layoutX="67.0" layoutY="106.0" startX="-10.0" stroke="#cbd1d3" strokeLineCap="ROUND" />
-                  <TextField layoutX="94.0" layoutY="233.0" prefHeight="33.0" prefWidth="391.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField layoutX="94.0" layoutY="233.0" prefHeight="33.0" prefWidth="185.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -99,6 +99,16 @@
                         <Font name="Corbel" size="17.0" />
                      </font>
                   </PasswordField>
+                  <Label layoutX="304.0" layoutY="212.0" text="👤Sobrenome" textFill="#bac0c3">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField layoutX="300.0" layoutY="233.0" prefHeight="33.0" prefWidth="185.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </TextField>
                </children>
             </Pane>
          </children>

@@ -19,7 +19,7 @@
                   <Font name="Eras Demi ITC" size="28.0" />
                </font>
             </Label>
-            <TextField layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+            <TextField layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -102,6 +102,16 @@
                   </Button>
                </children>
             </Pane>
+            <TextField layoutX="312.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
+               <font>
+                  <Font name="Corbel" size="17.0" />
+               </font>
+            </TextField>
+            <CheckBox layoutX="314.0" layoutY="211.0" mnemonicParsing="false" text="Editar 👤Sobreome" textFill="#bac0c3">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+            </CheckBox>
          </children>
       </Pane>
    </children>

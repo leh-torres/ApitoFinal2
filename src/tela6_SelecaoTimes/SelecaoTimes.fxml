@@ -8,19 +8,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Telas.tela10_SelecionarCampeonato.SelecionarCampeonatoController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Label layoutX="1153.0" layoutY="28.0" text="👤" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="35.0" />
-               </font>
-            </Label>
-            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="47.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
             <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Corbel" size="20.0" />
@@ -40,21 +33,19 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <image>
+                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User.png" />
+               </image>
             </ImageView>
          </children>
       </Pane>
       <Pane layoutX="35.0" layoutY="123.0" prefHeight="497.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
-            <Pane layoutX="172.0" layoutY="8.0" prefHeight="482.0" prefWidth="870.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+            <Pane layoutX="172.0" layoutY="8.0" prefHeight="482.0" prefWidth="856.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
                <children>
-                  <Label layoutX="541.0" layoutY="313.0" prefHeight="59.0" prefWidth="50.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="546.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="548.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/fortaleza.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <TextField layoutX="114.0" layoutY="140.0" prefHeight="33.0" prefWidth="319.0" style="-fx-background-color: #EBF2F5;">
                      <font>
@@ -64,41 +55,6 @@
                         <Cursor fx:constant="TEXT" />
                      </cursor>
                   </TextField>
-                  <Label layoutX="496.0" layoutY="229.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="651.0" layoutY="312.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="496.0" layoutY="144.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="697.0" layoutY="140.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="593.0" layoutY="228.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="593.0" layoutY="144.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="697.0" layoutY="227.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
                   <Label layoutX="121.0" layoutY="53.0" text="Selecione os times que participarão do campeonato na barra de pesquisa abaixo." textFill="#aeb3b5">
                      <font>
                         <Font name="Corbel" size="19.0" />
@@ -125,7 +81,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="791.0" layoutY="412.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-shape: &quot;M 100, 100                 m -75, 0                 a 75,75 0 1,0 150,0                 a 75,75 0 1,0 -150,0&quot;;" text="➕" textFill="#3ddb8c">
+                  <Button layoutX="780.0" layoutY="412.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-shape: &quot;M 100, 100                 m -75, 0                 a 75,75 0 1,0 150,0                 a 75,75 0 1,0 -150,0&quot;;" text="➕" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="19.0" />
                      </font>
@@ -135,72 +91,32 @@
                   </Button>
                   <ImageView fx:id="time2" fitHeight="50.0" fitWidth="50.0" layoutX="498.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/ceará.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time3" fitHeight="50.0" fitWidth="50.0" layoutX="653.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time3" fitHeight="50.0" fitWidth="50.0" layoutX="646.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/ceará.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <ImageView fx:id="time4" fitHeight="50.0" fitWidth="50.0" layoutX="501.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/fortaleza.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time5" fitHeight="50.0" fitWidth="50.0" layoutX="595.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time5" fitHeight="50.0" fitWidth="50.0" layoutX="596.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/ceará.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time6" fitHeight="50.0" fitWidth="50.0" layoutX="702.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time6" fitHeight="50.0" fitWidth="50.0" layoutX="696.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/fortaleza.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time7" fitHeight="50.0" fitWidth="50.0" layoutX="598.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time7" fitHeight="50.0" fitWidth="50.0" layoutX="596.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/fortaleza.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time8" fitHeight="50.0" fitWidth="50.0" layoutX="699.0" layoutY="231.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time8" fitHeight="50.0" fitWidth="50.0" layoutX="696.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/ceará.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <Label layoutX="591.0" layoutY="192.0" text="Time 2" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="590.0" layoutY="285.0" text="Time 5" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="694.0" layoutY="285.0" text="Time 6" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="493.0" layoutY="285.0" text="Time 4" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="494.0" layoutY="192.0" text="Time 1" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="539.0" layoutY="366.0" text="Time 7" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="649.0" layoutY="366.0" text="Time 8" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="695.0" layoutY="192.0" text="Time 3" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
                   <ListView layoutX="114.0" layoutY="173.0" prefHeight="200.0" prefWidth="319.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
                </children>
             </Pane>
