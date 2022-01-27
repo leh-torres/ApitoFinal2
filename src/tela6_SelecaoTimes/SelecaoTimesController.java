@@ -7,10 +7,10 @@ package tela6_SelecaoTimes;
 import classes.Competicao;
 import classes.Time;
 import classes.Usuario;
+import dao.CampeonatoDao;
 import dao.SelecaoTimesDao;
 import dao.TimeDao;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -25,9 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -110,6 +108,7 @@ public class SelecaoTimesController implements Initializable {
     private ArrayList<Time> listaTimeSelecionados = new ArrayList<>();
     private ObservableList<String> time;
     private Competicao competicao = new Competicao();
+    private CampeonatoDao campeonatoDao = new CampeonatoDao();
     private SelecaoTimesDao timesSelecionados = new SelecaoTimesDao();
 
     int cont = 1;
@@ -118,7 +117,9 @@ public class SelecaoTimesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
-
+        
+        competicao.setId_comp_aux(campeonatoDao.getId());
+        
         lista.setVisible(false);
 
         listaTimeSelecionados = competicao.getTimesSelecionados();
@@ -273,7 +274,7 @@ public class SelecaoTimesController implements Initializable {
     private void acaoBtnAvancar(ActionEvent event) {
         if (listaTimeSelecionados.size() == 8) {
             competicao.setTimesSelecionados(listaTimeSelecionados);
-            if (timesSelecionados.cadastrarComp() == true) {
+            if (timesSelecionados.cadastrarTimesSelecionados() == true) {
                 Tela09Sorteio tela = new Tela09Sorteio();
                 fecha();
 

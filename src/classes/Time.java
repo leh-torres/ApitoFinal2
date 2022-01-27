@@ -5,16 +5,14 @@
  */
 package classes;
 
-import java.util.ArrayList;
 import javafx.scene.image.Image;
-
-
 
 /**
  *
  * @author rayla
  */
 public class Time {
+    private static int id_time_aux;
     private int id_time;
     private String nome_time;
     private Image imagem_time;
@@ -69,4 +67,13 @@ public class Time {
     public void setFk_competidor(int fk_competidor) {
         this.fk_competidor = fk_competidor;
     }
+
+    public static int getId_time_aux() {
+        return id_time_aux;
+    }
+
+    public static void setId_time_aux(int id_time_aux) {
+        Time.id_time_aux = id_time_aux;
+    }
+    
 }

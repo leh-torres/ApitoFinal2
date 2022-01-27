@@ -3,7 +3,7 @@ package classes;
 import javafx.scene.image.Image;
 
 public class Usuario {
-    private static int    id_usuario;
+    private static int id_usuario;
     private static String nome;
     private static String sobrenome;
     private static String email;
