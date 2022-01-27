@@ -34,7 +34,7 @@
                   <Font name="Eras Demi ITC" size="50.0" />
                </font>
             </Label>
-            <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" onMouseClicked="#perfilUsuario" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

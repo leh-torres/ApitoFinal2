@@ -18,17 +18,17 @@
                   <Font name="Corbel Bold" size="73.0" />
                </font>
             </Label>
-            <Label layoutX="55.0" layoutY="144.0" text="Nome Completo do Usuário" textFill="#4d6f80">
+            <Label fx:id="labelNomeCompleto" layoutX="71.0" layoutY="144.0" text="Nome Completo do Usuário" textFill="#4d6f80">
                <font>
                   <Font name="Eras Medium ITC" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="98.0" layoutY="175.0" text="emaildousuario@gmail.com" textFill="#aeb3b5">
+            <Label fx:id="labelEmail" layoutX="105.0" layoutY="175.0" text="emaildousuario@gmail.com" textFill="#aeb3b5">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Button layoutX="98.0" layoutY="244.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Editar perfil" textFill="WHITE">
+            <Button layoutX="98.0" layoutY="244.0" mnemonicParsing="false" onAction="#telaEditarPerfil" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Editar perfil" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
@@ -36,7 +36,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="98.0" layoutY="300.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Excluir perfil" textFill="#3ddb8c">
+            <Button layoutX="98.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnExcluirPerfil" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Excluir perfil" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
@@ -52,7 +52,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageFoto" fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </Pane>
    </children>

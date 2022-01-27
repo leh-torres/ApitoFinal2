@@ -75,5 +75,41 @@ public class CompeticaoDao {
         return false;
         
     }
+
+    /**
+     * **Método que verifica se o usuário possui
+     * camponatos cadastrados**
+     * @param id
+     * @return
+     */
+    public boolean verificaCapeonato(int id){
+       
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        String SQL = "SELECT * FROM competicao WHERE fk_usuario = ?";
+ 
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+ 
+                 ps.setInt(1, id);
+ 
+             rs = ps.executeQuery();
+ 
+             if(rs.next()){
+                 conn.close();
+                 conexaoBanco.closeConexao();
+                 return true;
+             } else{
+                 System.out.println("+----------------------------------+");
+                 System.out.println("|   Nenhuma competicao cadastrada  |");
+                 System.out.println("+----------------------------------+");
+                 return false;      
+             }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro no verificaCampeonto:" + e);
+        }
+ 
+        return false;
+    }
     
 }

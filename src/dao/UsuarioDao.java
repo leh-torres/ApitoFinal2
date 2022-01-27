@@ -3,6 +3,7 @@ package dao;
 import classes.Usuario;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -202,6 +203,7 @@ public class UsuarioDao {
      * @throws PacketTooBigException
      */
     public boolean cadastrarUsuario(String nome, String sobrenome, String email, String senha, FileInputStream imageFile) throws PacketTooBigException{
+        
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
         String SQL = "SELECT * FROM usuario WHERE nome_user=? and sobrenome_user=? and email_user=? and senha_user=? and imagem_user=?";
@@ -254,5 +256,189 @@ public class UsuarioDao {
         return false;
 
     }
+
+    /**
+     * ***Método que atualiza o nome do usuário*****
+     * @param nome
+     * @param id
+     * @return
+     */
+    public boolean editarNome(String nome, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE usuario SET nome_user = ? WHERE id_user = ?";
+        
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, nome);
+            pst.setInt(2, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Nome não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+     /**
+     * ***Método que atualiza o sobrenome do usuário*****
+     * @param nome
+     * @param id
+     * @return
+     */
+    public boolean editarSObrenome(String sobrenome, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE usuario SET sobrenome_user = ? WHERE id_user = ?";
+        
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, sobrenome);
+            pst.setInt(2, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Sobrenome não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    /**
+     * ***Mètodo que edita o email do usuário****
+     * @param email
+     * @param id
+     * @return
+     */
+    public boolean editarEmail(String email, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE usuario SET email_user = ? WHERE id_user = ?";
+        
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, email);
+            pst.setInt(2, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Email não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    /**
+     * ***Método para atualizar a senha do usuário***
+     * @param senha
+     * @param id
+     * @return
+     */
+    public boolean editarSenha(String senha, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE usuario SET senha_user = ? WHERE id_user = ?";
+        
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, senha);
+            pst.setInt(2, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Senha não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+     /**
+     * ***Método que atualiza o nome do usuário*****
+     * @param nome
+     * @param id
+     * @return
+     */
+    public boolean editarImagem(FileInputStream selectedFile, int id) throws FileNotFoundException, PacketTooBigException{
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE usuario SET imagem_user = ? WHERE id_user = ?";
+        
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setBinaryStream(1, selectedFile);
+            pst.setInt(2, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Imagem não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    public boolean excluirUsuario(int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "DELETE FROM usuario WHERE id_user = ?";
+
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setInt(1, id);
+            intRS = pst.executeUpdate();
+
+            if(intRS == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            }else{
+                System.out.println("intRS == 0");
+                return false;
+            }
+        } catch (Exception e) {
+            System.out.println("Erro no excluirUsuario: " + e);
+        }
+
+        return false;
+    }
+    
  }
+
+
 
