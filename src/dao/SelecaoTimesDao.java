@@ -6,11 +6,13 @@
 package dao;
 
 import classes.Competicao;
+import classes.Time;
 import classes.Usuario;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
@@ -19,12 +21,12 @@ import javax.swing.JOptionPane;
  */
 public class SelecaoTimesDao {
     
-    Connection conn = null; 
-    PreparedStatement ps = null; 
-    ResultSet rs = null; 
+    private Connection conn = null; 
+    private PreparedStatement ps = null; 
+    private ResultSet rs = null; 
     private int retUpdate;
-    Usuario usuario = new Usuario();
-    Competicao competicao = new Competicao();
+    private Usuario usuario = new Usuario();
+    private Competicao competicao = new Competicao();
     private int id = competicao.getId_comp_aux();
     
     public boolean cadastrarTimesSelecionados(){
@@ -99,6 +101,5 @@ public class SelecaoTimesDao {
                 }
         return false;
         
-    }
-    
+    }    
 }
