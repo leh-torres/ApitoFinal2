@@ -224,6 +224,7 @@ public class UsuarioDao {
 
                return false;
             } else{
+                //TO DO esfecificar campos
                 SQL = "INSERT INTO usuario VALUES(null,?,?,?,?,?)";
 
                 try {
