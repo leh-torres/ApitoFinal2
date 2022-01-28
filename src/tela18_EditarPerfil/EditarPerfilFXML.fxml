@@ -19,11 +19,7 @@
                   <Font name="Eras Demi ITC" size="28.0" />
                </font>
             </Label>
-<<<<<<< HEAD
             <TextField fx:id="txtNome" editable="false" layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="204.0" style="-fx-background-color: #EBF2F5;">
-=======
-            <TextField layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
->>>>>>> raylander
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -37,9 +33,6 @@
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
             <PasswordField fx:id="txtSenha" editable="false" layoutX="72.0" layoutY="384.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
                <font>
@@ -106,35 +99,21 @@
                   </Button>
                </children>
             </Pane>
-<<<<<<< HEAD
             <TextField fx:id="txtSobrenome" editable="false" layoutX="317.0" layoutY="235.0" prefHeight="33.0" prefWidth="204.0" style="-fx-background-color: #EBF2F5;">
-=======
-            <TextField layoutX="312.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
->>>>>>> raylander
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
             </TextField>
-<<<<<<< HEAD
             <CheckBox fx:id="checkSobrenome" layoutX="317.0" layoutY="211.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 👤Sobrenome" textFill="#bac0c3">
-=======
-            <CheckBox layoutX="314.0" layoutY="211.0" mnemonicParsing="false" text="Editar 👤Sobreome" textFill="#bac0c3">
->>>>>>> raylander
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-<<<<<<< HEAD
             <Button layoutX="126.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="23.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
-=======
->>>>>>> raylander
          </children>
       </Pane>
    </children>
