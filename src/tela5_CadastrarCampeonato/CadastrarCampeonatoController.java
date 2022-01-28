@@ -83,7 +83,7 @@ public class CadastrarCampeonatoController implements Initializable {
         try {
             tela.start(new Stage());
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Tela 10 não iniciada" + ex);
+            JOptionPane.showMessageDialog(null, "Tela 06 não iniciada" + ex);
         }
     }
     
