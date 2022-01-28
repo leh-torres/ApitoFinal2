@@ -16,7 +16,6 @@ import javax.swing.JOptionPane;
 import classes.Usuario;
 import dao.CompeticaoDao;
 import dao.UsuarioDao;
-import dao.VerificaDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

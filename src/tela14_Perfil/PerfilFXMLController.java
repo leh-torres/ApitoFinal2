@@ -8,10 +8,8 @@ package tela14_Perfil;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.JOptionPane;
 
 import classes.Usuario;
-import dao.UsuarioDao;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

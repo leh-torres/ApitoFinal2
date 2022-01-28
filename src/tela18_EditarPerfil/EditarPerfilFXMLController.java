@@ -8,14 +8,10 @@ package tela18_EditarPerfil;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.UnsupportedEncodingException;
 import java.net.URL;
-import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
-
-import com.mysql.cj.jdbc.exceptions.PacketTooBigException;
 
 import classes.Usuario;
 import dao.CompeticaoDao;

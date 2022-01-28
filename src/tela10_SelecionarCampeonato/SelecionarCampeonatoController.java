@@ -21,7 +21,6 @@ import javafx.stage.Stage;
 import tela14_Perfil.Tela14Perfil;
 
 import javax.swing.JOptionPane;
-import javax.swing.plaf.synth.SynthStyle;
 
 import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
