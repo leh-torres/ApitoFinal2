@@ -14,11 +14,8 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
-<<<<<<< HEAD
 import dao.CampeonatoDao;
-=======
 import dao.CompeticaoDao;
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,24 +40,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-<<<<<<< HEAD
-    CampeonatoDao verificaCampeonato = new CampeonatoDao();
-=======
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
-    Usuario usuario = new Usuario();
-    UsuarioDao userDao = new UsuarioDao();
-    CompeticaoDao compDao = new CompeticaoDao();
-    boolean retorno, retorno2;
+    private CampeonatoDao verificaCampeonato = new CampeonatoDao();
+    private Usuario usuario = new Usuario();
+    private UsuarioDao userDao = new UsuarioDao();
+    private CompeticaoDao compDao = new CompeticaoDao();
+    private boolean retorno, retorno2;
 
     @FXML
-<<<<<<< HEAD
-    private void botaoEntrar(ActionEvent event) {
-        retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
-=======
     private void botaoEntrar(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         usuario.criptografaSenha(senhaPass.getText());
         retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 
         if(retorno == true){
             usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
@@ -70,11 +59,8 @@ public class FXMLDocumentController implements Initializable {
             usuario.setSobrenome(userDao.getSobrenome());
             usuario.setImagem(userDao.getImagem());
                 
-<<<<<<< HEAD
             retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
-=======
             retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 
                 if(retorno2 == true){
                     Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -110,12 +96,9 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
-<<<<<<< HEAD
                     retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
-=======
                     usuario.criptografaSenha(senhaPass.getText());
                     retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
                     if(retorno == true){
                         usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
                         usuario.setEmail(emailTxt.getText());
@@ -124,11 +107,8 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setSobrenome(userDao.getSobrenome());
                         usuario.setImagem(userDao.getImagem());
                             
-<<<<<<< HEAD
                         retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
-=======
                         retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
             
                             if(retorno2 == true){
                                 Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();

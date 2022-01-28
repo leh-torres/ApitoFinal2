@@ -35,34 +35,35 @@ public class FXMLCadastroController implements Initializable {
 
 
     @FXML
-    TextField txtNome, txtEmail, txtSobrenome;
+    private TextField txtNome, txtEmail, txtSobrenome;
+    
     @FXML
-    PasswordField password;
+    private PasswordField password;
 
     Usuario user = new Usuario();
 
     @FXML
     private void btnAvanca(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException{
 
-        if(txtNome.getText().isBlank()){
+        if(txtNome.getText().isEmpty()){
             txtNome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         } else{
             user.setNome(txtNome.getText());
         }
 
-        if(txtSobrenome.getText().isBlank()){
+        if(txtSobrenome.getText().isEmpty()){
             txtSobrenome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         } else{
             user.setSobrenome(txtSobrenome.getText());
         }
 
-        if(txtEmail.getText().isBlank()){
+        if(txtEmail.getText().isEmpty()){
             txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         } else{
             user.setEmail(txtEmail.getText());
         }
 
-        if(password.getText().isBlank()){
+        if(password.getText().isEmpty()){
             password.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         } else{
             user.criptografaSenha(password.getText());
@@ -90,25 +91,25 @@ public class FXMLCadastroController implements Initializable {
             try {
                 if(event.getCode() == KeyCode.ENTER){
 
-                    if(txtNome.getText().isBlank()){
+                    if(txtNome.getText().isEmpty()){
                         txtNome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setNome(txtNome.getText());
                     }
             
-                    if(txtSobrenome.getText().isBlank()){
+                    if(txtSobrenome.getText().isEmpty()){
                         txtSobrenome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setSobrenome(txtSobrenome.getText());
                     }
             
-                    if(txtEmail.getText().isBlank()){
+                    if(txtEmail.getText().isEmpty()){
                         txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setEmail(txtEmail.getText());
                     }
             
-                    if(password.getText().isBlank()){
+                    if(password.getText().isEmpty()){
                         password.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.criptografaSenha(password.getText());
@@ -146,5 +147,5 @@ public class FXMLCadastroController implements Initializable {
     private void fechaTela(){
         Tela2_Cadastro.getStage().close();
     }
-    
+
 }

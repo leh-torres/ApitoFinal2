@@ -7,10 +7,10 @@ package tela6_SelecaoTimes;
 import classes.Competicao;
 import classes.Time;
 import classes.Usuario;
+import dao.CampeonatoDao;
 import dao.SelecaoTimesDao;
 import dao.TimeDao;
 import java.io.IOException;
-import java.io.InputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -25,9 +25,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -41,8 +39,6 @@ import tela9_Sorteio.Tela09Sorteio;
  */
 public class SelecaoTimesController implements Initializable {
 
-    Usuario usuario = new Usuario();
-
     @FXML
     private Label nome_usuario;
 
@@ -53,49 +49,25 @@ public class SelecaoTimesController implements Initializable {
     private ImageView time1;
 
     @FXML
-    private Label nome_time1;
-
-    @FXML
     private ImageView time2;
-
-    @FXML
-    private Label nome_time2;
 
     @FXML
     private ImageView time3;
 
     @FXML
-    private Label nome_time3;
-
-    @FXML
     private ImageView time4;
-
-    @FXML
-    private Label nome_time4;
 
     @FXML
     private ImageView time5;
 
     @FXML
-    private Label nome_time5;
-
-    @FXML
     private ImageView time6;
 
     @FXML
-    private Label nome_time6;
-
-    @FXML
     private ImageView time7;
-
-    @FXML
-    private Label nome_time7;
-
+    
     @FXML
     private ImageView time8;
-
-    @FXML
-    private Label nome_time8;
 
     @FXML
     private Button btn_cadastrar_time;
@@ -110,7 +82,9 @@ public class SelecaoTimesController implements Initializable {
     private ArrayList<Time> listaTimeSelecionados = new ArrayList<>();
     private ObservableList<String> time;
     private Competicao competicao = new Competicao();
+    private CampeonatoDao campeonatoDao = new CampeonatoDao();
     private SelecaoTimesDao timesSelecionados = new SelecaoTimesDao();
+    private Usuario usuario = new Usuario();
 
     int cont = 1;
 
@@ -118,7 +92,9 @@ public class SelecaoTimesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
-
+        
+        competicao.setId_comp_aux(campeonatoDao.getId());
+        
         lista.setVisible(false);
 
         listaTimeSelecionados = competicao.getTimesSelecionados();
@@ -128,140 +104,74 @@ public class SelecaoTimesController implements Initializable {
 
                 case 1:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
                     
                     cont ++;
                     break;
 
                 case 2:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
                     
                     cont ++;
                     break;
 
                 case 3:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-                    
                     cont ++;
                     break;
 
                 case 4:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-
                     time4.setImage(listaTimeSelecionados.get(3).getImagem_time());
-                    nome_time4.setText(listaTimeSelecionados.get(3).getNome_time());
                     
                     cont ++;
                     break;
 
                 case 5:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-
                     time4.setImage(listaTimeSelecionados.get(3).getImagem_time());
-                    nome_time4.setText(listaTimeSelecionados.get(3).getNome_time());
-
-                    time5.setImage(listaTimeSelecionados.get(4).getImagem_time());
-                    nome_time5.setText(listaTimeSelecionados.get(4).getNome_time());
-                    
+                    time5.setImage(listaTimeSelecionados.get(4).getImagem_time());                    
                     cont ++;
                     break;
 
                 case 6:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-
                     time4.setImage(listaTimeSelecionados.get(3).getImagem_time());
-                    nome_time4.setText(listaTimeSelecionados.get(3).getNome_time());
-
                     time5.setImage(listaTimeSelecionados.get(4).getImagem_time());
-                    nome_time5.setText(listaTimeSelecionados.get(4).getNome_time());
-
                     time6.setImage(listaTimeSelecionados.get(5).getImagem_time());
-                    nome_time6.setText(listaTimeSelecionados.get(5).getNome_time());
                     
                     cont ++;
                     break;
 
                 case 7:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-
                     time4.setImage(listaTimeSelecionados.get(3).getImagem_time());
-                    nome_time4.setText(listaTimeSelecionados.get(3).getNome_time());
-
                     time5.setImage(listaTimeSelecionados.get(4).getImagem_time());
-                    nome_time5.setText(listaTimeSelecionados.get(4).getNome_time());
-
                     time6.setImage(listaTimeSelecionados.get(5).getImagem_time());
-                    nome_time6.setText(listaTimeSelecionados.get(5).getNome_time());
-
                     time7.setImage(listaTimeSelecionados.get(6).getImagem_time());
-                    nome_time7.setText(listaTimeSelecionados.get(6).getNome_time());
                     
                     cont ++;
                     break;
 
                 case 8:
                     time1.setImage(listaTimeSelecionados.get(0).getImagem_time());
-                    nome_time1.setText(listaTimeSelecionados.get(0).getNome_time());
-
                     time2.setImage(listaTimeSelecionados.get(1).getImagem_time());
-                    nome_time2.setText(listaTimeSelecionados.get(1).getNome_time());
-
                     time3.setImage(listaTimeSelecionados.get(2).getImagem_time());
-                    nome_time3.setText(listaTimeSelecionados.get(2).getNome_time());
-
                     time4.setImage(listaTimeSelecionados.get(3).getImagem_time());
-                    nome_time4.setText(listaTimeSelecionados.get(3).getNome_time());
-
                     time5.setImage(listaTimeSelecionados.get(4).getImagem_time());
-                    nome_time5.setText(listaTimeSelecionados.get(4).getNome_time());
-
                     time6.setImage(listaTimeSelecionados.get(5).getImagem_time());
-                    nome_time6.setText(listaTimeSelecionados.get(5).getNome_time());
-
                     time7.setImage(listaTimeSelecionados.get(6).getImagem_time());
-                    nome_time7.setText(listaTimeSelecionados.get(6).getNome_time());
-
                     time8.setImage(listaTimeSelecionados.get(7).getImagem_time());
-                    nome_time8.setText(listaTimeSelecionados.get(7).getNome_time());
                     
                     cont ++;
                     break;
@@ -273,7 +183,7 @@ public class SelecaoTimesController implements Initializable {
     private void acaoBtnAvancar(ActionEvent event) {
         if (listaTimeSelecionados.size() == 8) {
             competicao.setTimesSelecionados(listaTimeSelecionados);
-            if (timesSelecionados.cadastrarComp() == true) {
+            if (timesSelecionados.cadastrarTimesSelecionados() == true) {
                 Tela09Sorteio tela = new Tela09Sorteio();
                 fecha();
 
@@ -316,56 +226,48 @@ public class SelecaoTimesController implements Initializable {
 
                     case 1:
                         time1.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time1.setText(listaTime.get(linha).getNome_time());
-
+                        
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 2:
                         time2.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time2.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 3:
                         time3.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time3.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 4:
                         time4.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time4.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 5:
                         time5.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time5.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 6:
                         time6.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time6.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 7:
                         time7.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time7.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;
 
                     case 8:
                         time8.setImage(listaTime.get(linha).getImagem_time());
-                        nome_time8.setText(listaTime.get(linha).getNome_time());
 
                         listaTimeSelecionados.add(listaTime.get(linha));
                         break;

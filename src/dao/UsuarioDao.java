@@ -192,33 +192,6 @@ public class UsuarioDao {
         return false;
     }
     
-<<<<<<< HEAD
-    public boolean verificaLogin(String email, String senha){
-        Conexao conexaoBanco = new Conexao();
-        conn = conexaoBanco.getConnection();
-        String SQL = "SELECT * FROM usuario WHERE email_user = ? AND senha_user = ?";
-
-        try{
-            pst = (PreparedStatement)conn.prepareStatement(SQL);
-
-                pst.setString(1, email);
-                pst.setString(2, senha);
-
-            rs = pst.executeQuery();
-            if(rs.next()){
-                conn.close();
-                conexaoBanco.closeConexao();
-                return true;
-            } else{
-                JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos" );
-            }
-        } catch (SQLException ex){
-            JOptionPane.showMessageDialog(null, "Erro no verificaLogin: " + ex);
-            return false;
-        }
-        return false;
-    }
-=======
     /**
      * Método para cadastrar usuário
      * @param nome
@@ -464,7 +437,6 @@ public class UsuarioDao {
 
         return false;
     }
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
     
  }
 

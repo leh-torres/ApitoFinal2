@@ -27,7 +27,7 @@ public class TimeDao {
     PreparedStatement pst = null;
     ResultSet ps = null;
     Conexao conexao = new Conexao();
-    int rs;
+    private int rs;
     Time time = new Time();
     ArrayList<Time> listaTime = new ArrayList<>();
     Usuario usuario = new Usuario();
@@ -91,5 +91,33 @@ public class TimeDao {
             JOptionPane.showMessageDialog(null, ex);
         }        
         return null;
+    }
+    
+    public int getId(){
+        int id_time;
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+
+        String SQL = "SELECT MAX(id_time) as id_time FROM times";
+
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            ps = pst.executeQuery();
+
+            if(ps.next()){
+                id_time = ps.getInt("id_time");
+                conexaoBanco.closeConexao();
+                return id_time;
+            } else{
+                System.out.println("+----------------------+");
+                System.out.println("|   Id não encontrado  |");
+                System.out.println("+----------------------+");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro no getId: " + e);
+        }
+
+        return 0;
     }
 }

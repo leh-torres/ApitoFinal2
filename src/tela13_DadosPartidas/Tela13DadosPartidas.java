@@ -1,9 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML.java to edit this template
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
-package tela7_CadastrarTime;
+package tela13_DadosPartidas;
 
+import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,15 +14,15 @@ import javafx.stage.Stage;
 
 /**
  *
- * @author eroti
+ * @author rayla
  */
-public class Tela07CadastrarTime extends Application {
+public class Tela13DadosPartidas extends Application {
     
-    private static Stage stage; 
+    private static Stage stage;
     
     @Override
-    public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/tela7_CadastrarTime/CadastrarTime.fxml"));
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("DadosPartidasFXML.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -34,7 +36,7 @@ public class Tela07CadastrarTime extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Tela07CadastrarTime.stage = stage;
+        Tela13DadosPartidas.stage = stage;
     }
 
     /**

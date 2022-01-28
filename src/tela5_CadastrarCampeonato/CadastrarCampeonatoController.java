@@ -46,7 +46,7 @@ public class CadastrarCampeonatoController implements Initializable {
     @FXML
     private TextField descricao_campeonato;
     
-    CampeonatoDao campeonatoDao = new CampeonatoDao();
+    private CampeonatoDao campeonatoDao = new CampeonatoDao();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -73,6 +73,7 @@ public class CadastrarCampeonatoController implements Initializable {
         competicao.setPremiacao_comp(premiacao.getText());
         competicao.setQuantidade_times_comp(8);
         competicao.setDescricao_comp(descricao_campeonato.getText());
+        competicao.setFk_usuario(usuario.getId_usuario());
         
         
         campeonatoDao.cadastrarComp(competicao);
@@ -82,7 +83,7 @@ public class CadastrarCampeonatoController implements Initializable {
         try {
             tela.start(new Stage());
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(null, "Tela 10 não iniciada" + ex);
+            JOptionPane.showMessageDialog(null, "Tela 06 não iniciada" + ex);
         }
     }
     

@@ -13,12 +13,11 @@ import java.util.ArrayList;
  */
 public class Competicao {
     
+    private static int id_comp_aux;
     private int id_comp;
     private String nome_comp;
     private String descricao_comp;
     private String premiacao_comp;
-    private String data_ini_comp;
-    private String data_termi_comp;
     private String situacao_comp;
     private int quantidade_times_comp;
     private int fk_usuario;
@@ -56,22 +55,6 @@ public class Competicao {
         this.premiacao_comp = premiacao_comp;
     }
 
-    public String getData_ini_comp() {
-        return data_ini_comp;
-    }
-
-    public void setData_ini_comp(String data_ini_comp) {
-        this.data_ini_comp = data_ini_comp;
-    }
-
-    public String getData_termi_comp() {
-        return data_termi_comp;
-    }
-
-    public void setData_termi_comp(String data_termi_comp) {
-        this.data_termi_comp = data_termi_comp;
-    }
-
     public String getSituacao_comp() {
         return situacao_comp;
     }
@@ -105,7 +88,13 @@ public class Competicao {
     public void setTimesSelecionados(ArrayList<Time> timesSelecionados) {
         this.timesSelecionados = timesSelecionados;
     }
-    
-    
-    
+
+    public static int getId_comp_aux() {
+        return id_comp_aux;
+    }
+
+    public static void setId_comp_aux(int id_comp_aux) {
+        Competicao.id_comp_aux = id_comp_aux;
+    }
+
 }

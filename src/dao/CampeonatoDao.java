@@ -43,17 +43,15 @@ public class CampeonatoDao {
 
                 return true;
             } else{
-                SQL = "INSERT INTO competicao (nome_comp, descricao_comp, premiacao_comp, data_ini_comp, data_termi_comp, situacao_comp, fk_usuario) VALUES (?,?,?,?,?,?,?)";
+                SQL = "INSERT INTO competicao (nome_comp, descricao_comp, premiacao_comp,situacao_comp, fk_usuario) VALUES (?,?,?,?,?)";
 
                 try {
                     ps = (PreparedStatement)conn.prepareStatement(SQL);
                     ps.setString(1, competicao.getNome_comp());
                     ps.setString(2, competicao.getDescricao_comp());
                     ps.setString(3, competicao.getPremiacao_comp());
-                    ps.setString(4, competicao.getData_ini_comp());
-                    ps.setString(5, competicao.getData_termi_comp());
-                    ps.setString(6, competicao.getSituacao_comp());
-                    ps.setInt(7, competicao.getFk_usuario());
+                    ps.setString(4, competicao.getSituacao_comp());
+                    ps.setInt(5, competicao.getFk_usuario());
                     retUpdate = ps.executeUpdate();
 
 
@@ -99,8 +97,6 @@ public class CampeonatoDao {
                 competicao.setNome_comp(rs.getString("nome_comp"));
                 competicao.setDescricao_comp(rs.getString("descricao_comp"));
                 competicao.setPremiacao_comp(rs.getString("premiacao_comp"));
-                competicao.setData_ini_comp(rs.getString("data_ini_comp"));
-                competicao.setData_termi_comp(rs.getString("data_termi_comp"));
                 competicao.setSituacao_comp(rs.getString("situacao_comp"));
                 competicao.setQuantidade_times_comp(rs.getInt("quantidade_times_comp"));
                 competicao.setFk_usuario(rs.getInt("fk_usuario"));
@@ -145,5 +141,33 @@ public class CampeonatoDao {
 
        return false;
    }
+    
+   public int getId(){
+        int id_time;
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+
+        String SQL = "SELECT MAX(id_comp) as id_comp FROM competicao";
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                id_time = rs.getInt("id_comp");
+                conexaoBanco.closeConexao();
+                return id_time;
+            } else{
+                System.out.println("+----------------------+");
+                System.out.println("|   Id não encontrado  |");
+                System.out.println("+----------------------+");
+            }
+
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Erro no getId: " + e);
+        }
+
+        return 0;
+    }
     
 }
