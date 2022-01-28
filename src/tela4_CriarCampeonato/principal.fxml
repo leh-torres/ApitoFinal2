@@ -6,19 +6,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #ebf2f5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela4_CriarCampeonato.principalController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Label layoutX="1153.0" layoutY="28.0" text="👤" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="35.0" />
-               </font>
-            </Label>
-            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="44.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
             <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Corbel" size="20.0" />
@@ -38,6 +31,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <image>
+                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User.png" />
+               </image>
             </ImageView>
          </children>
       </Pane>

@@ -46,8 +46,6 @@ public class CompeticaoDao {
                     ps.setString(1, competicao.getNome_comp());
                     ps.setString(2, competicao.getDescricao_comp());
                     ps.setString(3, competicao.getPremiacao_comp());
-                    ps.setString(4, competicao.getData_ini_comp());
-                    ps.setString(5, competicao.getData_termi_comp());
                     ps.setString(6, competicao.getSituacao_comp());
                     ps.setInt(7, competicao.getFk_usuario());
                     retUpdate = ps.executeUpdate();

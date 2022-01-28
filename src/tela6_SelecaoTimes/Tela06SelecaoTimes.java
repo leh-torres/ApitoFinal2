@@ -16,6 +16,8 @@ import javafx.stage.Stage;
  */
 public class Tela06SelecaoTimes extends Application {
     
+    private static Stage stage;
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("SelecaoTimes.fxml"));
@@ -24,6 +26,15 @@ public class Tela06SelecaoTimes extends Application {
         
         stage.setScene(scene);
         stage.show();
+        setStage(stage);
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Tela06SelecaoTimes.stage = stage;
     }
 
     /**

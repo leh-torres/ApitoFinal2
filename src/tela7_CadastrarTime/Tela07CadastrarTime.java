@@ -16,7 +16,8 @@ import javafx.stage.Stage;
  */
 public class Tela07CadastrarTime extends Application {
     
-    private static Stage stage;
+    private static Stage stage; 
+    
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/tela7_CadastrarTime/CadastrarTime.fxml"));
@@ -25,6 +26,7 @@ public class Tela07CadastrarTime extends Application {
         
         stage.setScene(scene);
         stage.show();
+        setStage(stage);
     }
 
     public static Stage getStage() {
@@ -32,8 +34,8 @@ public class Tela07CadastrarTime extends Application {
     }
 
     public static void setStage(Stage stage) {
-       Tela07CadastrarTime.stage = stage;
-    }   
+        Tela07CadastrarTime.stage = stage;
+    }
 
     /**
      * @param args the command line arguments

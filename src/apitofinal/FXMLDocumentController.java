@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
+import dao.CampeonatoDao;
 import dao.CompeticaoDao;
 import dao.UsuarioDao;
 import javafx.event.ActionEvent;
@@ -39,10 +40,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-    Usuario usuario = new Usuario();
-    UsuarioDao userDao = new UsuarioDao();
-    CompeticaoDao compDao = new CompeticaoDao();
-    boolean retorno, retorno2;
+    private CampeonatoDao verificaCampeonato = new CampeonatoDao();
+    private Usuario usuario = new Usuario();
+    private UsuarioDao userDao = new UsuarioDao();
+    private CompeticaoDao compDao = new CompeticaoDao();
+    private boolean retorno, retorno2;
 
     @FXML
     private void botaoEntrar(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException {
@@ -57,6 +59,7 @@ public class FXMLDocumentController implements Initializable {
             usuario.setSobrenome(userDao.getSobrenome());
             usuario.setImagem(userDao.getImagem());
                 
+            retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
             retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
 
                 if(retorno2 == true){
@@ -93,6 +96,7 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
+                    retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
                     usuario.criptografaSenha(senhaPass.getText());
                     retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
                     if(retorno == true){
@@ -103,6 +107,7 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setSobrenome(userDao.getSobrenome());
                         usuario.setImagem(userDao.getImagem());
                             
+                        retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
                         retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
             
                             if(retorno2 == true){

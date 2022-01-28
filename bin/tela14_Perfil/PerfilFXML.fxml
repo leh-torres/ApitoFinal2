@@ -1,58 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="452.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela14_Perfil.PerfilFXMLController">
    <children>
       <Pane layoutX="16.0" layoutY="16.0" prefHeight="419.0" prefWidth="420.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
-            <Circle fill="WHITE" layoutX="210.0" layoutY="82.0" radius="50.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
+           
             <Label layoutX="174.0" layoutY="46.0" prefHeight="86.0" prefWidth="73.0" text="👤" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel Bold" size="73.0" />
                </font>
             </Label>
-            <Label layoutX="55.0" layoutY="144.0" text="Nome Completo do Usuário" textFill="#4d6f80">
+            <Label fx:id="labelNomeCompleto" layoutX="71.0" layoutY="144.0" text="Nome Completo do Usuário" textFill="#4d6f80">
                <font>
                   <Font name="Eras Medium ITC" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="98.0" layoutY="175.0" text="emaildousuario@gmail.com" textFill="#aeb3b5">
+            <Label fx:id="labelEmail" layoutX="105.0" layoutY="175.0" text="emaildousuario@gmail.com" textFill="#aeb3b5">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Button layoutX="98.0" layoutY="244.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Editar perfil" textFill="WHITE">
+            <Button layoutX="98.0" layoutY="244.0" mnemonicParsing="false" onAction="#telaEditarPerfil" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Editar perfil" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
-            <Button layoutX="98.0" layoutY="300.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Excluir perfil" textFill="#3ddb8c">
+            <Button layoutX="98.0" layoutY="300.0" mnemonicParsing="false" onAction="#btnExcluirPerfil" prefHeight="35.0" prefWidth="224.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Excluir perfil" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
-            <Button layoutX="329.0" layoutY="372.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Sair ▶🚪" textFill="#34b974" underline="true" wrapText="true">
+            <Button layoutX="329.0" layoutY="372.0" mnemonicParsing="false" onAction="#sairDoSistema" style="-fx-background-color: white;" text="Sair ▶🚪" textFill="#34b974" underline="true" wrapText="true">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
+
             </Button>
-            <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="imageFoto" fitHeight="100.0" fitWidth="100.0" layoutX="160.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/User%202.png" />
+               </image></ImageView>
          </children>
       </Pane>
    </children>

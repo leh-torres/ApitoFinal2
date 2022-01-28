@@ -6,7 +6,7 @@ package tela10_SelecionarCampeonato;
 
 import classes.Competicao;
 import classes.Usuario;
-import dao.BuscaCompeticaoDao;
+import dao.CampeonatoDao;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -42,8 +42,8 @@ public class SelecionarCampeonatoController implements Initializable {
     private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,
     btn12, btn13, btn14, btn15, btn_cad;
     
-    ArrayList<Competicao> listaComp = new ArrayList<>();
-    BuscaCompeticaoDao competicao = new BuscaCompeticaoDao();
+    private ArrayList<Competicao> listaComp = new ArrayList<>();
+    private CampeonatoDao competicao = new CampeonatoDao();
     
     @FXML
     private void funcaoBtnCad(ActionEvent event) {
@@ -252,7 +252,7 @@ public class SelecionarCampeonatoController implements Initializable {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
         listaComp = competicao.verificaCampeonatoAberto();
-        
+              
         switch (listaComp.size()) {
             case 15:                
                 btn15.setText(listaComp.get(14).getNome_comp());

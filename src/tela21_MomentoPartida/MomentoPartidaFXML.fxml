@@ -7,19 +7,12 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela21_MomentoPartida.MomentoPartidaFXMLController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Label layoutX="1153.0" layoutY="28.0" text="👤" textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="35.0" />
-               </font>
-            </Label>
-            <Circle fill="TRANSPARENT" layoutX="1170.0" layoutY="44.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" strokeWidth="2.0" />
             <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Corbel" size="20.0" />
@@ -39,6 +32,9 @@
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
+               <image>
+                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User.png" />
+               </image>
             </ImageView>
          </children>
       </Pane>
@@ -51,7 +47,7 @@
                         <Font name="Eras Demi ITC" size="27.0" />
                      </font>
                   </Label>
-                  <Button layoutX="272.0" layoutY="330.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
+                  <Button layoutX="378.0" layoutY="328.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0;" text="Salvar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -134,6 +130,14 @@
                         <Font name="Eras Bold ITC" size="17.0" />
                      </font>
                   </TextField>
+                  <Button layoutX="162.0" layoutY="328.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
                </children>
             </Pane>
             <Pane layoutX="473.0" layoutY="14.0" prefHeight="41.0" prefWidth="284.0" style="-fx-background-color: white; -fx-shape: &quot;M 0 4 L 2 7 L 17 7 L 19 4&quot;;">
@@ -169,14 +173,6 @@
                   </Label>
                </children>
             </Pane>
-            <Button layoutX="118.0" layoutY="195.0" mnemonicParsing="false" prefHeight="98.0" prefWidth="127.0" style="-fx-background-color: transparent;" text="❮ " textFill="WHITE">
-               <font>
-                  <Font name="Corbel Bold" size="62.0" />
-               </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
          </children>
       </Pane>
    </children>
