@@ -44,7 +44,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button layoutX="329.0" layoutY="372.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Sair ▶🚪" textFill="#34b974" underline="true" wrapText="true">
+            <Button layoutX="329.0" layoutY="372.0" mnemonicParsing="false" onAction="#sairDoSistema" style="-fx-background-color: white;" text="Sair ▶🚪" textFill="#34b974" underline="true" wrapText="true">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>

@@ -12,6 +12,7 @@ import javax.swing.JOptionPane;
 
 import classes.Usuario;
 import dao.UsuarioDao;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -64,6 +65,13 @@ public class PerfilFXMLController implements Initializable {
     private void btnExcluirPerfil(ActionEvent event) throws Exception{
         Tela19ExcluirPerfil excluirPerfil = new Tela19ExcluirPerfil();
         excluirPerfil.start(new Stage());
+    }
+
+    @FXML
+    private void sairDoSistema(ActionEvent event){
+        fechaTelas();
+        Platform.exit();
+        System.exit(0);
     }
     
     private void fechaTelas(){
