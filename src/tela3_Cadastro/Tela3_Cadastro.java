@@ -8,13 +8,9 @@ package tela3_Cadastro;
 import java.io.IOException;
 
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -26,8 +22,8 @@ public class Tela3_Cadastro extends Application {
     private static Stage stage; 
 
     @Override
-    public void start(Stage primaryStage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("FXMLCadastro.fxml"));
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/tela3_Cadastro/FXMLCadastro.fxml"));
         
         Scene scene = new Scene(root);
         

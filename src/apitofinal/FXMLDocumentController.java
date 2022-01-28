@@ -5,13 +5,20 @@
  */
 package apitofinal;
 
+import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
+import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
+<<<<<<< HEAD
 import dao.CampeonatoDao;
+=======
+import dao.CompeticaoDao;
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -22,6 +29,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
+import tela2_Cadastro.Tela2_Cadastro;
 import tela4_CriarCampeonato.Tela04CriarCampeonato;
 
 /**
@@ -35,24 +43,38 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
+<<<<<<< HEAD
     CampeonatoDao verificaCampeonato = new CampeonatoDao();
+=======
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
     Usuario usuario = new Usuario();
     UsuarioDao userDao = new UsuarioDao();
+    CompeticaoDao compDao = new CompeticaoDao();
     boolean retorno, retorno2;
 
     @FXML
+<<<<<<< HEAD
     private void botaoEntrar(ActionEvent event) {
         retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
+=======
+    private void botaoEntrar(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+        usuario.criptografaSenha(senhaPass.getText());
+        retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 
         if(retorno == true){
-            usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
-            //TODO  pegar nome do usuario
+            usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
             usuario.setEmail(emailTxt.getText());
-            usuario.setSenha(senhaPass.getText());
             usuario.setImagem(userDao.getImagem());
             usuario.setNome(userDao.getNome());
+            usuario.setSobrenome(userDao.getSobrenome());
+            usuario.setImagem(userDao.getImagem());
                 
+<<<<<<< HEAD
             retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
+=======
+            retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
 
                 if(retorno2 == true){
                     Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -76,6 +98,10 @@ public class FXMLDocumentController implements Initializable {
 
 
                 }
+        } else{
+            usuario.limpaUsuario();
+            emailTxt.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+            senhaPass.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         }
     }
     
@@ -84,15 +110,25 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
+<<<<<<< HEAD
                     retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
+=======
+                    usuario.criptografaSenha(senhaPass.getText());
+                    retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
                     if(retorno == true){
-                        usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
+                        usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
                         usuario.setEmail(emailTxt.getText());
-                        usuario.setSenha(senhaPass.getText());
                         usuario.setImagem(userDao.getImagem());
                         usuario.setNome(userDao.getNome());
+                        usuario.setSobrenome(userDao.getSobrenome());
+                        usuario.setImagem(userDao.getImagem());
                             
+<<<<<<< HEAD
                         retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
+=======
+                        retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
+>>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
             
                             if(retorno2 == true){
                                 Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -116,6 +152,8 @@ public class FXMLDocumentController implements Initializable {
             
             
                             }
+                    } else{
+                        usuario.limpaUsuario();
                     }
                 }
             } catch (Exception e) {
@@ -129,6 +167,23 @@ public class FXMLDocumentController implements Initializable {
      */
     private void fecha(){
         ApitoFinal.getStage().close();
+    }
+
+    /**
+     * Função para mudar a tela ao clicar no botão cadastrar
+     * @param event
+     */
+    @FXML
+    private void iniciarCadastro(ActionEvent event){
+        Tela2_Cadastro tela2 = new Tela2_Cadastro();
+        fecha();
+
+        try {
+            tela2.start(new Stage());
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Tela 2 não iniciada");
+        }
     }
     
 }

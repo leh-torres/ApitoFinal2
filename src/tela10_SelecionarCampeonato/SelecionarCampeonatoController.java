@@ -16,8 +16,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import tela14_Perfil.Tela14Perfil;
+
 import javax.swing.JOptionPane;
+
 import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
 /**
@@ -35,52 +39,8 @@ public class SelecionarCampeonatoController implements Initializable {
     private ImageView logo_usuario;
     
     @FXML
-    private Button btn1;
-    
-    @FXML
-    private Button btn2;
-    
-    @FXML
-    private Button btn3;
-    
-    @FXML
-    private Button btn4;
-    
-    @FXML
-    private Button btn5;
-    
-    @FXML
-    private Button btn6;
-    
-    @FXML
-    private Button btn7;
-    
-    @FXML
-    private Button btn8;
-    
-    @FXML
-    private Button btn9;
-    
-    @FXML
-    private Button btn10;
-    
-    @FXML
-    private Button btn11;
-    
-    @FXML
-    private Button btn12;
-    
-    @FXML
-    private Button btn13;
-    
-    @FXML
-    private Button btn14;
-    
-    @FXML
-    private Button btn15;
-    
-    @FXML
-    private Button btn_cad;
+    private Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,
+    btn12, btn13, btn14, btn15, btn_cad;
     
     private ArrayList<Competicao> listaComp = new ArrayList<>();
     private CampeonatoDao competicao = new CampeonatoDao();
@@ -721,6 +681,17 @@ public class SelecionarCampeonatoController implements Initializable {
     
     private void fecha(){
         Tela10SelecionarCampeonato.getStage().close();
+    }
+
+    @FXML
+    private void perfilUsuario(MouseEvent event){
+        Tela14Perfil telaPerfil = new Tela14Perfil();
+        
+        try {
+            telaPerfil.start(new Stage());
+        } catch (Exception e) {
+           System.out.println(e);
+        }
     }
     
 }
