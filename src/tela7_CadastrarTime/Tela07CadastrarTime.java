@@ -20,7 +20,7 @@ public class Tela07CadastrarTime extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("CadastrarTime.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/tela7_CadastrarTime/CadastrarTime.fxml"));
         
         Scene scene = new Scene(root);
         

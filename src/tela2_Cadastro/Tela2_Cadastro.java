@@ -5,12 +5,12 @@
  */
 package tela2_Cadastro;
 
+import java.io.IOException;
+
 import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -18,29 +18,28 @@ import javafx.stage.Stage;
  * @author RonaldoMatos
  */
 public class Tela2_Cadastro extends Application {
+
+    private static Stage stage;
     
     @Override
-    public void start(Stage primaryStage) {
-        Button btn = new Button();
-        btn.setText("Say 'Hello World'");
-        btn.setOnAction(new EventHandler<ActionEvent>() {
-            
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println("Hello World!");
-            }
-        });
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("/tela2_Cadastro/FXMLCadastro.fxml"));
         
-        StackPane root = new StackPane();
-        root.getChildren().add(btn);
+        Scene scene = new Scene(root);
         
-        Scene scene = new Scene(root, 300, 250);
-        
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        stage.setScene(scene);
+        stage.show();
+        setStage(stage);
     }
 
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Tela2_Cadastro.stage = stage;
+    }  
+    
     /**
      * @param args the command line arguments
      */

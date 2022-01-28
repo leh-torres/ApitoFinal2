@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="500.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="500.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela13_DadosPartidas.DadosPartidasFXMLController">
    <children>
       <Pane layoutX="18.0" layoutY="15.0" prefHeight="289.0" prefWidth="464.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>

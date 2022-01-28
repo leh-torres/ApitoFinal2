@@ -6,6 +6,30 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tela19ExcluirPerfil",
+            "request": "launch",
+            "mainClass": "tela19_ExcluirPerfil.Tela19ExcluirPerfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela18EditarPerfil",
+            "request": "launch",
+            "mainClass": "tela18_EditarPerfil.Tela18EditarPerfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela14Perfil",
+            "request": "launch",
+            "mainClass": "tela14_Perfil.Tela14Perfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch Tela12SelecionarPartida",
             "request": "launch",
             "mainClass": "tela12_SelecionarPartida.Tela12SelecionarPartida",

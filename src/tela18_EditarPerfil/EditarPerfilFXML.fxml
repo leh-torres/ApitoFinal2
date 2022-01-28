@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="639.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="698.0" prefWidth="639.0" style="-fx-background-color: #3ddb8c;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela18_EditarPerfil.EditarPerfilFXMLController">
    <children>
       <Pane layoutX="21.0" layoutY="24.0" prefHeight="650.0" prefWidth="598.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
@@ -19,17 +19,21 @@
                   <Font name="Eras Demi ITC" size="28.0" />
                </font>
             </Label>
+<<<<<<< HEAD
+            <TextField fx:id="txtNome" editable="false" layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="204.0" style="-fx-background-color: #EBF2F5;">
+=======
             <TextField layoutX="72.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
+>>>>>>> raylander
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
             </TextField>
-            <TextField layoutX="72.0" layoutY="308.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="txtEmail" editable="false" layoutX="72.0" layoutY="308.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
             </TextField>
-            <Button layoutX="217.0" layoutY="587.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Salvar" textFill="WHITE">
+            <Button layoutX="312.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnAtualiza" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Salvar" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
@@ -37,7 +41,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <PasswordField layoutX="72.0" layoutY="384.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
+            <PasswordField fx:id="txtSenha" editable="false" layoutX="72.0" layoutY="384.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -57,17 +61,17 @@
                   <Font name="Corbel" size="17.0" />
                </font>
             </Label>
-            <CheckBox layoutX="72.0" layoutY="211.0" mnemonicParsing="false" text="Editar 👤Nome" textFill="#bac0c3">
+            <CheckBox fx:id="checkNome" layoutX="72.0" layoutY="211.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 👤Nome" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <CheckBox layoutX="73.0" layoutY="284.0" mnemonicParsing="false" text="Editar 📧Email" textFill="#bac0c3">
+            <CheckBox fx:id="checkEmail" layoutX="73.0" layoutY="284.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 📧Email" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <CheckBox layoutX="73.0" layoutY="361.0" mnemonicParsing="false" text="Editar 🔒Senha" textFill="#bac0c3">
+            <CheckBox fx:id="checkSenha" layoutX="73.0" layoutY="361.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 🔒Senha" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
@@ -87,31 +91,50 @@
                   <Font name="Corbel" size="35.0" />
                </font>
             </Label>
-            <CheckBox layoutX="73.0" layoutY="430.0" mnemonicParsing="false" text="📷Foto do Perfil" textFill="#bac0c3">
+            <CheckBox fx:id="checkFoto" layoutX="73.0" layoutY="430.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="📷Foto do Perfil" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
             <Pane layoutX="242.0" layoutY="454.0" prefHeight="113.0" prefWidth="113.0" style="-fx-background-color: #EBF2F5; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
                <children>
-                  <ImageView fitHeight="113.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true" />
-                  <Button layoutX="36.0" layoutY="40.0" mnemonicParsing="false" prefHeight="21.0" prefWidth="42.0" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
+                  <ImageView fx:id="imageFoto" fitHeight="113.0" fitWidth="113.0" pickOnBounds="true" preserveRatio="true" />
+                  <Button fx:id="btnSelecionaFoto" disable="true" layoutX="36.0" layoutY="40.0" mnemonicParsing="false" onAction="#getNovaFoto" prefHeight="21.0" prefWidth="42.0" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Button>
                </children>
             </Pane>
+<<<<<<< HEAD
+            <TextField fx:id="txtSobrenome" editable="false" layoutX="317.0" layoutY="235.0" prefHeight="33.0" prefWidth="204.0" style="-fx-background-color: #EBF2F5;">
+=======
             <TextField layoutX="312.0" layoutY="235.0" prefHeight="33.0" prefWidth="214.0" style="-fx-background-color: #EBF2F5;">
+>>>>>>> raylander
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
             </TextField>
+<<<<<<< HEAD
+            <CheckBox fx:id="checkSobrenome" layoutX="317.0" layoutY="211.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 👤Sobrenome" textFill="#bac0c3">
+=======
             <CheckBox layoutX="314.0" layoutY="211.0" mnemonicParsing="false" text="Editar 👤Sobreome" textFill="#bac0c3">
+>>>>>>> raylander
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
+<<<<<<< HEAD
+            <Button layoutX="126.0" layoutY="591.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="23.0" prefWidth="164.0" style="-fx-background-color: white; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
+               <font>
+                  <Font name="Corbel Bold" size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+=======
+>>>>>>> raylander
          </children>
       </Pane>
    </children>
