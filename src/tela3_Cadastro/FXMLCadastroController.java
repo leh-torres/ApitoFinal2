@@ -74,9 +74,10 @@ public class FXMLCadastroController implements Initializable {
         try {
             boolean retornoCad;
 
-            File selectFile = new File(path);
-            fis = new FileInputStream(selectFile);
+            File selectedFile = new File(path);
+            fis = new FileInputStream(selectedFile);
 
+            System.out.println("Imagem: " + fis);
        
             retornoCad = userDao.cadastrarUsuario(user.getNome(), user.getSobrenome(), user.getEmail(), user.getSenha(), fis);
             if(retornoCad == true){

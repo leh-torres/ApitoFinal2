@@ -14,6 +14,7 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
+import dao.CompeticaoDao;
 import dao.UsuarioDao;
 import dao.VerificaDao;
 import javafx.event.ActionEvent;
@@ -39,9 +40,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-    VerificaDao verifica = new VerificaDao();
     Usuario usuario = new Usuario();
     UsuarioDao userDao = new UsuarioDao();
+    CompeticaoDao compDao = new CompeticaoDao();
     boolean retorno, retorno2;
 
     @FXML
@@ -55,8 +56,9 @@ public class FXMLDocumentController implements Initializable {
             usuario.setImagem(userDao.getImagem());
             usuario.setNome(userDao.getNome());
             usuario.setSobrenome(userDao.getSobrenome());
+            usuario.setImagem(userDao.getImagem());
                 
-            retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+            retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
 
                 if(retorno2 == true){
                     Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
@@ -92,14 +94,17 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
-                    retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
+                    usuario.criptografaSenha(senhaPass.getText());
+                    retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
                     if(retorno == true){
-                        usuario.setId_usuario(userDao.getId(emailTxt.getText(), senhaPass.getText()));
+                        usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
                         usuario.setEmail(emailTxt.getText());
                         usuario.setImagem(userDao.getImagem());
                         usuario.setNome(userDao.getNome());
+                        usuario.setSobrenome(userDao.getSobrenome());
+                        usuario.setImagem(userDao.getImagem());
                             
-                        retorno2 = verifica.verificaCapeonato(usuario.getId_usuario());
+                        retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
             
                             if(retorno2 == true){
                                 Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
