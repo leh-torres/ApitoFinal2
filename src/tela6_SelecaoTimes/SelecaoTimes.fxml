@@ -32,22 +32,15 @@
                <cursor>
                </cursor>
                <image>
-                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User.png" />
+                  <Image url="@../resources/User.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
       <Pane layoutX="35.0" layoutY="123.0" prefHeight="497.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
-                  <Label layoutX="541.0" layoutY="313.0" prefHeight="59.0" prefWidth="50.0" text="⚽" textFill="#3ddb8c">
-                     <font>
-                        <Font name="Corbel Bold" size="50.0" />
-                     </font>
-                  </Label>
-                  <ImageView fx:id="time7" fitHeight="50.0" fitWidth="50.0" layoutX="546.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true">
-                      <image>
-                        <Image url="@../resources/Bola%20de%20Futebol.png" />
-                     </image></ImageView>
+            <Pane layoutX="172.0" layoutY="8.0" prefHeight="482.0" prefWidth="856.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+               <children>
                   <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="548.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
@@ -69,7 +62,7 @@
                         <Font name="Corbel" size="19.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_concluir" layoutX="362.0" layoutY="395.0" mnemonicParsing="false" onAction="#acaoBtnAvancar" prefHeight="33.0" prefWidth="132.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Concluir" textFill="WHITE">
+                  <Button fx:id="btn_cconcluir" layoutX="369.0" layoutY="418.0" mnemonicParsing="false" onAction="#acaoBtnAvancar" prefHeight="33.0" prefWidth="132.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Concluir" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="19.0" />
                      </font>
@@ -83,27 +76,23 @@
                      <cursor>
                      </cursor>
                   </Button>
-                  <Button fx:id="btn_cadastrar_time" layoutX="791.0" layoutY="412.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarTime" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-shape: &quot;M 100, 100                 m -75, 0                 a 75,75 0 1,0 150,0                 a 75,75 0 1,0 -150,0&quot;;" text="➕" textFill="#3ddb8c">
+                  <Button fx:id="btn_cadastrar" layoutX="780.0" layoutY="412.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarTime" prefHeight="47.0" prefWidth="47.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-shape: &quot;M 100, 100                 m -75, 0                 a 75,75 0 1,0 150,0                 a 75,75 0 1,0 -150,0&quot;;" text="➕" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="19.0" />
                      </font>
                      <cursor>
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time4" fitHeight="50.0" fitWidth="50.0" layoutX="498.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time2" fitHeight="50.0" fitWidth="50.0" layoutX="498.0" layoutY="233.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../resources/Bola%20de%20Futebol.png" />
-                     </image></ImageView>
-                  <ImageView fx:id="time8" fitHeight="50.0" fitWidth="50.0" layoutX="653.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
-                      <image>
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <ImageView fx:id="time3" fitHeight="50.0" fitWidth="50.0" layoutX="646.0" layoutY="316.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time2" fitHeight="50.0" fitWidth="50.0" layoutX="595.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
-                      <image>
+                  <ImageView fx:id="time4" fitHeight="50.0" fitWidth="50.0" layoutX="501.0" layoutY="145.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <ImageView fx:id="time5" fitHeight="50.0" fitWidth="50.0" layoutX="596.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
@@ -114,49 +103,18 @@
                      <image>
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <Label fx:id="nome_time2" layoutX="591.0" layoutY="192.0" text="Time 2" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time5" layoutX="590.0" layoutY="285.0" text="Time 5" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time6" layoutX="694.0" layoutY="285.0" text="Time 6" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time4" layoutX="493.0" layoutY="285.0" text="Time 4" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time1" layoutX="494.0" layoutY="192.0" text="Time 1" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time7" layoutX="539.0" layoutY="366.0" text="Time 7" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time8" layoutX="649.0" layoutY="366.0" text="Time 8" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="nome_time3" layoutX="695.0" layoutY="192.0" text="Time 3" textFill="#4d6f80">
-                     <font>
-                        <Font name="Corbel Bold" size="19.0" />
-                     </font>
-                  </Label>
-                  <ListView fx:id="lista" layoutX="114.0" layoutY="173.0" onMouseReleased="#capturarElemento" prefHeight="200.0" prefWidth="319.0" />
-                  <ListView layoutX="114.0" layoutY="173.0" prefHeight="200.0" prefWidth="319.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
-            </children>             
-        </Pane>
-    </children>             
+                  <ImageView fx:id="time7" fitHeight="50.0" fitWidth="50.0" layoutX="596.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
+                     </image></ImageView>
+                  <ImageView fx:id="time8" fitHeight="50.0" fitWidth="50.0" layoutX="696.0" layoutY="232.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
+                     </image></ImageView>
+                  <ListView fx:id="lista" layoutX="114.0" layoutY="173.0" onMouseReleased="#capturarElemento" prefHeight="200.0" prefWidth="319.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </children>
 </Pane>

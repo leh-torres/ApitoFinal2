@@ -31,7 +31,7 @@
                <cursor>
                </cursor>
                <image>
-                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User.png" />
+                  <Image url="@../resources/User.png" />
                </image>
             </ImageView>
          </children>
