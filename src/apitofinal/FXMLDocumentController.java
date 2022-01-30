@@ -12,6 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
+import javax.swing.plaf.synth.SynthStyle;
 
 import classes.Usuario;
 import dao.CampeonatoDao;
@@ -40,7 +41,6 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private PasswordField senhaPass;
 
-    private CampeonatoDao verificaCampeonato = new CampeonatoDao();
     private Usuario usuario = new Usuario();
     private UsuarioDao userDao = new UsuarioDao();
     private CompeticaoDao compDao = new CompeticaoDao();
@@ -48,8 +48,13 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void botaoEntrar(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        usuario.criptografaSenha(senhaPass.getText());
+        //System.out.println("Email: " + emailTxt.getText());
+        //System.out.println("Senha: " + senhaPass.getText());
+
+        Usuario.criptografaSenha(senhaPass.getText());
         retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
+
+        //System.out.println("Retorno: " + retorno);
 
         if(retorno == true){
             usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
@@ -59,7 +64,6 @@ public class FXMLDocumentController implements Initializable {
             usuario.setSobrenome(userDao.getSobrenome());
             usuario.setImagem(userDao.getImagem());
                 
-            retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
             retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
 
                 if(retorno2 == true){
@@ -96,9 +100,13 @@ public class FXMLDocumentController implements Initializable {
         senhaPass.addEventHandler(KeyEvent.KEY_PRESSED, (KeyEvent event) -> {
             try {
                 if(event.getCode() == KeyCode.ENTER){
-                    retorno = userDao.verificaLogin(emailTxt.getText(), senhaPass.getText());
-                    usuario.criptografaSenha(senhaPass.getText());
+                    //System.out.println("Email: " + emailTxt.getText());
+                    //System.out.println("Senha: " + senhaPass.getText());
+                    
+                    Usuario.criptografaSenha(senhaPass.getText());
                     retorno = userDao.verificaLogin(emailTxt.getText(), usuario.getSenha());
+                    //System.out.println("Retorno: " + retorno);
+
                     if(retorno == true){
                         usuario.setId_usuario(userDao.getId(emailTxt.getText(), usuario.getSenha()));
                         usuario.setEmail(emailTxt.getText());
@@ -107,7 +115,6 @@ public class FXMLDocumentController implements Initializable {
                         usuario.setSobrenome(userDao.getSobrenome());
                         usuario.setImagem(userDao.getImagem());
                             
-                        retorno2 = verificaCampeonato.verificaCapeonato(usuario.getId_usuario());
                         retorno2 = compDao.verificaCapeonato(usuario.getId_usuario());
             
                             if(retorno2 == true){

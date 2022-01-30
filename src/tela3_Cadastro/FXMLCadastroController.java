@@ -40,8 +40,8 @@ public class FXMLCadastroController implements Initializable {
     private String path = null;
     private FileChooser fc = new FileChooser();
     private Image image;
-    Usuario user = new Usuario();
-    UsuarioDao userDao = new UsuarioDao();
+    private Usuario user = new Usuario();
+    private UsuarioDao userDao = new UsuarioDao();
 
     /**
      * Initializes the controller class.
@@ -79,7 +79,7 @@ public class FXMLCadastroController implements Initializable {
 
             System.out.println("Imagem: " + fis);
        
-            retornoCad = userDao.cadastrarUsuario(user.getNome(), user.getSobrenome(), user.getEmail(), user.getSenha(), fis);
+            retornoCad = userDao.cadastrarImagem(fis, user.getId_usuario());
             if(retornoCad == true){
                 user.setImagem(image);
                 ApitoFinal telaInicial = new ApitoFinal();
