@@ -62,7 +62,7 @@ public class Usuario {
         Usuario.imagem = imagem;
     }
     
-    public void criptografaSenha(String senha) throws NoSuchAlgorithmException, 
+    public static void criptografaSenha(String senha) throws NoSuchAlgorithmException, 
     UnsupportedEncodingException {
         
         MessageDigest algorithm = MessageDigest.getInstance("SHA-256");

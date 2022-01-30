@@ -5,6 +5,7 @@ import classes.Usuario;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.nio.file.FileAlreadyExistsException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -167,6 +168,9 @@ public class UsuarioDao {
      * @return
      */
     public boolean verificaLogin(String email, String senha){
+        //System.out.println("Email para o banco: " + email);
+        //System.out.println("Senha para o banco: " + senha);
+        
         Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();
         String SQL = "SELECT * FROM usuario WHERE email_user = ? AND senha_user = ?";
@@ -184,12 +188,12 @@ public class UsuarioDao {
                 return true;
             } else{
                 JOptionPane.showMessageDialog(null, "Usuário ou senha inválidos" );
+                return false;
             }
         } catch (SQLException ex){
             JOptionPane.showMessageDialog(null, "Erro no verificaLogin: " + ex);
             return false;
         }
-        return false;
     }
     
     /**
@@ -202,11 +206,11 @@ public class UsuarioDao {
      * @return
      * @throws PacketTooBigException
      */
-    public boolean cadastrarUsuario(String nome, String sobrenome, String email, String senha, FileInputStream imageFile) throws PacketTooBigException{
+    public boolean cadastrarUsuario(String nome, String sobrenome, String email, String senha) {
         
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
-        String SQL = "SELECT * FROM usuario WHERE nome_user=? and sobrenome_user=? and email_user=? and senha_user=? and imagem_user=?";
+        String SQL = "SELECT * FROM usuario WHERE nome_user=? and sobrenome_user=? and email_user=? and senha_user=?";
 
         try {
            pst = (PreparedStatement)conn.prepareStatement(SQL);
@@ -214,7 +218,6 @@ public class UsuarioDao {
            pst.setString(2, sobrenome);
            pst.setString(3, email);
            pst.setString(4, senha);
-           pst.setBinaryStream(5, imageFile);
            rs = pst.executeQuery();
 
            if(rs.next()){
@@ -224,8 +227,7 @@ public class UsuarioDao {
 
                return false;
             } else{
-                //TO DO esfecificar campos
-                SQL = "INSERT INTO usuario VALUES(null,?,?,?,?,?)";
+                SQL = "INSERT INTO usuario (nome_user, sobrenome_user, email_user, senha_user) VALUES(?,?,?,?)";
 
                 try {
                     pst = (PreparedStatement)conn.prepareStatement(SQL);
@@ -233,11 +235,9 @@ public class UsuarioDao {
                     pst.setString(2, sobrenome);
                     pst.setString(3, email);
                     pst.setString(4, senha);
-                    pst.setBinaryStream(5, imageFile);
                     intRS = pst.executeUpdate();
 
                     if(intRS == 1){
-                        JOptionPane.showMessageDialog(null, "Usuário Cadastrado com sucesso!!");
                         conn.close();
                         conexao.closeConexao();
 
@@ -256,6 +256,32 @@ public class UsuarioDao {
 
         return false;
 
+    }
+
+    public boolean cadastrarImagem(FileInputStream fis, int id) throws PacketTooBigException{
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "UPDATE usuario SET imagem_user=? WHERE id_user=?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setBinaryStream(1, fis);
+            pst.setInt(2,id);
+            intRS = pst.executeUpdate();
+            
+            if(intRS == 1){
+                JOptionPane.showMessageDialog(null, "Usuário Cadastrado com sucesso!!");
+                return true;
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Imagem não cadastrada");
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        return false;
     }
 
     /**
