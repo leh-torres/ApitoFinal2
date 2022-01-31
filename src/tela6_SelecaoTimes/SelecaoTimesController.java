@@ -81,7 +81,6 @@ public class SelecaoTimesController implements Initializable {
     private ArrayList<Time> listaTime = new ArrayList<>();
     private ArrayList<Time> listaTimeSelecionados = new ArrayList<>();
     private ObservableList<String> time;
-    private Competicao competicao = new Competicao();
     private CampeonatoDao campeonatoDao = new CampeonatoDao();
     private SelecaoTimesDao timesSelecionados = new SelecaoTimesDao();
     private Usuario usuario = new Usuario();
@@ -93,11 +92,11 @@ public class SelecaoTimesController implements Initializable {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
         
-        competicao.setId_comp_aux(campeonatoDao.getId());
+        Competicao.setId_comp_aux(campeonatoDao.getId());
         
         lista.setVisible(false);
 
-        listaTimeSelecionados = competicao.getTimesSelecionados();
+        listaTimeSelecionados = Competicao.getTimesSelecionados();
         if (listaTimeSelecionados.size() > 0) {
             cont = listaTimeSelecionados.size();
             switch (cont) {
@@ -182,7 +181,7 @@ public class SelecaoTimesController implements Initializable {
     @FXML
     private void acaoBtnAvancar(ActionEvent event) {
         if (listaTimeSelecionados.size() == 8) {
-            competicao.setTimesSelecionados(listaTimeSelecionados);
+            Competicao.setTimesSelecionados(listaTimeSelecionados);
             if (timesSelecionados.cadastrarTimesSelecionados() == true) {
                 Tela09Sorteio tela = new Tela09Sorteio();
                 fecha();
@@ -202,7 +201,7 @@ public class SelecaoTimesController implements Initializable {
 
     @FXML
     private void acaoBtnCadastrarTime(ActionEvent event) {
-        competicao.setTimesSelecionados(listaTimeSelecionados);
+        Competicao.setTimesSelecionados(listaTimeSelecionados);
         
         Tela07CadastrarTime tela = new Tela07CadastrarTime();
         fecha();

@@ -79,15 +79,13 @@ public class Competicao {
         this.fk_usuario = fk_usuario;
     }
 
-    
-
-    public ArrayList<Time> getTimesSelecionados() {
+    public static ArrayList<Time> getTimesSelecionados() {
         return timesSelecionados;
     }
 
-    public void setTimesSelecionados(ArrayList<Time> timesSelecionados) {
-        this.timesSelecionados = timesSelecionados;
-    }
+    public static void setTimesSelecionados(ArrayList<Time> timesSelecionados) {
+        Competicao.timesSelecionados = timesSelecionados;
+    }  
 
     public static int getId_comp_aux() {
         return id_comp_aux;

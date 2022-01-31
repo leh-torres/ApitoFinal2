@@ -9,11 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<<<<<<< HEAD
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela8_CadastrarJogadores.CadJogadoresFXMLController">
-=======
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela8_CadastrarJogadores.CadJogadoresFXMLController">
->>>>>>> 1e0281d9a2883c105514fbf066e6f65377f86631
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -36,7 +32,7 @@
                <cursor>
                </cursor>
                <image>
-                  <Image url="@../resources/User.png"/>
+                  <Image url="@../resources/User.png" />
                </image>
             </ImageView>
          </children>
@@ -91,14 +87,14 @@
                         <Font name="Corbel" size="19.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_concluir_cadastro" layoutX="139.0" layoutY="406.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
+                  <Button fx:id="btn_concluir_cadastro" layoutX="139.0" layoutY="406.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarJogadores" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                      <cursor>
                      </cursor>
                   </Button>
-                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➕" textFill="#3ddb8c">
+                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" onAction="#acaoBtnAdicionarJogadores" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➕" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>

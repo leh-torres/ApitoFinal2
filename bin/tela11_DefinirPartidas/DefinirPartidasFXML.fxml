@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela11_DefinirPartidas.DefinirPartidasFXMLController">
    <children>
@@ -46,14 +43,6 @@
                   <Image url="@../resources/Árvore%208.png" />
                </image>
             </ImageView>
-            <Circle fill="WHITE" layoutX="114.0" layoutY="82.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="114.0" layoutY="190.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="114.0" layoutY="291.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="114.0" layoutY="399.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="807.0" layoutY="82.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="807.0" layoutY="190.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="807.0" layoutY="291.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
-            <Circle fill="WHITE" layoutX="807.0" layoutY="399.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="3.0" />
             <Label layoutX="221.0" layoutY="24.0" text="Por fim, defina os dados de todas as partidas do campeonato." textFill="#aeb3b5">
                <font>
                   <Font name="Corbel" size="19.0" />
@@ -64,14 +53,38 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <ImageView fx:id="img1" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img2" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img3" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img7" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true" />
-            <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="img1" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img2" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img3" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img4" fitHeight="50.0" fitWidth="50.0" layoutX="89.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img5" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="57.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img6" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="165.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img7" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="266.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
+            <ImageView fx:id="img8" fitHeight="50.0" fitWidth="50.0" layoutX="782.0" layoutY="374.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/Bola%20de%20Futebol.png" />
+               </image></ImageView>
             <Pane layoutX="411.0" layoutY="366.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
                <children>
                   <ImageView fitHeight="80.0" fitWidth="86.0" layoutX="10.0" pickOnBounds="true" preserveRatio="true">
@@ -84,34 +97,34 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_concluir" layoutX="-2.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;">
+                  <Button fx:id="btn_concluir" layoutX="-2.0" layoutY="-2.0" mnemonicParsing="false" onAction="#acaoConcluir" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;">
                      <cursor>
                      </cursor>
                   </Button>
                </children>
             </Pane>
-            <Button fx:id="btn1" layoutX="203.0" layoutY="120.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn1" layoutX="203.0" layoutY="120.0" mnemonicParsing="false" onAction="#acaoPart1" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
                <cursor>
                </cursor>
             </Button>
-            <Button fx:id="btn2" layoutX="203.0" layoutY="328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn2" layoutX="203.0" layoutY="328.0" mnemonicParsing="false" onAction="#acaoPart2" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
                <cursor>
                </cursor>
             </Button>
-            <Button fx:id="btn3" layoutX="591.0" layoutY="120.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn3" layoutX="591.0" layoutY="120.0" mnemonicParsing="false" onAction="#acaoPart3" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
                <cursor>
                </cursor>
             </Button>
-            <Button fx:id="btn4" layoutX="591.0" layoutY="328.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn4" layoutX="591.0" layoutY="328.0" mnemonicParsing="false" onAction="#acaoPart4" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
@@ -119,21 +132,21 @@
                </cursor>
             </Button>
             <Line endX="-11.0" endY="43.0" layoutX="471.0" layoutY="196.0" startX="-11.0" startY="9.0" strokeWidth="3.0" />
-            <Button fx:id="btn7" layoutX="399.0" layoutY="174.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn7" layoutX="399.0" layoutY="174.0" mnemonicParsing="false" onAction="#acaoPart7" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
                <cursor>
                </cursor>
             </Button>
-            <Button fx:id="btn6" layoutX="483.0" layoutY="225.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn6" layoutX="483.0" layoutY="225.0" mnemonicParsing="false" onAction="#acaoPart6" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>
                <cursor>
                </cursor>
             </Button>
-            <Button fx:id="btn5" layoutX="314.0" layoutY="225.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
+            <Button fx:id="btn5" layoutX="314.0" layoutY="225.0" mnemonicParsing="false" onAction="#acaoPart5" prefHeight="32.0" prefWidth="125.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Definir partida" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="15.0" />
                </font>

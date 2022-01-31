@@ -39,7 +39,7 @@
       </Pane>
       <Pane layoutX="35.0" layoutY="123.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 0 0 10 10; -fx-background-radius: 0 0 10 10;">
          <children>
-            <Button fx:id="btn_cad" layoutX="527.0" layoutY="355.0" mnemonicParsing="false" onAction="#handleButtonAction" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text=" Cadastrar Campeonato   ❯" textFill="WHITE">
+            <Button fx:id="btn_cad" layoutX="527.0" layoutY="355.0" mnemonicParsing="false" onAction="#btnCadastrar" prefHeight="64.0" prefWidth="247.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text=" Cadastrar Campeonato   ❯" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="19.0" />
                </font>
