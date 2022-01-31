@@ -24,6 +24,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import javax.swing.JOptionPane;
 import tela11_DefinirPartidas.Tela11DefinirPartidas;
 
 /**
@@ -96,7 +97,6 @@ public class SorteioFXMLController implements Initializable {
     private int count = 0;
     private int[] id_sorteado = new int[9];
     private Usuario usuario = new Usuario();
-    private Competicao competicao = new Competicao();
     private ArrayList<Time> timesSorteados = new ArrayList<>();
     private SelecaoTimesDao selecaoTimesDao = new SelecaoTimesDao();
 
@@ -111,48 +111,61 @@ public class SorteioFXMLController implements Initializable {
 
         sortear();
 
-        img1.setImage(competicao.getTimesSelecionados().get(0).getImagem_time());
-        img2.setImage(competicao.getTimesSelecionados().get(1).getImagem_time());
-        img3.setImage(competicao.getTimesSelecionados().get(2).getImagem_time());
-        img4.setImage(competicao.getTimesSelecionados().get(3).getImagem_time());
-        img5.setImage(competicao.getTimesSelecionados().get(4).getImagem_time());
-        img6.setImage(competicao.getTimesSelecionados().get(5).getImagem_time());
-        img7.setImage(competicao.getTimesSelecionados().get(6).getImagem_time());
-        img8.setImage(competicao.getTimesSelecionados().get(7).getImagem_time());
+        img1.setImage(Competicao.getTimesSelecionados().get(0).getImagem_time());
+        img2.setImage(Competicao.getTimesSelecionados().get(1).getImagem_time());
+        img3.setImage(Competicao.getTimesSelecionados().get(2).getImagem_time());
+        img4.setImage(Competicao.getTimesSelecionados().get(3).getImagem_time());
+        img5.setImage(Competicao.getTimesSelecionados().get(4).getImagem_time());
+        img6.setImage(Competicao.getTimesSelecionados().get(5).getImagem_time());
+        img7.setImage(Competicao.getTimesSelecionados().get(6).getImagem_time());
+        img8.setImage(Competicao.getTimesSelecionados().get(7).getImagem_time());
 
     }
 
     @FXML
     private void acaoBotaoSortear(ActionEvent event) throws SQLException {
 
-        if (count == 0) {
-            time1.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 1) {
-            time2.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 2) {
-            time3.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 3) {
-            time4.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 4) {
-            time5.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 5) {
-            time6.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 6) {
-            time7.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-        } else if (count == 7) {
-            time8.setImage(competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
-            btn_sortear.setText("Avançar");
-        } else if (count == 8) {
-            for (i = 0; i < 8; i++) {
-                for (j = 0; j < i; j++) {
-                    if (id_sorteado[j] == competicao.getTimesSelecionados().get(j).getId_time()) {
-                        timesSorteados.add(competicao.getTimesSelecionados().get(j));
+        switch (count) {
+            case 0:
+                time1.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 1:
+                time2.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 2:
+                time3.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 3:
+                time4.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 4:
+                time5.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 5:
+                time6.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 6:
+                time7.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                break;
+            case 7:
+                time8.setImage(Competicao.getTimesSelecionados().get(id_sorteado[count]).getImagem_time());
+                btn_sortear.setText("Avançar");
+                break;
+            case 8:
+                for (i = 0; i < 8; i++) {
+                    for (j = 0; j < 8; j++) {
+                        if (Competicao.getTimesSelecionados().get(id_sorteado[i]).getId_time() == Competicao.getTimesSelecionados().get(j).getId_time()) {
+                             timesSorteados.add(Competicao.getTimesSelecionados().get(j));
+                        }
                     }
-                }
-            }
-            if(selecaoTimesDao.alterarTimesSelecionados() == true){
-                trocarTela();
-            }
+                }   
+                Competicao.setTimesSelecionados(timesSorteados);
+                if(selecaoTimesDao.alterarTimesSelecionados() == true){
+                    trocarTela();
+                }   
+                break;
+            default:
+                break;
         }
         count++;
     }
