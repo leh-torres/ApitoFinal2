@@ -52,6 +52,9 @@ public class EditarPerfilFXMLController implements Initializable {
     private static FileInputStream fis = null;
     private FileChooser fileChooser = new FileChooser();
     private Image foto;
+    private boolean retorno;
+    private Usuario usuario = new Usuario();
+    private CompeticaoDao compDao =  new CompeticaoDao();
 
     /**
      * Initializes the controller class.
@@ -161,9 +164,19 @@ public class EditarPerfilFXMLController implements Initializable {
 
     @FXML
     private void btnVoltar(ActionEvent event) throws Exception{
-        Tela04CriarCampeonato tela4 = new Tela04CriarCampeonato();
-        fechaTela();
-        tela4.start(new Stage());
+
+        retorno = compDao.verificaCapeonato(usuario.getId_usuario());
+
+        if(retorno == true){
+            Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
+            fechaTela();
+            tela10.start(new Stage());
+        } else{
+            Tela04CriarCampeonato tela4 = new Tela04CriarCampeonato();
+            fechaTela();
+            tela4.start(new Stage());
+        }
+        
     }
 
     private void fechaTela(){
@@ -171,11 +184,6 @@ public class EditarPerfilFXMLController implements Initializable {
     }
 
     private void trocarTela() throws Exception{
-        boolean retorno;
-        
-        Usuario usuario = new Usuario();
-        CompeticaoDao compDao =  new CompeticaoDao();
-
         retorno = compDao.verificaCapeonato(usuario.getId_usuario());
 
         if(retorno == true){

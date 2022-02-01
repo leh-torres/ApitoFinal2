@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela18_EditarPerfil.Tela18EditarPerfil;
 import tela19_ExcluirPerfil.Tela19ExcluirPerfil;
 import tela4_CriarCampeonato.Tela04CriarCampeonato;
@@ -74,7 +75,12 @@ public class PerfilFXMLController implements Initializable {
     
     private void fechaTelas(){
         Tela14Perfil.getStage().close();
-        Tela04CriarCampeonato.getStage().close();
+        
+        if(Tela04CriarCampeonato.getStage() == null){
+            Tela10SelecionarCampeonato.getStage().close();
+        } else{
+            Tela04CriarCampeonato.getStage().close();
+        }
     }
     
 }
