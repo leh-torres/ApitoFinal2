@@ -21,6 +21,7 @@ import javafx.stage.Stage;
 import tela14_Perfil.Tela14Perfil;
 
 import javax.swing.JOptionPane;
+import tela12_SelecionarPartida.Tela12SelecionarPartida;
 
 import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
@@ -55,13 +56,11 @@ public class SelecionarCampeonatoController implements Initializable {
             JOptionPane.showMessageDialog(null, "Tela 5 não iniciada" + ex);
         }
     }
-    /*
-    @FXML
-    public void funcaoBtn1(ActionEvent event){
 
-        competicao.
-        (listaComp.get(0).getId_competicao());
-        Home h = new Home();
+    @FXML
+    private void funcaoBtn1(ActionEvent event){
+        Competicao.setId_comp_aux(listaComp.get(0).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
@@ -72,88 +71,80 @@ public class SelecionarCampeonatoController implements Initializable {
     
     @FXML
     public void funcaoBtn2(ActionEvent event){
-        comp2.setIdSelecionaCampeonato(listaComp.get(1).getId_competicao());
-        Home h = new Home();
+        Competicao.setId_comp_aux(listaComp.get(1).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-    
     }
     
     @FXML
     public void funcaoBtn3(ActionEvent event){
-
-        Home h = new Home();
-        comp3.setIdSelecionaCampeonato(listaComp.get(2).getId_competicao());
+    Competicao.setId_comp_aux(listaComp.get(2).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     
     @FXML
     public void funcaoBtn4(ActionEvent event){
-        Home h = new Home();
-        comp4.setIdSelecionaCampeonato(listaComp.get(3).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(3).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
     
     @FXML
     public void funcaoBtn5(ActionEvent event){
-        
-        Home h = new Home();
-        comp5.setIdSelecionaCampeonato(listaComp.get(4).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(4).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
     
     @FXML
     public void funcaoBtn6(ActionEvent event){
-        Home h = new Home();
-        comp6.setIdSelecionaCampeonato(listaComp.get(5).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(5).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
     
     @FXML
     public void funcaoBtn7(ActionEvent event){
-        Home h = new Home();
-        comp7.setIdSelecionaCampeonato(listaComp.get(6).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(6).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
     
     @FXML
     public void funcaoBtn8(ActionEvent event){
-        Home h = new Home();
-        comp8.setIdSelecionaCampeonato(listaComp.get(7).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(7).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
@@ -164,20 +155,20 @@ public class SelecionarCampeonatoController implements Initializable {
     
     @FXML
     public void funcaoBtn9(ActionEvent event){
-        Home h = new Home();
-        comp9.setIdSelecionaCampeonato(listaComp.get(8).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(8).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
-        } 
+        }
     }
     
     @FXML
     public void funcaoBtn10(ActionEvent event){
-        Home h = new Home();
-        comp10.setIdSelecionaCampeonato(listaComp.get(9).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(9).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
@@ -188,63 +179,63 @@ public class SelecionarCampeonatoController implements Initializable {
     
     @FXML
     public void funcaoBtn11(ActionEvent event){
-        
-        Home h = new Home();
-        comp11.setIdSelecionaCampeonato(listaComp.get(10).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(10).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
-         }
-        
+        }
     }
     
     @FXML
     public void funcaoBtn12(ActionEvent event){
-        Home h = new Home();
-        comp12.setIdSelecionaCampeonato(listaComp.get(11).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(11).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-         
     }
     
     @FXML
     public void funcaoBtn13(ActionEvent event){
-        Home h = new Home();
-        comp13.setIdSelecionaCampeonato(listaComp.get(12).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(12).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
-        }
-         
+        } 
     }
     
     @FXML
     public void funcaoBtn14(ActionEvent event){
-        Home h = new Home();
-        comp14.setIdSelecionaCampeonato(listaComp.get(13).getId_competicao());
+        Competicao.setId_comp_aux(listaComp.get(13).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
         fecha();
         try {
             h.start(new Stage());
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
     }
     
     @FXML
-    public void funcaoBtn15(ActionEvent event){
-    
-    }*/
-    
-    
+    public void funcaoBtn15(ActionEvent event){   
+        Competicao.setId_comp_aux(listaComp.get(14).getId_comp());
+        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        fecha();
+        try {
+            h.start(new Stage());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    } 
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {

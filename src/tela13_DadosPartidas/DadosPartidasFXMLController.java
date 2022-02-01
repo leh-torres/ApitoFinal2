@@ -44,8 +44,11 @@ public class DadosPartidasFXMLController implements Initializable {
     
     public void acaoBotaoSalvar(ActionEvent event){
         
-        part.cadastrarPart(data_partida.getEditor().getText(), horario_partida.getText(), local.getText(), Partida.getFk_comp(), Partida.getFk_time1(), Partida.getFk_time2());
-        fecha();
+        if(part.cadastrarPart(data_partida.getEditor().getText(), horario_partida.getText(), local.getText(),
+                Partida.getFk_comp(), Partida.getFk_time1(), Partida.getFk_time2()) == true){
+            
+            fecha();
+        }
     }
     
     private void fecha(){

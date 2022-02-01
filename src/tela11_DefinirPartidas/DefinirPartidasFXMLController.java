@@ -110,72 +110,72 @@ public class DefinirPartidasFXMLController implements Initializable {
 
     @FXML
     public void acaoPart1(ActionEvent event) throws IOException {
+        btn1.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(Competicao.getTimesSelecionados().get(0).getId_time());
         Partida.setFk_time2(Competicao.getTimesSelecionados().get(1).getId_time());
         tela.start(new Stage());
-        btn1.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart2(ActionEvent event) throws IOException {
+        btn2.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(Competicao.getTimesSelecionados().get(2).getId_time());
         Partida.setFk_time2(Competicao.getTimesSelecionados().get(3).getId_time());
         tela.start(new Stage());
-        btn2.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart3(ActionEvent event) throws IOException {
+        btn3.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(Competicao.getTimesSelecionados().get(4).getId_time());
         Partida.setFk_time2(Competicao.getTimesSelecionados().get(5).getId_time());
         tela.start(new Stage());
-        btn3.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart4(ActionEvent event) throws IOException {
+        btn4.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(Competicao.getTimesSelecionados().get(6).getId_time());
         Partida.setFk_time2(Competicao.getTimesSelecionados().get(7).getId_time());
         tela.start(new Stage());
-        btn4.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart5(ActionEvent event) throws IOException {
+        btn5.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(0);
         Partida.setFk_time2(0);
         tela.start(new Stage());
-        btn5.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart6(ActionEvent event) throws IOException {
+        btn6.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(0);
         Partida.setFk_time2(0);
         tela.start(new Stage());
-        btn6.setDisable(true);
-        cont++;
     }
 
     @FXML
     public void acaoPart7(ActionEvent event) throws IOException {
+        btn7.setDisable(true);
+        cont++;
         Tela13DadosPartidas tela = new Tela13DadosPartidas();
         Partida.setFk_time1(0);
         Partida.setFk_time2(0);
         tela.start(new Stage());
-        btn7.setDisable(true);
-        cont++;
     }
 
     @FXML

@@ -5,6 +5,7 @@
  */
 package dao;
 
+import classes.Jogadores;
 import classes.Time;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,10 +23,10 @@ public class JogadoresDao {
     private PreparedStatement pst = null;
     private ResultSet ps = null;
     private int rs;
-    private Time time = new Time();
+    private Jogadores jogadores = new Jogadores();
     private TimeDao timeDao = new TimeDao();
     
-    public boolean cadastrarJogador() {
+    public boolean cadastrarJogador(String nome) {
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
 
@@ -33,7 +34,7 @@ public class JogadoresDao {
 
         try {
             pst = (PreparedStatement) conn.prepareStatement(SQL);
-            pst.setString(1, time.getNome_time());
+            pst.setString(1, nome);
             pst.setInt(2, timeDao.getId());
             rs = pst.executeUpdate();
 
