@@ -31,20 +31,20 @@ public class PartidaDao {
     public boolean cadastrarPart(String data_part,String hora_part, String local_part, int fk_comp,int fk_time1,int fk_time2){
         Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();
-        String SQL = "SELECT * FROM partida WHERE local_part = ? and fk_comp = ? and fk_time1 = ? and fk_time2 =? ";
+        String SQL = "SELECT * FROM partida WHERE local_part = ? and fk_comp = ? and data_part = ? and horario_part = ? ";
         try {
             ps = (PreparedStatement)conn.prepareStatement(SQL);
             ps.setString(1, local_part);
             ps.setInt(2, fk_comp);
-            ps.setInt(3, fk_time1);
-            ps.setInt(4, fk_time2);
+            ps.setString(3, data_part);
+            ps.setString(4, hora_part);
             rs = ps.executeQuery();
 
             if(rs.next()){
                 JOptionPane.showMessageDialog(null, "Partida já cadastrado");
                 conexaoBanco.closeConexao();
 
-                return true;
+                return false;
             } else{                
                 SQL = "INSERT INTO partida (data_part,horario_part,local_part,fk_comp,fk_time1,fk_time2) VALUES (?,?,?,?,?,?)";
 
