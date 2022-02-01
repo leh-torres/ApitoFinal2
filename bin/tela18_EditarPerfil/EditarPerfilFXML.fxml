@@ -33,9 +33,6 @@
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
             <PasswordField fx:id="txtSenha" editable="false" layoutX="72.0" layoutY="384.0" prefHeight="33.0" prefWidth="454.0" style="-fx-background-color: #EBF2F5;">
                <font>
@@ -116,9 +113,6 @@
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
          </children>
       </Pane>

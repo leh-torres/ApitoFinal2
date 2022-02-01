@@ -9,12 +9,14 @@ import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.security.NoSuchAlgorithmException;
+import java.security.interfaces.RSAPrivateCrtKey;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
 import apitofinal.ApitoFinal;
 import classes.Usuario;
+import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -36,14 +38,16 @@ public class FXMLCadastroController implements Initializable {
 
     @FXML
     private TextField txtNome, txtEmail, txtSobrenome;
-    
     @FXML
     private PasswordField password;
 
-    Usuario user = new Usuario();
+    private Usuario user = new Usuario();
+    private UsuarioDao userDao = new UsuarioDao();
 
     @FXML
     private void btnAvanca(ActionEvent event) throws NoSuchAlgorithmException, UnsupportedEncodingException{
+
+        boolean retorno;
 
         if(txtNome.getText().isEmpty()){
             txtNome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
@@ -66,18 +70,17 @@ public class FXMLCadastroController implements Initializable {
         if(password.getText().isEmpty()){
             password.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
         } else{
-            user.criptografaSenha(password.getText());
+            Usuario.criptografaSenha(password.getText());
         }
         
-        Tela3_Cadastro tela3 = new Tela3_Cadastro();
-        fechaTela();
-
-        try {
-            tela3.start(new Stage());
-        } catch (IOException e) {
-            e.printStackTrace();
-            System.out.println("Erro ao abrir tela 3");
-        }
+        retorno = userDao.cadastrarUsuario(user.getNome(), user.getSobrenome(), user.getEmail(), user.getSenha());
+        
+        if(retorno == true){
+            trocaDeTela();
+            user.setId_usuario(userDao.getId(user.getEmail(), user.getSenha()));
+        } else{
+            System.out.println("Erro ao trocar de tela");
+        } 
 
     }
 
@@ -91,39 +94,41 @@ public class FXMLCadastroController implements Initializable {
             try {
                 if(event.getCode() == KeyCode.ENTER){
 
+               
+                    boolean retorno;
+
                     if(txtNome.getText().isEmpty()){
                         txtNome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setNome(txtNome.getText());
                     }
-            
+
                     if(txtSobrenome.getText().isEmpty()){
                         txtSobrenome.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setSobrenome(txtSobrenome.getText());
                     }
-            
+
                     if(txtEmail.getText().isEmpty()){
-                        txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
+                       txtEmail.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.setEmail(txtEmail.getText());
                     }
-            
+
                     if(password.getText().isEmpty()){
                         password.setStyle("-fx-border-color: red; -fx-border-width: 1px; -fx-background-color:  #EBF2F5; -fx-border-radius: 4px;");
                     } else{
                         user.criptografaSenha(password.getText());
                     }
-                    
-                    Tela3_Cadastro tela3 = new Tela3_Cadastro();
-                    fechaTela();
-            
-                    try {
-                        tela3.start(new Stage());
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                        System.out.println("Erro ao abrir tela 3");
-                    }
+        
+                    retorno = userDao.cadastrarUsuario(user.getNome(), user.getSobrenome(), user.getEmail(), user.getSenha());
+        
+                    if(retorno == true){
+                        trocaDeTela();
+                    } else{
+                       System.out.println("Erro ao trocar de tela");
+                    } 
+
 
                 }
             } catch (Exception e) {
@@ -148,4 +153,16 @@ public class FXMLCadastroController implements Initializable {
         Tela2_Cadastro.getStage().close();
     }
 
+    private void trocaDeTela(){
+        Tela3_Cadastro tela3 = new Tela3_Cadastro();
+        fechaTela();
+
+        try {
+            tela3.start(new Stage());
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Erro ao abrir tela 3");
+        }
+    }
+    
 }

@@ -16,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tela14_Perfil.Tela14Perfil;
+import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
 /**
  *
@@ -51,6 +52,17 @@ public class principalController implements Initializable {
         } catch (Exception e) {
            System.out.println(e);
         }
+    }
+
+    @FXML
+    private void btnCadastrar(ActionEvent event) throws Exception{
+        Tela05CadastrarCampeonato tela05 = new Tela05CadastrarCampeonato();
+        fechaTela();
+        tela05.start(new Stage());
+    }
+
+    private void fechaTela(){
+        Tela04CriarCampeonato.getStage().close();
     }
 
     

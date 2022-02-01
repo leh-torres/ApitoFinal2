@@ -21,15 +21,15 @@ public class JogadoresDao {
     private Connection conn = null;
     private PreparedStatement pst = null;
     private ResultSet ps = null;
-    private Conexao conexao = new Conexao();
     private int rs;
     private Time time = new Time();
     private TimeDao timeDao = new TimeDao();
     
     public boolean cadastrarJogador() {
+        Conexao conexao = new Conexao();
         conn = conexao.getConnection();
 
-        String SQL = "INSERT INTO times (nome_jogador,fk_time) VALUES (?,?)";
+        String SQL = "INSERT INTO competidores (nome_competidor,fk_time) VALUES (?,?)";
 
         try {
             pst = (PreparedStatement) conn.prepareStatement(SQL);
