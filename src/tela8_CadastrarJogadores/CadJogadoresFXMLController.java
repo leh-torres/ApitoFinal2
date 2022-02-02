@@ -12,6 +12,8 @@ import dao.TimeDao;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -24,7 +26,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import tela6_SelecaoTimes.Tela06SelecaoTimes;
 
 /**
  * FXML Controller class
@@ -227,7 +231,7 @@ public class CadJogadoresFXMLController implements Initializable {
     @FXML
     private void acaoBtnAdicionarJogadoresTecla(KeyEvent e) {
         if (e.getCode() == KeyCode.ENTER) {
-            if (nome_jogador != null) {
+            if (nome_jogador.getText() != "") {
                 jogadores.add(nome_jogador.getText());
                 nome_jogador.setText("");
                 switch (cont) {
@@ -385,9 +389,21 @@ public class CadJogadoresFXMLController implements Initializable {
     @FXML
     private void acaoBtnCadastrarJogadores(ActionEvent event) {
         for (int i = 0; i < 24; i++) {
-            jogado.setNome_competidor(jogadores.get(i));
-            jogadoresDao.cadastrarJogador();
+            jogadoresDao.cadastrarJogador(jogadores.get(i));
         }
+        Tela06SelecaoTimes tela06 = new Tela06SelecaoTimes();
+        
+        try {
+            tela06.start(new Stage());
+            fecha();
+        } catch (Exception ex) {
+            Logger.getLogger(CadJogadoresFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+    }
+    
+    private void fecha() {
+        Tela08CadastrarJogadores.getStage().close();
     }
 
 }

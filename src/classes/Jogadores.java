@@ -12,7 +12,7 @@ package classes;
 public class Jogadores {
     
     private int id_competidor;
-    private String nome_competidor;
+    private static String nome_competidor;
     private static int fk_time;
 
     public int getId_competidor() {
@@ -28,7 +28,7 @@ public class Jogadores {
     }
 
     public void setNome_competidor(String nome_competidor) {
-        this.nome_competidor = nome_competidor;
+        Jogadores.nome_competidor = nome_competidor;
     }
 
     public static int getFk_time() {
