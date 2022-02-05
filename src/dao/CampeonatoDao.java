@@ -24,6 +24,7 @@ public class CampeonatoDao {
     private PreparedStatement ps = null; 
     private ResultSet rs = null; 
     private int retUpdate;
+    private int resultado;
     private Usuario usuario = new Usuario();
     private ArrayList<Competicao> listaComp = new ArrayList<>();
     
@@ -168,6 +169,75 @@ public class CampeonatoDao {
         }
 
         return 0;
+    }
+    
+    public boolean atualizaDescricao(String descricao, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET descricao_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, descricao);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Descrição atualizada com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+
+    public boolean atualizaPremiacao(String prem, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET premiacao_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, prem);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Premiação atualizada com sucesso!");
+                 conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean atualizaNome(String nome, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET nome_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, nome);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Nome atualizado com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
     }
     
 }
