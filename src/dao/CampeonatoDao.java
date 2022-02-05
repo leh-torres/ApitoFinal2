@@ -169,5 +169,36 @@ public class CampeonatoDao {
 
         return 0;
     }
+
+    public String getNome(int idCampeonato)
+    {
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT nome_comp FROM competicao WHERE id_comp = ?";
+        String nome;
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                nome = rs.getString("nome_comp");
+                conexao.closeConexao();
+                conn.close();
+                return nome;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
     
 }

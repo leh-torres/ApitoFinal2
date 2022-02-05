@@ -30,7 +30,7 @@
                         <Font name="Eras Demi ITC" size="30.0" />
                      </font>
                   </Label>
-                  <Button layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
+                  <Button layoutY="252.0" mnemonicParsing="false" onAction="#btnSelecionarPartida" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -38,7 +38,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="301.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
+                  <Button layoutY="301.0" mnemonicParsing="false" onAction="#btnEditarCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -46,7 +46,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                  <Button layoutY="350.0" mnemonicParsing="false" onAction="#btnExcluirCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -54,7 +54,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="399.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
+                  <Button layoutY="399.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -92,7 +92,7 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="521.0" layoutY="43.0" text="Nome do Campeonato" textFill="#4b6f80">
+            <Label fx:id="labelNomeComp" layoutX="521.0" layoutY="43.0" text="Nome do Campeonato" textFill="#4b6f80">
                <font>
                   <Font name="Eras Demi ITC" size="36.0" />
                </font>
@@ -105,7 +105,7 @@
                   <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User%202.png" />
                </image>
             </ImageView>
-            <Label layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
+            <Label fx:id="txtNomeUsuario" layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
@@ -129,59 +129,59 @@
             <Circle fill="WHITE" layoutX="898.0" layoutY="443.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="2.0" />
             <Circle fill="WHITE" layoutX="650.0" layoutY="345.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="2.0" />
             <Circle fill="WHITE" layoutX="776.0" layoutY="345.0" radius="25.0" stroke="#3ddb8c" strokeType="INSIDE" strokeWidth="2.0" />
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="358.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime1" fitHeight="50.0" fitWidth="50.0" layoutX="358.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="361.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime2" fitHeight="50.0" fitWidth="50.0" layoutX="361.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="358.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime3" fitHeight="50.0" fitWidth="50.0" layoutX="358.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="361.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime4" fitHeight="50.0" fitWidth="50.0" layoutX="361.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="504.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime5" fitHeight="50.0" fitWidth="50.0" layoutX="504.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="507.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime6" fitHeight="50.0" fitWidth="50.0" layoutX="507.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="627.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime7" fitHeight="50.0" fitWidth="50.0" layoutX="627.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="756.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime8" fitHeight="50.0" fitWidth="50.0" layoutX="756.0" layoutY="320.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="878.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime9" fitHeight="50.0" fitWidth="50.0" layoutX="878.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1026.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime11" fitHeight="50.0" fitWidth="50.0" layoutX="1026.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1023.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime12" fitHeight="50.0" fitWidth="50.0" layoutX="1023.0" layoutY="272.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1026.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime13" fitHeight="50.0" fitWidth="50.0" layoutX="1026.0" layoutY="367.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/fortaleza.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="1023.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime14" fitHeight="50.0" fitWidth="50.0" layoutX="1023.0" layoutY="468.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image></ImageView>
-            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="875.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgTime10" fitHeight="50.0" fitWidth="50.0" layoutX="875.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/ceará.png" />
                </image>
