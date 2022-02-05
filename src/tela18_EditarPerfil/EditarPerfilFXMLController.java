@@ -14,7 +14,7 @@ import java.util.ResourceBundle;
 import javax.swing.JOptionPane;
 
 import classes.Usuario;
-import dao.CompeticaoDao;
+import dao.CampeonatoDao;
 import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -54,7 +54,7 @@ public class EditarPerfilFXMLController implements Initializable {
     private Image foto;
     private boolean retorno;
     private Usuario usuario = new Usuario();
-    private CompeticaoDao compDao =  new CompeticaoDao();
+    private CampeonatoDao compDao =  new CampeonatoDao();
 
     /**
      * Initializes the controller class.
