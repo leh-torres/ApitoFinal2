@@ -1,11 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package tela16_EditarCampeonato;
-
-import java.io.IOException;
+package tela15_Campeonato;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -13,18 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- *
- * @author rayla
- */
-public class Tela16EditarCampeonato extends Application {
-
+public class Tela15Campeonato extends Application{
     private static Stage stage; 
-    
-    @Override
-    public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("EditarCampeonatoFXML.fxml"));
 
+    @Override
+    public void start(Stage stage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/tela15_Campeonato/CampeonatoFXML.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -38,8 +25,7 @@ public class Tela16EditarCampeonato extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Tela16EditarCampeonato.stage = stage;
-
+        Tela15Campeonato.stage = stage;
     }   
 
     /**
@@ -48,5 +34,4 @@ public class Tela16EditarCampeonato extends Application {
     public static void main(String[] args) {
         launch(args);
     }
-    
 }

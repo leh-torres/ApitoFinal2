@@ -20,6 +20,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javax.swing.JOptionPane;
+import tela12_SelecionarPartida.Tela12SelecionarPartida;
+import tela15_Campeonato.Tela15Campeonato;
+import tela17_ExcluirCampeonato.Tela17ExcluirCampeonato;
 
 /**
  * FXML Controller class
@@ -93,14 +96,48 @@ public class EditarCampeonatoFXMLController implements Initializable {
         refreshScreen();
     }
     
+    @FXML 
+    private void btnExcluirCampeonato(ActionEvent event){
+        Tela17ExcluirCampeonato tela17 = new Tela17ExcluirCampeonato();
+        fecha();
+        try {
+            tela17.start(new Stage());
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     
+    @FXML 
+    private void btnSelecionarPartidas(ActionEvent event){
+        Tela12SelecionarPartida tela12 = new Tela12SelecionarPartida();
+        fecha();
+        try {
+            tela12.start(new Stage());
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
+    
+    @FXML 
+    private void btnInicio(ActionEvent event){
+        Tela15Campeonato tela15 = new Tela15Campeonato();
+        fecha();
+        try {
+            tela15.start(new Stage());
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+    }
     
     @FXML 
     private void btnVoltar(ActionEvent event){
-        Home h = new Home();
+        Tela15Campeonato tela15 = new Tela15Campeonato();
         fecha();
         try {
-            h.start(new Stage());
+            tela15.start(new Stage());
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -10,6 +10,7 @@ import classes.Partida;
 import classes.Usuario;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -86,6 +87,7 @@ public class DefinirPartidasFXMLController implements Initializable {
     private Usuario usuario = new Usuario();
     private Partida partida = new Partida();
     private int cont = 0;
+
 
     /**
      * Initializes the controller class.

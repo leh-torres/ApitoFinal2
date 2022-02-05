@@ -5,8 +5,11 @@
 package tela10_SelecionarCampeonato;
 
 import classes.Competicao;
+import classes.Partida;
 import classes.Usuario;
 import dao.CampeonatoDao;
+import dao.PartidaDao;
+
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -19,6 +22,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tela14_Perfil.Tela14Perfil;
+import tela15_Campeonato.Tela15Campeonato;
 
 import javax.swing.JOptionPane;
 import tela12_SelecionarPartida.Tela12SelecionarPartida;
@@ -60,7 +64,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     private void funcaoBtn1(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(0).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(0).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -72,7 +77,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn2(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(1).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(1).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -83,8 +89,9 @@ public class SelecionarCampeonatoController implements Initializable {
     
     @FXML
     public void funcaoBtn3(ActionEvent event){
-    Competicao.setId_comp_aux(listaComp.get(2).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        Competicao.setId_comp_aux(listaComp.get(2).getId_comp());
+        setArrayList(listaComp.get(2).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -96,7 +103,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn4(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(3).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(3).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -108,7 +116,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn5(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(4).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(4).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -120,7 +129,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn6(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(5).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(5).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -132,7 +142,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn7(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(6).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(6).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -144,7 +155,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn8(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(7).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(7).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -156,7 +168,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn9(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(8).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(8).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -168,7 +181,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn10(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(9).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(9).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -180,7 +194,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn11(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(10).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(10).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -192,7 +207,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn12(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(11).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(11).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -204,7 +220,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn13(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(12).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(12).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -216,7 +233,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn14(ActionEvent event){
         Competicao.setId_comp_aux(listaComp.get(13).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(13).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -228,7 +246,8 @@ public class SelecionarCampeonatoController implements Initializable {
     @FXML
     public void funcaoBtn15(ActionEvent event){   
         Competicao.setId_comp_aux(listaComp.get(14).getId_comp());
-        Tela12SelecionarPartida h = new Tela12SelecionarPartida();
+        setArrayList(listaComp.get(14).getId_comp());
+        Tela15Campeonato h = new Tela15Campeonato();
         fecha();
         try {
             h.start(new Stage());
@@ -682,6 +701,24 @@ public class SelecionarCampeonatoController implements Initializable {
             telaPerfil.start(new Stage());
         } catch (Exception e) {
            System.out.println(e);
+        }
+    }
+
+    /**
+     * Metódo que busca todas as partidas daquela competição no banco
+     * e seta na competição
+     * @param idCompeticao
+     */
+    private void setArrayList(int idCompeticao)
+    {   
+        PartidaDao partidaDao = new PartidaDao();
+        ArrayList<Partida> listaDeRetorno = new ArrayList<>();
+
+        listaDeRetorno = partidaDao.getListaPartidas(idCompeticao);
+        
+        if(listaDeRetorno != null)
+        {
+            Competicao.setListaPartidasDaCompeticao(listaDeRetorno);
         }
     }
     

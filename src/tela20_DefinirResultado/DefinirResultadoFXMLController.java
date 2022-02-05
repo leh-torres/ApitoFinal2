@@ -7,6 +7,9 @@ package tela20_DefinirResultado;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
 import javafx.fxml.Initializable;
 
 /**
@@ -16,12 +19,22 @@ import javafx.fxml.Initializable;
  */
 public class DefinirResultadoFXMLController implements Initializable {
 
+    private static int idPartida;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        JOptionPane.showMessageDialog(null, "IdPartida: " + idPartida);
+    }
+
+    public static int getIdPartida() {
+        return idPartida;
+    }
+
+    public static void setIdPartida(int idPartida) {
+        DefinirResultadoFXMLController.idPartida = idPartida;
     }    
     
 }

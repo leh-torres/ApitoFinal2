@@ -26,7 +26,7 @@
                         <Font name="Eras Demi ITC" size="30.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_selecionar_partidas" layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
+                  <Button fx:id="btn_selecionar_partidas" layoutY="252.0" mnemonicParsing="false" onAction="#btnSelecionarPartidas" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -42,7 +42,7 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn_excluir_campeonato" layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                  <Button fx:id="btn_excluir_campeonato" layoutY="350.0" mnemonicParsing="false" onAction="#btnExcluirCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn_voltar" layoutY="399.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
+                  <Button fx:id="btn_voltar" layoutY="399.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btn_inicio" layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
+                  <Button fx:id="btn_inicio" layoutY="203.0" mnemonicParsing="false" onAction="#btnInicio" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -111,7 +111,7 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <TextField fx:id="nome_campeonato" editable="false" layoutX="426.0" layoutY="232.0" prefHeight="33.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="nome_campeonato" editable="false" layoutX="426.0" layoutY="232.0" onAction="#acaoDoCheck" prefHeight="33.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -119,17 +119,17 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <CheckBox fx:id="seletor_nome" layoutX="426.0" layoutY="209.0" mnemonicParsing="false" text="Editar ⚽Nome do Campeonato" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_nome" layoutX="426.0" layoutY="209.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar ⚽Nome do Campeonato" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="seletor_premiacao" layoutX="426.0" layoutY="281.0" mnemonicParsing="false" text="Editar 🏆Premiação" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_premiacao" layoutX="426.0" layoutY="281.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 🏆Premiação" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <TextField fx:id="premiacao_campeonato" editable="false" layoutX="426.0" layoutY="305.0" prefHeight="33.0" prefWidth="277.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="premiacao_campeonato" editable="false" layoutX="426.0" layoutY="305.0" onAction="#acaoDoCheck" prefHeight="33.0" prefWidth="277.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -150,12 +150,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <CheckBox fx:id="seletor_descricao" layoutX="426.0" layoutY="355.0" mnemonicParsing="false" text="Editar 📙Descrição" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_descricao" layoutX="426.0" layoutY="355.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 📙Descrição" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <TextField fx:id="descricao_campeonato" editable="false" layoutX="426.0" layoutY="379.0" prefHeight="82.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="descricao_campeonato" editable="false" layoutX="426.0" layoutY="379.0" onAction="#acaoDoCheck" prefHeight="82.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -163,7 +163,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <Button fx:id="btn_salvar" layoutX="645.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
+            <Button fx:id="btn_salvar" layoutX="645.0" layoutY="487.0" mnemonicParsing="false" onAction="#acaoSalvar" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
