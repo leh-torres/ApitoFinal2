@@ -120,4 +120,32 @@ public class TimeDao {
 
         return 0;
     }
+
+    public Image getImagem(int idTime){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "SELECT imagem_time FROM times WHERE id_time=?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setInt(1, idTime);
+            ps = pst.executeQuery();
+            
+            if(ps.next()){
+                if(ps != null){
+                    InputStream imageFile = ps.getBinaryStream("imagem_time");
+                    Image image = new Image(imageFile);
+                    return image;
+                }
+            }
+            else{
+                JOptionPane.showMessageDialog(null,"Não existe imagem salva");
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return null;
+    }
+
+    
 }

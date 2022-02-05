@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela12_SelecionarPartida.SelecionarPartidaController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela12_SelecionarPartida.SelecionarPartidaController">
    <children>
-      <Pane layoutX="35.0" layoutY="53.0" prefHeight="544.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+      <Pane layoutX="35.0" layoutY="6.0" prefHeight="544.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
             <Pane prefHeight="544.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 0 0 10; -fx-background-radius: 10 0 0 10;">
                <children>
@@ -57,7 +57,7 @@
             </Pane>
             <Pane layoutX="496.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button2" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -65,11 +65,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time3" fitHeight="50.0" fitWidth="50.0" layoutX="10.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time3" fitHeight="36.0" fitWidth="43.0" layoutX="17.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time4" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time4" fitHeight="36.0" fitWidth="43.0" layoutX="143.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -77,7 +77,7 @@
             </Pane>
             <Pane layoutX="736.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button3" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -85,11 +85,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time5" fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time5" fitHeight="36.0" fitWidth="43.0" layoutX="23.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time6" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time6" fitHeight="36.0" fitWidth="43.0" layoutX="143.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -97,7 +97,7 @@
             </Pane>
             <Pane layoutX="981.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button4" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -105,11 +105,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time7" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time7" fitHeight="36.0" fitWidth="43.0" layoutX="21.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time8" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time8" fitHeight="36.0" fitWidth="43.0" layoutX="150.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -117,7 +117,7 @@
             </Pane>
             <Pane layoutX="496.0" layoutY="351.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button5" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -125,11 +125,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time9" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time9" fitHeight="36.0" fitWidth="43.0" layoutX="21.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time10" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time10" fitHeight="36.0" fitWidth="43.0" layoutX="143.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -137,7 +137,7 @@
             </Pane>
             <Pane layoutX="253.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button1" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -145,11 +145,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time1" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time1" fitHeight="36.0" fitWidth="43.0" layoutX="14.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time2" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time2" fitHeight="36.0" fitWidth="43.0" layoutX="136.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -157,7 +157,7 @@
             </Pane>
             <Pane layoutX="736.0" layoutY="351.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="70.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button6" layoutX="70.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -165,11 +165,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time11" fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time11" fitHeight="36.0" fitWidth="43.0" layoutX="18.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time12" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time12" fitHeight="42.0" fitWidth="43.0" layoutX="143.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -177,7 +177,7 @@
             </Pane>
             <Pane layoutX="615.0" layoutY="444.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button layoutX="73.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button7" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -185,11 +185,11 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <ImageView fx:id="time13" fitHeight="50.0" fitWidth="50.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time13" fitHeight="36.0" fitWidth="43.0" layoutX="21.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/ceará.png" />
                      </image></ImageView>
-                  <ImageView fx:id="time14" fitHeight="50.0" fitWidth="50.0" layoutX="136.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="time14" fitHeight="29.0" fitWidth="43.0" layoutX="143.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/fortaleza.png" />
                      </image></ImageView>
@@ -250,7 +250,7 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Label layoutX="522.0" layoutY="86.0" text="Nome do Campeonato" textFill="#4b6f80">
+            <Label fx:id="labelNomeCampeonato" layoutX="522.0" layoutY="86.0" text="Nome do Campeonato" textFill="#4b6f80">
                <font>
                   <Font name="Eras Demi ITC" size="36.0" />
                </font>
@@ -262,12 +262,12 @@
                <image>
                   <Image url="@../resources/User%202.png" />
                </image></ImageView>
-            <Label layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
+            <Label fx:id="nome_usuario" layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <Button layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
+            <Button layoutY="203.0" mnemonicParsing="false" onAction="#btnInicio" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>

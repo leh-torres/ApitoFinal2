@@ -21,6 +21,11 @@ public class Partida {
     private static int fk_time2;
     private int fk_momento_da_pontuacao;
 
+
+    private int fk_compDinamico;
+    private int fk_time1Dinamico;
+    private int fk_time2Dinamico;
+
     public int getId_part() {
         return id_part;
     }
@@ -86,13 +91,37 @@ public class Partida {
     }
 
     
-
     public int getFk_momento_da_pontuacao() {
         return fk_momento_da_pontuacao;
     }
 
     public void setFk_momento_da_pontuacao(int fk_momento_da_pontuacao) {
         this.fk_momento_da_pontuacao = fk_momento_da_pontuacao;
+    }
+
+
+    public int getFk_time2Dinamico() {
+        return fk_time2Dinamico;
+    }
+
+    public void setFk_time2Dinamico(int fk_time2Dinamico) {
+        this.fk_time2Dinamico = fk_time2Dinamico;
+    }
+
+    public int getFk_time1Dinamico() {
+        return fk_time1Dinamico;
+    }
+
+    public void setFk_time1Dinamico(int fk_time1Dinamico) {
+        this.fk_time1Dinamico = fk_time1Dinamico;
+    }
+
+    public int getFk_compDinamico() {
+        return fk_compDinamico;
+    }
+
+    public void setFk_compDinamico(int fk_compDinamico) {
+        this.fk_compDinamico = fk_compDinamico;
     }
     
 }

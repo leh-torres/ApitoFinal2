@@ -22,6 +22,7 @@ public class Competicao {
     private int quantidade_times_comp;
     private int fk_usuario;
     private static ArrayList<Time> timesSelecionados = new ArrayList<>();
+    private static ArrayList<Partida> listaPartidasDaCompeticao = new ArrayList<>();
 
     public int getId_comp() {
         return id_comp;
@@ -95,4 +96,11 @@ public class Competicao {
         Competicao.id_comp_aux = id_comp_aux;
     }
 
+    public static ArrayList<Partida> getListaPartidasDaCompeticao() {
+        return listaPartidasDaCompeticao;
+    }
+
+    public static void setListaPartidasDaCompeticao(ArrayList<Partida> listaPartidasDaCompeticao) {
+        Competicao.listaPartidasDaCompeticao = listaPartidasDaCompeticao;
+    }
 }
