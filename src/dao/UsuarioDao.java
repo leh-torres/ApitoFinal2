@@ -64,7 +64,6 @@ public class UsuarioDao {
     }
     
 
-    //TO DO - Ajeitar a imagem do perfil - MÉTODO DESNECESSÁRIO
     /**
      * ******Método para recuperar o avatar do usuário********
      * @return image
