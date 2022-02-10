@@ -103,13 +103,10 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
+                  <Button fx:id="btn_adicionar_jogador" layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                </children>
             </Pane>
