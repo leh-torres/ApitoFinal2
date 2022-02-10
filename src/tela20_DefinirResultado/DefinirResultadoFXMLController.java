@@ -67,6 +67,8 @@ public class DefinirResultadoFXMLController implements Initializable {
 
         listViewJogador1.setVisible(false);
         listViewJogador2.setVisible(false);
+
+       
     }
 
     private void setAbrev(){
@@ -90,6 +92,12 @@ public class DefinirResultadoFXMLController implements Initializable {
         int i = 0;
 
         listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
+
+        for(i = 0; i < 24;i++){
+            System.out.println(" Jogador " + i);
+            System.out.println(" Nome Jogador: " + listaJogadores.get(i).getNome_competidor());
+            System.out.println(" Time do Jogador: " + listaJogadores.get(i).getFk_time());
+        }
 
         if (listaJogadores.size() > 24) {
             listaJogadores= null;
