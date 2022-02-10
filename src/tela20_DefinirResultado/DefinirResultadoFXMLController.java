@@ -6,11 +6,28 @@
 package tela20_DefinirResultado;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
 
+import classes.Competicao;
+import classes.Jogadores;
+import classes.Partida;
+import classes.Time;
+import classes.Usuario;
+import dao.JogadoresDao;
+import dao.TimeDao;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 
 /**
  * FXML Controller class
@@ -19,22 +36,322 @@ import javafx.fxml.Initializable;
  */
 public class DefinirResultadoFXMLController implements Initializable {
 
-    private static int idPartida;
+    @FXML
+    private Label nome_usuario, labelAbrev1, labelAbrev2;
+    @FXML
+    private TextField txtNomeJogador1, txtNomeJogador2, txtTempo1, txtTempo2;
+    @FXML
+    private ImageView logo_usuario, image1, image2;
+    @FXML
+    private ListView listViewJogador1, listViewJogador2;
+    
+    private ArrayList<Jogadores> listaJogadores = new ArrayList<>();
+    private ObservableList<String> jogador;
+    private JogadoresDao jogadoresDao = new JogadoresDao();
+    private TimeDao timeDao = new TimeDao();
+    private Usuario usuario = new Usuario();
+    private static Partida partida = new Partida();
+   
+    
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        JOptionPane.showMessageDialog(null, "IdPartida: " + idPartida);
+        nome_usuario.setText(usuario.getNome());
+        logo_usuario.setImage(usuario.getImagem());
+
+        setAbrev();
+        setImagensTimes();
+
+        listViewJogador1.setVisible(false);
+        listViewJogador2.setVisible(false);
     }
 
-    public static int getIdPartida() {
-        return idPartida;
+    private void setAbrev(){
+        labelAbrev1.setText("  " + timeDao.getAbrev(partida.getFk_time1Dinamico()));
+        labelAbrev2.setText("  " + timeDao.getAbrev(partida.getFk_time2Dinamico()));
     }
 
-    public static void setIdPartida(int idPartida) {
-        DefinirResultadoFXMLController.idPartida = idPartida;
+    private void setImagensTimes(){
+        image1.setImage(timeDao.getImagem(partida.getFk_time1Dinamico()));
+        image2.setImage(timeDao.getImagem(partida.getFk_time2Dinamico()));
+    }
+
+    public static void setPartida(Partida partidaPassada) {
+        partida = partidaPassada;
     }    
+
+
+    @FXML
+    private void listaDePesquisa1(KeyEvent e) {
+
+        int i = 0;
+
+        listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
+
+        if (listaJogadores.size() > 24) {
+            listaJogadores= null;
+        }
+
+        if (listaJogadores == null) {
+            listViewJogador1.setVisible(false);
+            listViewJogador1.refresh();
+        }
+
+        switch (listaJogadores.size()) {
+
+            case 1:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor());
+                break;
+
+            case 2:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor());
+                break;
+
+            case 3:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor());
+                break;
+
+            case 4:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor());
+                break;
+
+            case 5:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor());
+                break;
+
+            case 6:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                        listaJogadores.get(5).getNome_competidor());
+                break;
+
+            case 7:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                        listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor());
+                break;
+
+            case 8:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                        listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                        listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor());
+                break;
+
+            case 9:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor());
+                break;
+
+            case 10:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor());
+                break;
+
+            case 11:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor());
+                break;
+
+            case 12:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor());
+                break;
+
+            case 13:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor());
+                break;
+
+            case 14:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor());
+                break;
+
+            case 15:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor());
+                break;
+
+            case 16:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor());
+                break;
+
+            case 17:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor());
+                break;
+
+            case 18:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor());
+                break;
+
+            case 19:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor());
+                break;
+
+            case 20:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor());
+                break;
+
+            case 21:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
+                    listaJogadores.get(20).getNome_competidor());
+                break;
+
+            case 22:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
+                    listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor());
+                break;
+
+            case 23:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
+                    listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor(), listaJogadores.get(22).getNome_competidor());
+                break;
+        }
+
+        while (i < listaJogadores.size()) {
+            listViewJogador1.setItems(jogador);
+            i++;
+        }
+        if (i >= 1) {
+            listViewJogador1.setVisible(true);
+        } else {
+            listViewJogador1.setVisible(false);
+        }
+    }
+
+
+    /**@FXML
+    private void capturarElemento1(MouseEvent e) {
+
+            int cont = 0;
+            int linha = listViewJogador1.getSelectionModel().getSelectedIndex();
+            if (linha >= 0) {
+
+                switch (cont) {
+
+                    case 1:
+                        time1.setImage(listaTime.get(linha).getImagem_time());
+                        
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 2:
+                        time2.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 3:
+                        time3.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 4:
+                        time4.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 5:
+                        time5.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 6:
+                        time6.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 7:
+                        time7.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+
+                    case 8:
+                        time8.setImage(listaTime.get(linha).getImagem_time());
+
+                        listaTimeSelecionados.add(listaTime.get(linha));
+                        break;
+                }
+                cont++;
+            }
+
+    }*/
+  
     
 }

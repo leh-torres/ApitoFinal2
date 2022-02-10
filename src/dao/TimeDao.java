@@ -138,14 +138,31 @@ public class TimeDao {
                     return image;
                 }
             }
-            else{
-                JOptionPane.showMessageDialog(null,"Não existe imagem salva");
-            }
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);
         }
         return null;
     }
 
+    public String getAbrev(int idTime){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "SELECT abreviacao_time FROM times WHERE id_time=?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setInt(1, idTime);
+            ps = pst.executeQuery();
+            
+            if(ps.next()){
+                if(ps != null){
+                    return ps.getString("abreviacao_time");
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return null;
+    }
     
 }

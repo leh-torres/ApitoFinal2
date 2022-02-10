@@ -29,7 +29,7 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutY="301.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
+                  <Button layoutY="301.0" mnemonicParsing="false" onAction="#btnEditarCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -37,7 +37,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                  <Button layoutY="350.0" mnemonicParsing="false" onAction="#btnExcluirCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -45,7 +45,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="399.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
+                  <Button layoutY="399.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -57,7 +57,7 @@
             </Pane>
             <Pane layoutX="496.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button2" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button2" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs2" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -77,7 +77,7 @@
             </Pane>
             <Pane layoutX="736.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button3" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button3" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs3" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -97,7 +97,7 @@
             </Pane>
             <Pane layoutX="981.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button4" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button4" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs4" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -117,7 +117,7 @@
             </Pane>
             <Pane layoutX="496.0" layoutY="351.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button5" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button5" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs5" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -137,7 +137,7 @@
             </Pane>
             <Pane layoutX="253.0" layoutY="248.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button1" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button1" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs1" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -157,7 +157,7 @@
             </Pane>
             <Pane layoutX="736.0" layoutY="351.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button6" layoutX="70.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button6" layoutX="70.0" mnemonicParsing="false" onAction="#btnVs6" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>
@@ -177,7 +177,7 @@
             </Pane>
             <Pane layoutX="615.0" layoutY="444.0" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: white; -fx-border-color: #3ddb8c; -fx-border-radius: 15 0 15 0; -fx-background-radius: 15 0 15 0;">
                <children>
-                  <Button fx:id="button7" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
+                  <Button fx:id="button7" layoutX="73.0" mnemonicParsing="false" onAction="#btnVs7" prefHeight="49.0" prefWidth="54.0" style="-fx-background-color: #3ddb8c; -fx-shape: &quot;M 0 10 L 3 5 L 8 5 L 11 10&quot;;" text="VS" textFill="WHITE">
                      <font>
                         <Font name="Eras Demi ITC" size="21.0" />
                      </font>

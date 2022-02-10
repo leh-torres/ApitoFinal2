@@ -57,7 +57,7 @@
                         <Font name="Eras Demi ITC" size="28.0" />
                      </font>
                   </Label>
-                  <TextField layoutX="39.0" layoutY="241.0" prefHeight="33.0" prefWidth="405.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField layoutX="39.0" layoutY="241.0" onKeyReleased="#acaoBtnAdicionarJogadoresTecla" prefHeight="33.0" prefWidth="405.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -95,7 +95,7 @@
                         <Font name="Corbel" size="19.0" />
                      </font>
                   </Label>
-                  <Button layoutX="139.0" layoutY="406.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
+                  <Button layoutX="139.0" layoutY="406.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarJogadores" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -103,7 +103,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
+                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" onAction="#acaoBtnAdicionarJogadores" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
