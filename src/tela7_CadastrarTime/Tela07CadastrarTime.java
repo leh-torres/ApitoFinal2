@@ -16,14 +16,25 @@ import javafx.stage.Stage;
  */
 public class Tela07CadastrarTime extends Application {
     
+    private static Stage stage; 
+    
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("CadastrarTime.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/tela7_CadastrarTime/CadastrarTime.fxml"));
         
         Scene scene = new Scene(root);
         
         stage.setScene(scene);
         stage.show();
+        setStage(stage);
+    }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Tela07CadastrarTime.stage = stage;
     }
 
     /**

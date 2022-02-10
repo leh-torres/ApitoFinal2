@@ -5,28 +5,31 @@
  */
 package classes;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author rayla
  */
 public class Competicao {
     
-    private static int id_comp;
-    private static String nome_comp;
-    private static String descricao_comp;
-    private static String premiacao_comp;
-    private static String data_ini_comp;
-    private static String data_termi_comp;
-    private static String situacao_comp;
-    private static int quantidade_times_comp;
-    private static int fk_usuario;
+    private static int id_comp_aux;
+    private int id_comp;
+    private String nome_comp;
+    private String descricao_comp;
+    private String premiacao_comp;
+    private String situacao_comp;
+    private int quantidade_times_comp;
+    private int fk_usuario;
+    private static ArrayList<Time> timesSelecionados = new ArrayList<>();
+    private static ArrayList<Partida> listaPartidasDaCompeticao = new ArrayList<>();
 
     public int getId_comp() {
         return id_comp;
     }
 
     public void setId_comp(int id_comp) {
-        Competicao.id_comp = id_comp;
+        this.id_comp = id_comp;
     }
 
     public String getNome_comp() {
@@ -34,7 +37,7 @@ public class Competicao {
     }
 
     public void setNome_comp(String nome_comp) {
-        Competicao.nome_comp = nome_comp;
+        this.nome_comp = nome_comp;
     }
 
     public String getDescricao_comp() {
@@ -42,7 +45,7 @@ public class Competicao {
     }
 
     public void setDescricao_comp(String descricao_comp) {
-        Competicao.descricao_comp = descricao_comp;
+        this.descricao_comp = descricao_comp;
     }
 
     public String getPremiacao_comp() {
@@ -50,23 +53,7 @@ public class Competicao {
     }
 
     public void setPremiacao_comp(String premiacao_comp) {
-        Competicao.premiacao_comp = premiacao_comp;
-    }
-
-    public String getData_ini_comp() {
-        return data_ini_comp;
-    }
-
-    public void setData_ini_comp(String data_ini_comp) {
-        Competicao.data_ini_comp = data_ini_comp;
-    }
-
-    public String getData_termi_comp() {
-        return data_termi_comp;
-    }
-
-    public void setData_termi_comp(String data_termi_comp) {
-        Competicao.data_termi_comp = data_termi_comp;
+        this.premiacao_comp = premiacao_comp;
     }
 
     public String getSituacao_comp() {
@@ -74,7 +61,7 @@ public class Competicao {
     }
 
     public void setSituacao_comp(String situacao_comp) {
-        Competicao.situacao_comp = situacao_comp;
+        this.situacao_comp = situacao_comp;
     }
 
     public int getQuantidade_times_comp() {
@@ -82,7 +69,7 @@ public class Competicao {
     }
 
     public void setQuantidade_times_comp(int quantidade_times_comp) {
-        Competicao.quantidade_times_comp = quantidade_times_comp;
+        this.quantidade_times_comp = quantidade_times_comp;
     }
 
     public int getFk_usuario() {
@@ -90,7 +77,30 @@ public class Competicao {
     }
 
     public void setFk_usuario(int fk_usuario) {
-        Competicao.fk_usuario = fk_usuario;
+        this.fk_usuario = fk_usuario;
     }
-    
+
+    public static ArrayList<Time> getTimesSelecionados() {
+        return timesSelecionados;
+    }
+
+    public static void setTimesSelecionados(ArrayList<Time> timesSelecionados) {
+        Competicao.timesSelecionados = timesSelecionados;
+    }  
+
+    public static int getId_comp_aux() {
+        return id_comp_aux;
+    }
+
+    public static void setId_comp_aux(int id_comp_aux) {
+        Competicao.id_comp_aux = id_comp_aux;
+    }
+
+    public static ArrayList<Partida> getListaPartidasDaCompeticao() {
+        return listaPartidasDaCompeticao;
+    }
+
+    public static void setListaPartidasDaCompeticao(ArrayList<Partida> listaPartidasDaCompeticao) {
+        Competicao.listaPartidasDaCompeticao = listaPartidasDaCompeticao;
+    }
 }

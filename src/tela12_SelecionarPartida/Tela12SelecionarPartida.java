@@ -15,6 +15,8 @@ import javafx.stage.Stage;
  * @author eroti
  */
 public class Tela12SelecionarPartida extends Application {
+
+    private static Stage stage; 
     
     @Override
     public void start(Stage stage) throws Exception {
@@ -24,7 +26,16 @@ public class Tela12SelecionarPartida extends Application {
         
         stage.setScene(scene);
         stage.show();
+        setStage(stage);
     }
+
+    public static Stage getStage() {
+        return stage;
+    }
+
+    public static void setStage(Stage stage) {
+        Tela12SelecionarPartida.stage = stage;
+    }  
 
     /**
      * @param args the command line arguments

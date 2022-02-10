@@ -8,89 +8,120 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1360.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela5_CadastrarCampeonato.CadastrarCampeonatoController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela5_CadastrarCampeonato.CadastrarCampeonatoController">
    <children>
-      <Pane prefHeight="87.1" prefWidth="1360.0" style="-fx-background-color: fff;">
+      <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
-            <Label layoutX="76.0" prefHeight="87.0" prefWidth="280.0" text="Apito Final" textFill="#4d6f80">
+            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="969.0" layoutY="28.0" prefHeight="32.0" prefWidth="167.0" text="Nome de Usuário" textAlignment="CENTER" textFill="WHITE">
                <font>
-                  <Font name="Nunito Bold" size="50.0" />
+                  <Font name="Corbel" size="20.0" />
                </font>
             </Label>
-            <ImageView fx:id="logo_usuario" fitHeight="80.0" fitWidth="80.0" layoutX="1204.17" layoutY="3.75" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/Ellipse%208.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="nome_usuario" alignment="CENTER" layoutX="1064.0" layoutY="28.0" prefHeight="32.0" prefWidth="140.0" text="User Name" textAlignment="CENTER" textFill="#4d6f80">
-               <font>
-                  <Font name="Nunito ExtraBold" size="18.0" />
-               </font>
-            </Label>
-         </children></Pane>
-      <Pane layoutY="87.1" prefHeight="1.0" prefWidth="1360.0" style="-fx-background-color: D3E2E5;" />
-      <Pane layoutX="378.0" layoutY="135.0" prefHeight="571.0" prefWidth="604.0" style="-fx-background-color: fff;">
-         <children>
-            <ImageView fitHeight="80.0" fitWidth="80.0" layoutX="60.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="99.0" fitWidth="86.0" layoutX="14.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../resources/Logotype.jpg" />
                </image>
             </ImageView>
-            <Label layoutX="161.0" layoutY="64.0" text="Cadastrar Campeonato" textFill="#4d6f80">
+            <Label layoutX="100.0" layoutY="12.0" prefHeight="64.0" prefWidth="274.0" text="Apito Final" textFill="WHITE">
                <font>
-                  <Font name="Nunito Bold" size="36.0" />
+                  <Font name="Eras Demi ITC" size="50.0" />
                </font>
             </Label>
-            <Pane layoutX="60.0" layoutY="148.0" prefHeight="1.0" prefWidth="483.13" style="-fx-background-color: D3E2E5;" />
-            <Label layoutX="60.0" layoutY="174.0" prefHeight="24.0" prefWidth="177.0" text="Nome do Campeonato" textFill="#8fa7b2">
-               <font>
-                  <Font name="Nunito SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <TextField layoutX="60.0" layoutY="198.0" prefHeight="39.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
-            <Label layoutX="60.0" layoutY="241.0" text="Campo Obrigatório" textFill="#cd3232">
-               <font>
-                  <Font name="Nunito SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="60.0" layoutY="265.0" text="Premiação" textFill="#8fa7b2">
-               <font>
-                  <Font name="Nunito SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <TextField layoutX="60.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
-            <Label layoutX="61.0" layoutY="332.0" text="Campo Obrigatório" textFill="#cd3232">
-               <font>
-                  <Font name="Nunito SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="330.0" layoutY="265.0" text="Quantidade de Times" textFill="#8fa7b2">
-               <font>
-                  <Font name="Nunito SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <TextField layoutX="330.0" layoutY="289.0" prefHeight="39.0" prefWidth="213.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
-            <Label layoutX="331.0" layoutY="332.0" text="Campo Obrigatório" textFill="#cd3232">
-               <font>
-                  <Font name="Nunito SemiBold" size="12.0" />
-               </font>
-            </Label>
-            <Label layoutX="60.0" layoutY="356.0" prefHeight="24.0" prefWidth="204.0" text="Descrição do Campeonato" textFill="#8fa7b2">
-               <font>
-                  <Font name="Nunito SemiBold" size="16.0" />
-               </font>
-            </Label>
-            <TextField alignment="TOP_LEFT" layoutX="60.0" layoutY="380.0" prefHeight="100.0" prefWidth="483.0" style="-fx-background-color: F5F8FA; -fx-border-color: D3E2E5;" />
-            <Button layoutX="61.0" layoutY="496.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="230.0" style="-fx-background-color: transparent; -fx-border-color: #3CDC8C; -fx-border-width: 3;" text="Voltar" textFill="#3cdc8c">
-               <font>
-                  <Font name="Nunito ExtraBold" size="22.0" />
-               </font>
-            </Button>
-            <Button layoutX="314.0" layoutY="496.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="230.0" style="-fx-background-color: #3CDC8C;" text="Avançar" textFill="WHITE">
-               <font>
-                  <Font name="Nunito ExtraBold" size="24.0" />
-               </font>
-            </Button>
+            <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1140.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+               </cursor>
+               <image>
+                  <Image url="@../resources/User.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="35.0" layoutY="126.0" prefHeight="494.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+         <children>
+            <Pane layoutX="316.0" layoutY="6.0" prefHeight="482.0" prefWidth="599.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
+               <children>
+                  <Label layoutX="146.0" layoutY="47.0" text="Cadastrar Campeonato" textFill="#3ddb8c">
+                     <font>
+                        <Font name="Eras Demi ITC" size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="nome_campeonato" layoutX="66.0" layoutY="159.0" prefHeight="33.0" prefWidth="466.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                     <cursor>
+                     </cursor>
+                  </TextField>
+                  <TextField fx:id="premiacao" layoutX="66.0" layoutY="234.0" prefHeight="33.0" prefWidth="231.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                     <cursor>
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="66.0" layoutY="138.0" text="⚽Nome do Campeonato" textFill="#bac0c3">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="66.0" layoutY="213.0" text="🏆Premiação" textFill="#bac0c3">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="329.0" layoutY="213.0" text="🚩Quantidade de Times" textFill="#bac0c3">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn_avancar" layoutX="305.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBtnAvancar" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btn_voltar" layoutX="67.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBtnVoltar" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="❮   Voltar" textFill="#3ddb8c">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                     <cursor>
+                     </cursor>
+                  </Button>
+                  <Label layoutX="66.0" layoutY="288.0" text="📙Descrição" textFill="#bac0c3">
+                     <font>
+                        <Font name="Corbel Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="quantidade_times" layoutX="329.0" layoutY="234.0" prefHeight="33.0" prefWidth="204.0" style="-fx-background-color: #c4cacd; -fx-border-radius: 2 2 2 2; -fx-background-radius: 2 2 2 2;" text="  8">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="descricao_campeonato" layoutX="67.0" layoutY="309.0" prefHeight="88.0" prefWidth="466.0" style="-fx-background-color: #EBF2F5;">
+                     <font>
+                        <Font name="Corbel" size="17.0" />
+                     </font>
+                     <cursor>
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="280.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="329.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="231.0" layoutY="87.0" prefHeight="35.0" prefWidth="35.0" text="⚽" textFill="#c4cacd">
+                     <font>
+                        <Font name="Corbel" size="35.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
          </children>
       </Pane>
    </children>

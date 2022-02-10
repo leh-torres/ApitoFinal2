@@ -6,6 +6,70 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch Tela20DefinirResultados",
+            "request": "launch",
+            "mainClass": "tela20_DefinirResultado.Tela20DefinirResultados",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela17ExcluirCampeonato",
+            "request": "launch",
+            "mainClass": "tela17_ExcluirCampeonato.Tela17ExcluirCampeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela16EditarCampeonato",
+            "request": "launch",
+            "mainClass": "tela16_EditarCampeonato.Tela16EditarCampeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela11DefinirPartidas",
+            "request": "launch",
+            "mainClass": "tela11_DefinirPartidas.Tela11DefinirPartidas",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela15Campeonato",
+            "request": "launch",
+            "mainClass": "tela15_Campeonato.Tela15Campeonato",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela19ExcluirPerfil",
+            "request": "launch",
+            "mainClass": "tela19_ExcluirPerfil.Tela19ExcluirPerfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela18EditarPerfil",
+            "request": "launch",
+            "mainClass": "tela18_EditarPerfil.Tela18EditarPerfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
+            "name": "Launch Tela14Perfil",
+            "request": "launch",
+            "mainClass": "tela14_Perfil.Tela14Perfil",
+            "projectName": "ApitoFinal2_2cf81833",
+            "vmArgs": "--module-path \"C:/Program Files/Java/javafx-sdk-11.0.2/lib\" --add-modules javafx.controls,javafx.fxml"
+        },
+        {
+            "type": "java",
             "name": "Launch Tela12SelecionarPartida",
             "request": "launch",
             "mainClass": "tela12_SelecionarPartida.Tela12SelecionarPartida",
