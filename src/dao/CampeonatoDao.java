@@ -202,6 +202,68 @@ public class CampeonatoDao {
         return null;
     }
     
+    public String getPremiacao(int idCampeonato)
+    {
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT premiacao_comp FROM competicao WHERE id_comp = ?";
+        String premiacao;
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                premiacao = rs.getString("premiacao_comp");
+                conexao.closeConexao();
+                conn.close();
+                return premiacao;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
+    
+    public String getDescricao(int idCampeonato)
+    {
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT descricao_comp FROM competicao WHERE id_comp = ?";
+        String descricao;
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                descricao = rs.getString("descricao_comp");
+                conexao.closeConexao();
+                conn.close();
+                return descricao;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
+    
     public boolean atualizaDescricao(String descricao, int id){
         Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();
