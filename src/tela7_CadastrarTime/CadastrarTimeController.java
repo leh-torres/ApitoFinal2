@@ -100,6 +100,7 @@ public class CadastrarTimeController implements Initializable{
     @FXML
     private void acaoBotaoAvancar(ActionEvent event) throws FileNotFoundException{
         Tela08CadastrarJogadores tela = new Tela08CadastrarJogadores();
+        cadastrar();
         fecha();
         try {
             tela.start(new Stage());
