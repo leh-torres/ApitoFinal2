@@ -69,7 +69,7 @@
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Label>
-                  <Button fx:id="btn_avancar" layoutX="305.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBotaoAvancar" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
+                  <Button fx:id="btn_avancar" layoutX="305.0" layoutY="420.0" mnemonicParsing="false" onAction="#acaoBotaoAvancar" onMousePressed="#importarImagem" prefHeight="35.0" prefWidth="225.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0; -fx-border-color: #3ddb8c;" text="Avançar   ❯" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -106,7 +106,7 @@
                   <Pane layoutX="224.0" layoutY="232.0" prefHeight="150.0" prefWidth="150.0" style="-fx-background-color: #EBF2F5; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5;">
                      <children>
                         <ImageView fx:id="escudo_time" fitHeight="150.0" fitWidth="150.0" layoutY="1.0" onMouseClicked="#importarImagem" pickOnBounds="true" preserveRatio="true" />
-                        <Button fx:id="btn_imagem" layoutX="56.0" layoutY="59.0" mnemonicParsing="false" onAction="#importarImagem" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
+                        <Button fx:id="btn_escudo" layoutX="56.0" layoutY="59.0" mnemonicParsing="false" onAction="#importarImagem" style="-fx-background-color: transparent;" text="➕" textFill="#3ddb8c">
                            <font>
                               <Font name="Corbel Bold" size="17.0" />
                            </font>
