@@ -16,6 +16,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -36,6 +38,7 @@ import javax.swing.JOptionPane;
 import tela16_EditarCampeonato.Tela16EditarCampeonato;
 import tela22_MaisInfo.Tela22MaisInfo;
 import tela23_EditarPartidas.Tela23EditarPartidas;
+import tela26_ExcluirTime.Tela26ExcluirTime;
 
 /**
  * FXML Controller class
@@ -226,12 +229,22 @@ public class EditarTimesFXMLController implements Initializable {
     
     @FXML
     private void acaoBtnExcluirTime(ActionEvent event){
-        if(timeDao.excluirTime(id)){
-            JOptionPane.showMessageDialog(null, "Time excluído com sucesso!");
-            refreshScreen();
-        }
-        else{
-            JOptionPane.showMessageDialog(null, "Erro ao excluir time!");
+        barra_pesquisa.setText(null);
+        nome_time.setText(null);
+        abreviacao_time.setText(null);
+        imagem_time.setImage(null);
+        lista.setVisible(false);
+        Time.setId_time_aux(id);
+        
+        JOptionPane.showMessageDialog(null, "Observação: o time exluido pode está participando de alguma partida de algum"
+                + " campeonato assim podendo excluir partidas de algum campeonato!");
+        
+        Tela26ExcluirTime tela26 = new Tela26ExcluirTime();
+        
+        try {
+            tela26.start(new Stage());
+        } catch (IOException ex) {
+            Logger.getLogger(EditarTimesFXMLController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
