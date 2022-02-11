@@ -708,8 +708,7 @@ public class SelecionarCampeonatoController implements Initializable {
      * e seta na competição
      * @param idCompeticao
      */
-    private void setArrayList(int idCompeticao)
-    {   
+    private void setArrayList(int idCompeticao){   
         PartidaDao partidaDao = new PartidaDao();
         ArrayList<Partida> listaDeRetorno = new ArrayList<>();
 

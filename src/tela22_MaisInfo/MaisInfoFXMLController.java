@@ -10,12 +10,17 @@ import classes.Usuario;
 import dao.CampeonatoDao;
 import dao.SelecaoTimesDao;
 import dao.TimeDao;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+import tela15_Campeonato.Tela15Campeonato;
+import tela23_EditarPartidas.Tela23EditarPartidas;
+import tela25_EditarTimes.Tela25EditarTimes;
 
 /**
  * FXML Controller class
@@ -34,7 +39,7 @@ public class MaisInfoFXMLController implements Initializable {
     private CampeonatoDao campeonatoDao = new CampeonatoDao();
     private TimeDao timeDao = new TimeDao();
     private SelecaoTimesDao selecaoTimeDao = new SelecaoTimesDao();
-    private int [] ids = null;
+    private int [] ids = new int[9];
         
     /**
      * Initializes the controller class.
@@ -42,7 +47,6 @@ public class MaisInfoFXMLController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        Competicao.setId_comp_aux(campeonatoDao.getId());
         ids = selecaoTimeDao.getIds(Competicao.getId_comp_aux(), usuario.getId_usuario());
         
         nome_campeonato.setText(campeonatoDao.getNome(Competicao.getId_comp_aux()));
@@ -61,5 +65,30 @@ public class MaisInfoFXMLController implements Initializable {
         nome_usuario.setText(usuario.getNome());
         logo_usuario.setImage(usuario.getImagem());
     }    
+    
+    @FXML
+    private void acaoBtnEditarTimes() throws IOException{
+        Tela25EditarTimes tela25 = new Tela25EditarTimes();
+        fecha();
+        tela25.start(new Stage());
+    }
+    
+    @FXML
+    private void acaoBtnEditarPartida() throws IOException{
+        Tela23EditarPartidas tela23 = new Tela23EditarPartidas();
+        fecha();
+        tela23.start(new Stage());
+    }
+    
+    @FXML
+    private void acaoBtnVoltar() throws Exception{
+        Tela15Campeonato tela15 = new Tela15Campeonato();
+        fecha();
+        tela15.start(new Stage());
+    }
+    
+    private void fecha(){
+        Tela22MaisInfo.getStage().close();
+    }
     
 }

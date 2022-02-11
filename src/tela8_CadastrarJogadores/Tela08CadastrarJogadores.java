@@ -22,7 +22,7 @@ public class Tela08CadastrarJogadores extends Application {
     
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("CadJogadoresFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/tela8_CadastrarJogadores/CadJogadoresFXML.fxml"));
         
         Scene scene = new Scene(root);
         
