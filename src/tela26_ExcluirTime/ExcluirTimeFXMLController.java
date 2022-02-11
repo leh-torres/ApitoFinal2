@@ -5,9 +5,14 @@
  */
 package tela26_ExcluirTime;
 
+import classes.Time;
+import dao.TimeDao;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javax.swing.JOptionPane;
 
 /**
  * FXML Controller class
@@ -15,6 +20,8 @@ import javafx.fxml.Initializable;
  * @author RonaldoMatos
  */
 public class ExcluirTimeFXMLController implements Initializable {
+    
+    private TimeDao timeDao = new TimeDao();
 
     /**
      * Initializes the controller class.
@@ -23,5 +30,20 @@ public class ExcluirTimeFXMLController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+    
+    @FXML
+    private void acaoBtnConfirmar(ActionEvent event){
+        if(timeDao.excluirTime(Time.getId_time_aux())){
+            JOptionPane.showMessageDialog(null, "Time excluído com sucesso!");
+        }
+        else{
+            JOptionPane.showMessageDialog(null, "Erro ao excluir time!");
+        }
+    }
+    
+    @FXML
+    private void acaoBtnCancelar(ActionEvent event){
+        Tela26ExcluirTime.getStage().close();
+    }
     
 }
