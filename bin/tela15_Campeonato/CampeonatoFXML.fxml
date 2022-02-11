@@ -34,41 +34,26 @@
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                   <Button layoutY="301.0" mnemonicParsing="false" onAction="#btnEditarCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Editar Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                   <Button layoutY="350.0" mnemonicParsing="false" onAction="#btnExcluirCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                   <Button layoutY="399.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor>
                   </Button>
                   <Button layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #34b974; -fx-border-color: white;" text="Início" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
-                     <cursor>
-                        <Cursor fx:constant="DEFAULT" />
-                     </cursor>
                   </Button>
                </children>
             </Pane>
@@ -98,9 +83,6 @@
                </font>
             </Label>
             <ImageView fx:id="logo_usuario" fitHeight="60.0" fitWidth="60.0" layoutX="1151.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
                <image>
                   <Image url="@../resources/User%202.png" />
                </image>
@@ -190,9 +172,6 @@
                <font>
                   <Font name="Eras Demi ITC" size="21.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
             </Button>
             <Label layoutX="628.0" layoutY="186.0" text="mais funcionalidades!" textFill="#c4cacd">
                <font>
