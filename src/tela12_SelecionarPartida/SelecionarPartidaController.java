@@ -18,7 +18,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela15_Campeonato.Tela15Campeonato;
+import tela16_EditarCampeonato.Tela16EditarCampeonato;
+import tela17_ExcluirCampeonato.Tela17ExcluirCampeonato;
 import tela20_DefinirResultado.DefinirResultadoFXMLController;
 import tela20_DefinirResultado.Tela20DefinirResultados;
 
@@ -51,7 +54,114 @@ public class SelecionarPartidaController implements Initializable {
         logo_usuario.setImage(usuario.getImagem());
 
         carregaImagensTimes();
-    }    
+    }
+
+    //Botões centrais
+
+    @FXML
+    private void btnVs1(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(0));  
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs2(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(1)); 
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs3(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(2));  
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs4(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(3));  
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs5(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(4));  
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs6(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(5));  
+        trocaTelaBotãoVS();
+    }
+
+    @FXML
+    private void btnVs7(ActionEvent event) throws Exception
+    {
+        DefinirResultadoFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(6));  
+        trocaTelaBotãoVS();
+    }
+
+    
+    //Botões laterais
+
+    /**
+     * Método para trocar para a tela inicio
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void btnInicio(ActionEvent event) throws Exception
+    {
+        Tela15Campeonato tela15 = new Tela15Campeonato();
+        fechaTela();
+        tela15.start(new Stage());
+    }
+
+    /**
+     * Método para trocar para a tela editar campeonato
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void btnEditarCampeonato(ActionEvent event) throws Exception
+    {
+        Tela16EditarCampeonato tela16 = new Tela16EditarCampeonato();
+        fechaTela();
+        tela16.start(new Stage());
+    }
+
+    /**
+     * Método para mudar para a tela Excluir Campeonato
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void btnExcluirCampeonato(ActionEvent event) throws Exception
+    {
+        Tela17ExcluirCampeonato tela17 = new Tela17ExcluirCampeonato();
+        fechaTela();
+        tela17.start(new Stage());
+    }
+
+    /**
+     * Método para mudar para a tela Selecionar Campeonato
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void btnVoltar(ActionEvent event) throws Exception
+    {
+        Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
+        tela10.start(new Stage());
+    }
+
+
 
     /**
      * Retorna o nome da Competição
@@ -62,6 +172,9 @@ public class SelecionarPartidaController implements Initializable {
         return "    " + campDao.getNome(Competicao.getId_comp_aux());
     } 
 
+    /**
+     * Método para carregar a imagens dos times
+     */
     private void carregaImagensTimes()
     {
         TimeDao timeDao = new TimeDao();
@@ -82,57 +195,23 @@ public class SelecionarPartidaController implements Initializable {
         time10.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(4).getFk_time2Dinamico()));
     }
 
-    @FXML
-    private void btnInicio(ActionEvent event) throws Exception
-    {
-        Tela15Campeonato tela15 = new Tela15Campeonato();
-        fechaTela();
-        tela15.start(new Stage());
-    }
-
-    @FXML
-    private void btnVs(ActionEvent event) throws Exception
-    {
-        if(button1.isCache())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(0).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(0).getId_part());
-        } else if(button2.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(1).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(1).getId_part());
-        } else if(button3.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(2).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(2).getId_part());
-        } else if(button4.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(3).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(3).getId_part());
-        } else if(button5.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
-        } else if(button6.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
-        } else if(button7.isPressed())
-        {
-            DefinirResultadoFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
-            System.out.println("IdPassado: " + Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
-        }
-
-        Tela20DefinirResultados tela20 = new Tela20DefinirResultados();
-        fechaTela();
-        tela20.start(new Stage());
-
-    }
-
-
+    /**
+     * Método para fechar a tela atual
+     */
     private void fechaTela()
     {
         Tela12SelecionarPartida.getStage().close();
+    }
+
+    /**
+     * Método para mudar para a tela Definir Resultados
+     * @throws Exception
+     */
+    private void trocaTelaBotãoVS() throws Exception
+    {
+        Tela20DefinirResultados tela20 = new Tela20DefinirResultados();
+        fechaTela();
+        tela20.start(new Stage());
     }
     
 }

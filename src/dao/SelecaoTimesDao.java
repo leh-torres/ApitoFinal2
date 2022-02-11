@@ -25,6 +25,7 @@ public class SelecaoTimesDao {
     private int retUpdate;
     private Usuario usuario = new Usuario();
     private int id ;
+    private int [] ids = new int[9];
     
     public boolean cadastrarTimesSelecionados(){
         Conexao conexaoBanco = new Conexao();
@@ -100,13 +101,11 @@ public class SelecaoTimesDao {
         
     }    
     
-    public int[] getIds(int idCampeonato,int idUsuario)
-    {
+    public int[] getIds(int idCampeonato,int idUsuario){
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
 
-        String SQL = "SELECT * FROM competicao WHERE fk_competicao = ? AND fk_usuario = ?";
-        int [] ids = null ;
+        String SQL = "SELECT * FROM selecao_times WHERE fk_competicao = ? AND fk_usuario = ?";
 
         try {
             ps = (PreparedStatement)conn.prepareStatement(SQL);

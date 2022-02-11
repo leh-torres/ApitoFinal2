@@ -58,7 +58,7 @@ public class EditarCampeonatoFXMLController implements Initializable {
         logo_usuario.setImage(usuario.getImagem());
     }
     
-     @FXML
+    @FXML
     private void acaoDoCheck(ActionEvent event){
         if(seletor_nome.isSelected()){
             nome_campeonato.setEditable(true);

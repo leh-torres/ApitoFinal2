@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tela22_MaisInfo;
+package tela23_EditarPartidas;
 
 import java.io.IOException;
 import javafx.application.Application;
@@ -16,13 +16,13 @@ import javafx.stage.Stage;
  *
  * @author rayla
  */
-public class Tela22MaisInfo extends Application {
+public class Tela23EditarPartidas extends Application {
     
     private static Stage stage; 
     
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("MaisInfoFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("EditarPartidasFXML.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -36,9 +36,9 @@ public class Tela22MaisInfo extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Tela22MaisInfo.stage = stage;
+        Tela23EditarPartidas.stage = stage;
     }
-    
+
     /**
      * @param args the command line arguments
      */
