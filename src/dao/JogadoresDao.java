@@ -56,8 +56,8 @@ public class JogadoresDao {
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
         
-        String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' ORDER BY nome_competidor AND fk_time = ?";
-
+        String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' AND fk_time = ?";
+        JOptionPane.showMessageDialog(null, "nome SQL: " + nome);
         try {
             pst = (PreparedStatement) conn.prepareStatement(SQL);
             pst.setInt(1, idTime);
@@ -70,9 +70,10 @@ public class JogadoresDao {
                 jogador.setNome_competidor(ps.getString("nome_competidor"));
                 jogador.setFk_time(ps.getInt("fk_time"));
                 
-                listaDeJogadores.add(jogador);    
+                listaDeJogadores.add(jogador);  
             }
             conexao.closeConexao();
+            JOptionPane.showMessageDialog(null, "Arraylist banco tamanho: " + listaDeJogadores.size());
             return listaDeJogadores;
 
         } catch (SQLException ex) {

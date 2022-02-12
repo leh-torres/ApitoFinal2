@@ -16,12 +16,18 @@ import javafx.fxml.Initializable;
  */
 public class EditarDadosPartidaFXMLController implements Initializable {
 
+    private static int IdPartida;
+
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+    }
+
+    public static void setIdPartida(int idPartida) {
+        IdPartida = idPartida;
     }    
     
 }
