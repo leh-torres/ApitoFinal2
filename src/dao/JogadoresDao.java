@@ -11,6 +11,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+
 import javax.swing.JOptionPane;
 
 /**
@@ -23,8 +25,8 @@ public class JogadoresDao {
     private PreparedStatement pst = null;
     private ResultSet ps = null;
     private int rs;
-    private Jogadores jogadores = new Jogadores();
     private TimeDao timeDao = new TimeDao();
+    private ArrayList<Jogadores> listaDeJogadores = new ArrayList<>();
     
     public boolean cadastrarJogador(String nome) {
         Conexao conexao = new Conexao();
@@ -49,5 +51,35 @@ public class JogadoresDao {
         }
         return false;
     }
+
+    public ArrayList<Jogadores> getJogadores(String nome, int idTime){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        
+        String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' ORDER BY nome_competidor AND fk_time = ?";
+
+        try {
+            pst = (PreparedStatement) conn.prepareStatement(SQL);
+            pst.setInt(1, idTime);
+            ps = pst.executeQuery();
+            
+            while(ps.next()){
+                Jogadores jogador = new Jogadores();
+                
+                jogador.setId_competidor(ps.getInt("id_competidor"));
+                jogador.setNome_competidor(ps.getString("nome_competidor"));
+                jogador.setFk_time(ps.getInt("fk_time"));
+                
+                listaDeJogadores.add(jogador);    
+            }
+            conexao.closeConexao();
+            return listaDeJogadores;
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }        
+        return null;
+    }
+    
     
 }

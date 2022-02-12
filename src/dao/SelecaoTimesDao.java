@@ -25,6 +25,7 @@ public class SelecaoTimesDao {
     private int retUpdate;
     private Usuario usuario = new Usuario();
     private int id ;
+    private int [] ids = new int[9];
     
     public boolean cadastrarTimesSelecionados(){
         Conexao conexaoBanco = new Conexao();
@@ -99,5 +100,43 @@ public class SelecaoTimesDao {
         return false;
         
     }    
+    
+    public int[] getIds(int idCampeonato,int idUsuario){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT * FROM selecao_times WHERE fk_competicao = ? AND fk_usuario = ?";
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            ps.setInt(2, idUsuario);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                ids[0] = rs.getInt("fk_time1");
+                ids[1] = rs.getInt("fk_time2");
+                ids[2] = rs.getInt("fk_time3");
+                ids[3] = rs.getInt("fk_time4");
+                ids[4] = rs.getInt("fk_time5");
+                ids[5] = rs.getInt("fk_time6");
+                ids[6] = rs.getInt("fk_time7");
+                ids[7] = rs.getInt("fk_time8");
+                
+                conexao.closeConexao();
+                conn.close();
+                return ids;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
     
 }
