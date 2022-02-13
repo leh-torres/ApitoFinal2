@@ -1,4 +1,4 @@
-package tela23_EditarPartidas;
+package tela24_EditarDadosPartida;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,13 +6,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Tela23EditarPartidas extends Application{
-    
+public class Tela24EditarDadosPartida extends Application{
+
+        
     private static Stage stage; 
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/tela23_EditarPartidas/EditarPartidasFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/tela24_EditarDadosPartida/EditarDadosPartidaFXML.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -26,7 +27,7 @@ public class Tela23EditarPartidas extends Application{
     }
 
     public static void setStage(Stage stage) {
-        Tela23EditarPartidas.stage = stage;
+        Tela24EditarDadosPartida.stage = stage;
     }   
 
     /**
@@ -34,5 +35,6 @@ public class Tela23EditarPartidas extends Application{
      */
     public static void main(String[] args) {
         launch(args);
-    }    
+    }
+    
 }

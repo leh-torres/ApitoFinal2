@@ -9,17 +9,17 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
+import javax.swing.Action;
 import javax.swing.JOptionPane;
 
-import classes.Competicao;
 import classes.Jogadores;
 import classes.Partida;
-import classes.Time;
 import classes.Usuario;
 import dao.JogadoresDao;
 import dao.TimeDao;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -28,6 +28,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import tela12_SelecionarPartida.Tela12SelecionarPartida;
 
 /**
  * FXML Controller class
@@ -37,7 +39,7 @@ import javafx.scene.input.MouseEvent;
 public class DefinirResultadoFXMLController implements Initializable {
 
     @FXML
-    private Label nome_usuario, labelAbrev1, labelAbrev2;
+    private Label nome_usuario, labelAbrev1, labelAbrev2, qtdGolsTime1, qtdGolsTime2;
     @FXML
     private TextField txtNomeJogador1, txtNomeJogador2, txtTempo1, txtTempo2;
     @FXML
@@ -51,8 +53,9 @@ public class DefinirResultadoFXMLController implements Initializable {
     private TimeDao timeDao = new TimeDao();
     private Usuario usuario = new Usuario();
     private static Partida partida = new Partida();
+    private String tempoGol1, tempoGol2;
+    private int qtdGols1 = 0, qtdGols2 = 0;
    
-    
 
     /**
      * Initializes the controller class.
@@ -64,6 +67,8 @@ public class DefinirResultadoFXMLController implements Initializable {
 
         setAbrev();
         setImagensTimes();
+        qtdGolsTime1.setText("0");
+        qtdGolsTime2.setText("0");
 
         listViewJogador1.setVisible(false);
         listViewJogador2.setVisible(false);
@@ -91,13 +96,12 @@ public class DefinirResultadoFXMLController implements Initializable {
 
         int i = 0;
 
-        listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
-
-        for(i = 0; i < 24;i++){
-            System.out.println(" Jogador " + i);
-            System.out.println(" Nome Jogador: " + listaJogadores.get(i).getNome_competidor());
-            System.out.println(" Time do Jogador: " + listaJogadores.get(i).getFk_time());
+        if(txtNomeJogador1.getText() == ""){
+            listaJogadores = null;
+        } else{
+            listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
         }
+        JOptionPane.showMessageDialog(null, "Arraylist classe tamanho: " + listaJogadores.size());
 
         if (listaJogadores.size() > 24) {
             listaJogadores= null;
@@ -299,7 +303,7 @@ public class DefinirResultadoFXMLController implements Initializable {
     }
 
 
-    /**@FXML
+    @FXML
     private void capturarElemento1(MouseEvent e) {
 
             int cont = 0;
@@ -309,57 +313,157 @@ public class DefinirResultadoFXMLController implements Initializable {
                 switch (cont) {
 
                     case 1:
-                        time1.setImage(listaTime.get(linha).getImagem_time());
-                        
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 2:
-                        time2.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 3:
-                        time3.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 4:
-                        time4.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 5:
-                        time5.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 6:
-                        time6.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 7:
-                        time7.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
 
                     case 8:
-                        time8.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
                         break;
+
+                    case 9:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                        break;
+                        
+                    case 10:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 11:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 12:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 13:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 14:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 15:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 16:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 17:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 18:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 19:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 20:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 21:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 22:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 23:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
+                        
+                    case 24:
+                        txtNomeJogador1.clear();
+                        txtNomeJogador1.setText(listaJogadores.get(linha).getNome_competidor());
+                    break;
                 }
                 cont++;
             }
 
-    }*/
+    }
+
+    @FXML
+    private void btnAdicionarGol1(ActionEvent event){
+        qtdGols1 += 1;
+        qtdGolsTime1.setText(Integer.toString(qtdGols1));
+        tempoGol1 = txtTempo1.getText();
+        txtTempo1.clear();
+    }
+
+    @FXML
+    private void btnAdicionarGol2(ActionEvent event){
+        qtdGols2 += 1;
+        qtdGolsTime2.setText(Integer.toString(qtdGols2));
+        tempoGol2 = txtTempo2.getText();
+        txtTempo2.clear();
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws Exception{
+        Tela12SelecionarPartida tela12 = new Tela12SelecionarPartida();
+        fechaTela();
+        tela12.start(new Stage());
+
+    }
+
+    private void fechaTela(){
+        Tela20DefinirResultados.getStage().close();
+    }
   
     
 }

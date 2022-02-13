@@ -12,15 +12,19 @@ package classes;
 public class Jogadores {
     
     private int id_competidor;
-    private static String nome_competidor;
-    private static int fk_time;
+    private String nome_competidor;
+    private int fk_time;
 
     public int getId_competidor() {
         return id_competidor;
     }
 
-    public void setId_competidor(int id_competidor) {
-        this.id_competidor = id_competidor;
+    public int getFk_time() {
+        return fk_time;
+    }
+
+    public void setFk_time(int fk_time) {
+        this.fk_time = fk_time;
     }
 
     public String getNome_competidor() {
@@ -28,15 +32,13 @@ public class Jogadores {
     }
 
     public void setNome_competidor(String nome_competidor) {
-        Jogadores.nome_competidor = nome_competidor;
+        this.nome_competidor = nome_competidor;
     }
 
-    public static int getFk_time() {
-        return fk_time;
+    public void setId_competidor(int id_competidor) {
+        this.id_competidor = id_competidor;
     }
 
-    public static void setFk_time(int fk_time) {
-        Jogadores.fk_time = fk_time;
-    }
+    
            
 }

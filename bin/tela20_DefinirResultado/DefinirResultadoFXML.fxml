@@ -78,7 +78,7 @@
                         <Font name="Corbel" size="18.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="txtNomeJogador1" layoutX="64.0" layoutY="221.0" onKeyReleased="#listaDePesquisa1" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="txtNomeJogador1" layoutX="64.0" layoutY="221.0" onAction="#listaDePesquisa1" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -88,12 +88,12 @@
                         <Font name="Corbel" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="txtTempo2" layoutX="392.0" layoutY="366.0" prefHeight="33.0" prefWidth="86.0" promptText="  :   " style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="txtTempo2" layoutX="392.0" layoutY="366.0" prefHeight="33.0" prefWidth="86.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="txtTempo1" layoutX="67.0" layoutY="366.0" prefHeight="33.0" prefWidth="86.0" promptText="  :  " style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="txtTempo1" layoutX="67.0" layoutY="366.0" prefHeight="33.0" prefWidth="86.0" promptText="      :" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -134,7 +134,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="191.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
+                  <Button layoutX="191.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnAdicionarGol1" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -142,7 +142,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutX="521.0" layoutY="366.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
+                  <Button layoutX="521.0" layoutY="366.0" mnemonicParsing="false" onAction="#btnAdicionarGol2" prefHeight="33.0" prefWidth="156.0" style="-fx-background-color: #3ddb8c;" text="Adicionar gol" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -152,15 +152,15 @@
                   </Button>
                   <ImageView fx:id="image1" fitHeight="50.0" fitWidth="50.0" layoutX="65.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/Bola%20de%20Futebol.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <ImageView fx:id="image2" fitHeight="50.0" fitWidth="50.0" layoutX="624.0" layoutY="139.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/Bola%20de%20Futebol.png" />
+                        <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
-                  <ListView fx:id="listViewJogador1" layoutX="64.0" layoutY="254.0" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
+                  <ListView fx:id="listViewJogador1" layoutX="64.0" layoutY="254.0" onMouseReleased="#capturarElemento1" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
                   <ListView fx:id="listViewJogador2" layoutX="392.0" layoutY="255.0" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
-                  <Button layoutX="165.0" layoutY="422.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
+                  <Button layoutX="165.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -182,7 +182,7 @@
                <children>
                   <Pane layoutX="99.0" layoutY="-11.0" prefHeight="50.0" prefWidth="86.0" style="-fx-background-color: #34b974; -fx-shape: &quot;M 0 4 L 2 7 L 17 7 L 19 4&quot;;">
                      <children>
-                        <Label layoutX="17.0" layoutY="10.0" text="0" textFill="WHITE">
+                        <Label fx:id="qtdGolsTime1" layoutX="17.0" layoutY="10.0" textFill="WHITE">
                            <font>
                               <Font name="Eras Bold ITC" size="25.0" />
                            </font>
@@ -192,7 +192,7 @@
                               <Font name="Eras Bold ITC" size="25.0" />
                            </font>
                         </Label>
-                        <Label layoutX="55.0" layoutY="10.0" text="0" textFill="WHITE">
+                        <Label fx:id="qtdGolsTime2" layoutX="55.0" layoutY="10.0" textFill="WHITE">
                            <font>
                               <Font name="Eras Bold ITC" size="25.0" />
                            </font>

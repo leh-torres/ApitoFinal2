@@ -268,7 +268,7 @@ public class EditarTimesFXMLController implements Initializable {
     }
     
     @FXML
-    private void acaoBtnEditarPartida() throws IOException{
+    private void acaoBtnEditarPartida() throws Exception{
         Tela23EditarPartidas tela23 = new Tela23EditarPartidas();
         fecha();
         tela23.start(new Stage());
