@@ -23,14 +23,14 @@ import javax.swing.JOptionPane;
  */
 public class TimeDao {
 
-    Connection conn = null;
-    PreparedStatement pst = null;
-    ResultSet ps = null;
-    Conexao conexao = new Conexao();
+    private Connection conn = null;
+    private PreparedStatement pst = null;
+    private ResultSet ps = null;
+    private Conexao conexao = new Conexao();
     private int rs;
-    Time time = new Time();
-    ArrayList<Time> listaTime = new ArrayList<>();
-    Usuario usuario = new Usuario();
+    private Time time = new Time();
+    private ArrayList<Time> listaTime = new ArrayList<>();
+    private Usuario usuario = new Usuario();
 
     public TimeDao() {
 
@@ -163,6 +163,97 @@ public class TimeDao {
             JOptionPane.showMessageDialog(null, ex);
         }
         return null;
+    }
+    
+    public boolean atualizaAbreviacao(String abreviacao, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE times SET abreviacao_time = ? WHERE id_time = ?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, abreviacao);
+            pst.setInt(2, id);
+            rs = pst.executeUpdate();
+
+            if(rs == 1){
+                System.out.println("Abreviação atualizada com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean atualizaNome(String nome, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE times SET nome_time = ? WHERE id_time = ?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setString(1, nome);
+            pst.setInt(2, id);
+            rs = pst.executeUpdate();
+
+            if(rs == 1){
+                System.out.println("Nome atualizado com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean atualizaImagem(FileInputStream fis, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE times SET imagem_time = ? WHERE id_time = ?";
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setBinaryStream(1, fis);
+            pst.setInt(2, id);
+            rs = pst.executeUpdate();
+
+            if(rs == 1){
+                System.out.println("Imagem atualizado com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean excluirTime(int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+
+        String SQL = "DELETE FROM times WHERE times.id_time = ?";
+
+        try {
+            pst = (PreparedStatement)conn.prepareStatement(SQL);
+            pst.setInt(1, id);
+            rs = pst.executeUpdate();
+
+            if(rs == 1){
+                conexaoBanco.closeConexao();
+            }
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
+        return false;
     }
     
 }

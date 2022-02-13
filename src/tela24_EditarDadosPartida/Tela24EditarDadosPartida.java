@@ -13,7 +13,7 @@ public class Tela24EditarDadosPartida extends Application{
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("EditarDadosPartidasFXML.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/tela24_EditarDadosPartida/EditarDadosPartidaFXML.fxml"));
         
         Scene scene = new Scene(root);
         

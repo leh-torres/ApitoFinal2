@@ -22,6 +22,7 @@ import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela12_SelecionarPartida.Tela12SelecionarPartida;
 import tela16_EditarCampeonato.Tela16EditarCampeonato;
 import tela17_ExcluirCampeonato.Tela17ExcluirCampeonato;
+import tela22_MaisInfo.Tela22MaisInfo;
 
 /**
  * FXML Controller class
@@ -109,6 +110,14 @@ public class CampeonatoFXMLController implements Initializable {
         Tela12SelecionarPartida tela12 = new Tela12SelecionarPartida();
         fechaTela();
         tela12.start(new Stage());
+    }
+    
+    @FXML
+    private void btnTelaMaisInfo(ActionEvent event) throws Exception
+    {
+        Tela22MaisInfo tela22 = new Tela22MaisInfo();
+        fechaTela();
+        tela22.start(new Stage());
     }
 
     /**

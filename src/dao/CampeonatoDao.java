@@ -24,6 +24,7 @@ public class CampeonatoDao {
     private PreparedStatement ps = null; 
     private ResultSet rs = null; 
     private int retUpdate;
+    private int resultado;
     private Usuario usuario = new Usuario();
     private ArrayList<Competicao> listaComp = new ArrayList<>();
     
@@ -201,4 +202,156 @@ public class CampeonatoDao {
         return null;
     }
     
+    public String getPremiacao(int idCampeonato)
+    {
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT premiacao_comp FROM competicao WHERE id_comp = ?";
+        String premiacao;
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                premiacao = rs.getString("premiacao_comp");
+                conexao.closeConexao();
+                conn.close();
+                return premiacao;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
+    
+    public String getDescricao(int idCampeonato)
+    {
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "SELECT descricao_comp FROM competicao WHERE id_comp = ?";
+        String descricao;
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idCampeonato);
+            rs = ps.executeQuery();
+
+            if(rs.next()){
+                descricao = rs.getString("descricao_comp");
+                conexao.closeConexao();
+                conn.close();
+                return descricao;
+            } else{
+                conexao.closeConexao();
+                conn.close();
+                return null;
+            }
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+
+
+        return null;
+    }
+    
+    public boolean atualizaDescricao(String descricao, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET descricao_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, descricao);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Descrição atualizada com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+
+    public boolean atualizaPremiacao(String prem, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET premiacao_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, prem);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Premiação atualizada com sucesso!");
+                 conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean atualizaNome(String nome, int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "UPDATE competicao SET nome_comp = ? WHERE id_comp = ?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, nome);
+            ps.setInt(2, id);
+            resultado = ps.executeUpdate();
+
+            if(resultado == 1){
+                System.out.println("Nome atualizado com sucesso!");
+                conexaoBanco.closeConexao();
+            }
+
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return false;
+    }
+    
+    public boolean excluirCompeticao(int id){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+
+        String SQL = "DELETE FROM competicao WHERE competicao.id_comp = ?";
+
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, id);
+            retUpdate = ps.executeUpdate();
+
+            if(retUpdate == 1){
+                conexaoBanco.closeConexao();
+            }
+            return true;
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+
+        return false;
+    }
 }

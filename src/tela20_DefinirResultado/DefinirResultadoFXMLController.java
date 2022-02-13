@@ -28,6 +28,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
+import tela12_SelecionarPartida.Tela12SelecionarPartida;
 
 /**
  * FXML Controller class
@@ -51,7 +53,7 @@ public class DefinirResultadoFXMLController implements Initializable {
     private TimeDao timeDao = new TimeDao();
     private Usuario usuario = new Usuario();
     private static Partida partida = new Partida();
-    private String nomeJogador, tempoGol1, tempoGol2;
+    private String tempoGol1, tempoGol2;
     private int qtdGols1 = 0, qtdGols2 = 0;
    
 
@@ -94,12 +96,11 @@ public class DefinirResultadoFXMLController implements Initializable {
 
         int i = 0;
 
-        if(txtNomeJogador1.getText() == "" || txtNomeJogador1.getText() == " "){
-            listaJogadores = jogadoresDao.getJogadores(null, partida.getFk_time1Dinamico());
+        if(txtNomeJogador1.getText() == ""){
+            listaJogadores = null;
         } else{
             listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
         }
-
         JOptionPane.showMessageDialog(null, "Arraylist classe tamanho: " + listaJogadores.size());
 
         if (listaJogadores.size() > 24) {
@@ -450,6 +451,18 @@ public class DefinirResultadoFXMLController implements Initializable {
         qtdGolsTime2.setText(Integer.toString(qtdGols2));
         tempoGol2 = txtTempo2.getText();
         txtTempo2.clear();
+    }
+
+    @FXML
+    private void btnVoltar(ActionEvent event) throws Exception{
+        Tela12SelecionarPartida tela12 = new Tela12SelecionarPartida();
+        fechaTela();
+        tela12.start(new Stage());
+
+    }
+
+    private void fechaTela(){
+        Tela20DefinirResultados.getStage().close();
     }
   
     

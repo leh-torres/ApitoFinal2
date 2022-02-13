@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela16_EditarCampeonato.EditarCampeonatoFXMLController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: EBF2F5;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela16_EditarCampeonato.EditarCampeonatoFXMLController">
    <children>
       <Pane layoutX="35.0" layoutY="53.0" prefHeight="544.0" prefWidth="1230.0" style="-fx-background-color: white; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;">
          <children>
@@ -18,7 +18,7 @@
                <children>
                   <ImageView fitHeight="106.0" fitWidth="96.0" layoutX="52.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/Logotype.jpg" />
+                        <Image url="@../resources/Logotype.jpg" />
                      </image>
                   </ImageView>
                   <Label layoutX="22.0" layoutY="110.0" text="Apito Final" textFill="WHITE">
@@ -26,7 +26,7 @@
                         <Font name="Eras Demi ITC" size="30.0" />
                      </font>
                   </Label>
-                  <Button layoutY="252.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
+                  <Button fx:id="btn_selecionar_partidas" layoutY="252.0" mnemonicParsing="false" onAction="#btnSelecionarPartidas" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Selecionar Partidas" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -42,7 +42,7 @@
                         <Cursor fx:constant="DEFAULT" />
                      </cursor>
                   </Button>
-                  <Button layoutY="350.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
+                  <Button fx:id="btn_excluir_campeonato" layoutY="350.0" mnemonicParsing="false" onAction="#btnExcluirCampeonato" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Excluir Campeonato" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="399.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
+                  <Button fx:id="btn_voltar" layoutY="399.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Voltar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -58,7 +58,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button layoutY="203.0" mnemonicParsing="false" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
+                  <Button fx:id="btn_inicio" layoutY="203.0" mnemonicParsing="false" onAction="#btnInicio" prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #3ddb8c; -fx-border-color: white;" text="Início" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
@@ -93,10 +93,10 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <image>
-                  <Image url="file:/C:/Users/RonaldoMatos/Desktop/Projeto%20Integrador%20II/ApitoFinal/src/resources/User%202.png" />
+                  <Image url="@../resources/User%202.png" />
                </image>
             </ImageView>
-            <Label layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
+            <Label fx:id="nome_usuario" layoutX="1003.0" layoutY="32.0" text="Nome de Usuário" textFill="#3ddb8c">
                <font>
                   <Font name="Corbel" size="19.0" />
                </font>
@@ -111,7 +111,7 @@
                   <Font name="Corbel" size="19.0" />
                </font>
             </Label>
-            <TextField layoutX="426.0" layoutY="232.0" prefHeight="33.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="nome_campeonato" editable="false" layoutX="426.0" layoutY="232.0" onAction="#acaoDoCheck" prefHeight="33.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -119,17 +119,17 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <CheckBox layoutX="426.0" layoutY="209.0" mnemonicParsing="false" text="Editar ⚽Nome do Campeonato" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_nome" layoutX="426.0" layoutY="209.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar ⚽Nome do Campeonato" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <CheckBox layoutX="426.0" layoutY="281.0" mnemonicParsing="false" text="Editar 🏆Premiação" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_premiacao" layoutX="426.0" layoutY="281.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 🏆Premiação" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <TextField layoutX="426.0" layoutY="305.0" prefHeight="33.0" prefWidth="277.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="premiacao_campeonato" editable="false" layoutX="426.0" layoutY="305.0" onAction="#acaoDoCheck" prefHeight="33.0" prefWidth="277.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -137,12 +137,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <CheckBox layoutX="734.0" layoutY="281.0" mnemonicParsing="false" text="Editar 🚩Quantidade de Times" textFill="#bac0c3">
+            <CheckBox disable="true" layoutX="734.0" layoutY="281.0" mnemonicParsing="false" selected="true" text="Editar 🚩Quantidade de Times" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <TextField layoutX="734.0" layoutY="305.0" prefHeight="33.0" prefWidth="263.0" style="-fx-background-color: #EBF2F5;">
+            <TextField editable="false" layoutX="734.0" layoutY="305.0" prefHeight="33.0" prefWidth="263.0" style="-fx-background-color: #EBF2F5;" text="8">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -150,12 +150,12 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <CheckBox layoutX="426.0" layoutY="355.0" mnemonicParsing="false" text="Editar 📙Descrição" textFill="#bac0c3">
+            <CheckBox fx:id="seletor_descricao" layoutX="426.0" layoutY="355.0" mnemonicParsing="false" onAction="#acaoDoCheck" text="Editar 📙Descrição" textFill="#bac0c3">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>
             </CheckBox>
-            <TextField layoutX="426.0" layoutY="379.0" prefHeight="82.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
+            <TextField fx:id="descricao_campeonato" editable="false" layoutX="426.0" layoutY="379.0" onAction="#acaoDoCheck" prefHeight="82.0" prefWidth="573.0" style="-fx-background-color: #EBF2F5;">
                <font>
                   <Font name="Corbel" size="17.0" />
                </font>
@@ -163,7 +163,7 @@
                   <Cursor fx:constant="TEXT" />
                </cursor>
             </TextField>
-            <Button layoutX="645.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
+            <Button fx:id="btn_salvar" layoutX="645.0" layoutY="487.0" mnemonicParsing="false" onAction="#acaoSalvar" prefHeight="33.0" prefWidth="136.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50;" text="Salvar" textFill="WHITE">
                <font>
                   <Font name="Corbel Bold" size="17.0" />
                </font>

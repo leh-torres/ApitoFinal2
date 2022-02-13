@@ -25,7 +25,6 @@ import tela14_Perfil.Tela14Perfil;
 import tela15_Campeonato.Tela15Campeonato;
 
 import javax.swing.JOptionPane;
-import tela12_SelecionarPartida.Tela12SelecionarPartida;
 
 import tela5_CadastrarCampeonato.Tela05CadastrarCampeonato;
 
@@ -709,8 +708,7 @@ public class SelecionarCampeonatoController implements Initializable {
      * e seta na competição
      * @param idCompeticao
      */
-    private void setArrayList(int idCompeticao)
-    {   
+    private void setArrayList(int idCompeticao){   
         PartidaDao partidaDao = new PartidaDao();
         ArrayList<Partida> listaDeRetorno = new ArrayList<>();
 

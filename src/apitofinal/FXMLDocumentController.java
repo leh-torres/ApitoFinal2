@@ -12,11 +12,9 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ResourceBundle;
 
 import javax.swing.JOptionPane;
-import javax.swing.plaf.synth.SynthStyle;
 
 import classes.Usuario;
 import dao.CampeonatoDao;
-import dao.CompeticaoDao;
 import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,7 +41,7 @@ public class FXMLDocumentController implements Initializable {
 
     private Usuario usuario = new Usuario();
     private UsuarioDao userDao = new UsuarioDao();
-    private CompeticaoDao compDao = new CompeticaoDao();
+    private CampeonatoDao compDao = new CampeonatoDao();
     private boolean retorno, retorno2;
 
     @FXML

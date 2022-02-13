@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tela16_EditarCampeonato;
+package tela22_MaisInfo;
 
 import java.io.IOException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,14 +16,13 @@ import javafx.stage.Stage;
  *
  * @author rayla
  */
-public class Tela16EditarCampeonato extends Application {
-
+public class Tela22MaisInfo extends Application {
+    
     private static Stage stage; 
     
     @Override
     public void start(Stage stage) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("EditarCampeonatoFXML.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getResource("MaisInfoFXML.fxml"));
         
         Scene scene = new Scene(root);
         
@@ -38,10 +36,9 @@ public class Tela16EditarCampeonato extends Application {
     }
 
     public static void setStage(Stage stage) {
-        Tela16EditarCampeonato.stage = stage;
-
-    }   
-
+        Tela22MaisInfo.stage = stage;
+    }
+    
     /**
      * @param args the command line arguments
      */

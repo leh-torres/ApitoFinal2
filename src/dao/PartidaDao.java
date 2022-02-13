@@ -122,5 +122,67 @@ public class PartidaDao {
         return null;
     
     }
+
+    /**
+     * Método para atualizar o local da partida
+     * @param local
+     * @param id
+     * @return
+     */
+    public boolean editarLocal(String local, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE partida SET local_part = ? WHERE id_part = ?";
+        
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, local);
+            ps.setInt(2, id);
+            retUpdate = ps.executeUpdate();
+
+            if(retUpdate == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Local não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    /**
+     * Método para atualizar o local da partida
+     * @param local
+     * @param id
+     * @return
+     */
+    public boolean editarHora(String horario, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE partida SET horario_part = ? WHERE id_part = ?";
+        
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, horario);
+            ps.setInt(2, id);
+            retUpdate = ps.executeUpdate();
+
+            if(retUpdate == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Horario não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
     
 }

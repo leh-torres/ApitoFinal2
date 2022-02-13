@@ -84,6 +84,7 @@ public class SelecaoTimesController implements Initializable {
     private CampeonatoDao campeonatoDao = new CampeonatoDao();
     private SelecaoTimesDao timesSelecionados = new SelecaoTimesDao();
     private Usuario usuario = new Usuario();
+    private boolean verifica;
 
     int cont = 1;
 
@@ -215,7 +216,9 @@ public class SelecaoTimesController implements Initializable {
 
     @FXML
     private void capturarElemento(MouseEvent e) {
-
+        
+        verifica = false;
+        
         if (listaTimeSelecionados.size() < 8) {
 
             int linha = lista.getSelectionModel().getSelectedIndex();
@@ -224,54 +227,117 @@ public class SelecaoTimesController implements Initializable {
                 switch (cont) {
 
                     case 1:
-                        time1.setImage(listaTime.get(linha).getImagem_time());
-                        
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time1.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 2:
-                        time2.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true; 
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time2.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 3:
-                        time3.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time3.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 4:
-                        time4.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time4.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 5:
-                        time5.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time5.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 6:
-                        time6.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time6.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 7:
-                        time7.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time7.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
 
                     case 8:
-                        time8.setImage(listaTime.get(linha).getImagem_time());
-
-                        listaTimeSelecionados.add(listaTime.get(linha));
+                        for(int i=0; i<listaTimeSelecionados.size() ; i++ ){
+                            if(listaTime.get(linha) == listaTimeSelecionados.get(i)){
+                                verifica = true;
+                                JOptionPane.showMessageDialog(null, "Time já selecionado!");
+                            }
+                        }
+                        if(verifica == false){
+                            time8.setImage(listaTime.get(linha).getImagem_time());
+                            listaTimeSelecionados.add(listaTime.get(linha));
+                            cont++;
+                        }
                         break;
                 }
-                cont++;
             }
 
         } else {

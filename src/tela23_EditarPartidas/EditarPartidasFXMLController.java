@@ -5,13 +5,12 @@
  */
 package tela23_EditarPartidas;
 
+import classes.Usuario;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javax.swing.event.AncestorEvent;
-
 import classes.Competicao;
-import classes.Usuario;
 import dao.TimeDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,8 +18,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import tela22_MaisInfo.Tela22MaisInfo;
 import tela24_EditarDadosPartida.EditarDadosPartidaFXMLController;
 import tela24_EditarDadosPartida.Tela24EditarDadosPartida;
+import tela25_EditarTimes.Tela25EditarTimes;
 
 /**
  * FXML Controller class
@@ -33,6 +34,7 @@ public class EditarPartidasFXMLController implements Initializable {
     private ImageView logo_usuario, image1, image2, image3, image4, image5, image6, image7, image8;
     @FXML
     private Label nomeUsuario;
+    
     private Usuario usuario = new Usuario();
     
     @Override
@@ -80,8 +82,6 @@ public class EditarPartidasFXMLController implements Initializable {
        image8.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(3).getFk_time2Dinamico()));
 
     }
-
-    //TODO lincar botões laterais
 
     //Botões centrais
     @FXML
@@ -134,4 +134,28 @@ public class EditarPartidasFXMLController implements Initializable {
     }
 
     
+    @FXML
+    private void acaoBtnMaisInfo() throws IOException{
+        Tela22MaisInfo tela22 = new Tela22MaisInfo();
+        fecha();
+        tela22.start(new Stage());
+    }
+    
+    @FXML
+    private void acaoBtnEditarTimes() throws IOException{
+        Tela25EditarTimes tela25 = new Tela25EditarTimes();
+        fecha();
+        tela25.start(new Stage());
+    }
+    
+    @FXML
+    private void acaoBtnVoltar() throws IOException{
+        Tela22MaisInfo tela22 = new Tela22MaisInfo();
+        fecha();
+        tela22.start(new Stage());
+    }
+    
+    private void fecha(){
+        Tela23EditarPartidas.getStage().close();
+    }
 }
