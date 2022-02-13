@@ -9,7 +9,6 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-import javax.swing.Action;
 import javax.swing.JOptionPane;
 
 import classes.Jogadores;
@@ -49,7 +48,6 @@ public class DefinirResultadoFXMLController implements Initializable {
     
     private ArrayList<Jogadores> listaJogadores = new ArrayList<>();
     private ObservableList<String> jogador;
-    private JogadoresDao jogadoresDao = new JogadoresDao();
     private TimeDao timeDao = new TimeDao();
     private Usuario usuario = new Usuario();
     private static Partida partida = new Partida();
@@ -93,17 +91,13 @@ public class DefinirResultadoFXMLController implements Initializable {
 
     @FXML
     private void listaDePesquisa1(KeyEvent e) {
+        JogadoresDao jogadoresDao = new JogadoresDao();
 
         int i = 0;
 
-        if(txtNomeJogador1.getText() == ""){
-            listaJogadores = null;
-        } else{
-            listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
-        }
-        JOptionPane.showMessageDialog(null, "Arraylist classe tamanho: " + listaJogadores.size());
+        listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
 
-        if (listaJogadores.size() > 24) {
+        if (listaJogadores.size() >= 24) {
             listaJogadores= null;
         }
 

@@ -6,7 +6,6 @@
 package dao;
 
 import classes.Jogadores;
-import classes.Time;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -57,7 +56,6 @@ public class JogadoresDao {
         conn = conexao.getConnection();
         
         String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' AND fk_time = ?";
-        JOptionPane.showMessageDialog(null, "nome SQL: " + nome);
         try {
             pst = (PreparedStatement) conn.prepareStatement(SQL);
             pst.setInt(1, idTime);
@@ -73,7 +71,6 @@ public class JogadoresDao {
                 listaDeJogadores.add(jogador);  
             }
             conexao.closeConexao();
-            JOptionPane.showMessageDialog(null, "Arraylist banco tamanho: " + listaDeJogadores.size());
             return listaDeJogadores;
 
         } catch (SQLException ex) {
