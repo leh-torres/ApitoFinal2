@@ -34,6 +34,8 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
+
 import javax.swing.JOptionPane;
 import tela16_EditarCampeonato.Tela16EditarCampeonato;
 import tela22_MaisInfo.Tela22MaisInfo;
@@ -268,17 +270,17 @@ public class EditarTimesFXMLController implements Initializable {
     }
     
     @FXML
-    private void acaoBtnEditarPartida() throws IOException{
+    private void acaoBtnEditarPartida() throws Exception{
         Tela23EditarPartidas tela23 = new Tela23EditarPartidas();
         fecha();
         tela23.start(new Stage());
     }
     
     @FXML
-    private void acaoBtnVoltar() throws IOException{
-        Tela22MaisInfo tela22 = new Tela22MaisInfo();
+    private void acaoBtnVoltar() throws Exception{
+        Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
         fecha();
-        tela22.start(new Stage());
+        tela10.start(new Stage());
     }
     
     private void fecha(){

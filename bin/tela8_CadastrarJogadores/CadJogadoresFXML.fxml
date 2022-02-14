@@ -50,11 +50,7 @@
                         <Font name="Eras Demi ITC" size="28.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
-                  <TextField layoutX="39.0" layoutY="241.0" onKeyReleased="#acaoBtnAdicionarJogadoresTecla" prefHeight="33.0" prefWidth="405.0" style="-fx-background-color: #EBF2F5;">
-=======
                   <TextField fx:id="nome_jogador" layoutX="39.0" layoutY="241.0" onKeyReleased="#acaoBtnAdicionarJogadoresTecla" prefHeight="33.0" prefWidth="405.0" style="-fx-background-color: #EBF2F5;">
->>>>>>> d230cee9012b6f0b70f69b4c3c3cf50d5212b782
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -89,20 +85,16 @@
                         <Font name="Corbel" size="19.0" />
                      </font>
                   </Label>
-<<<<<<< HEAD
-                  <Button layoutX="139.0" layoutY="406.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarJogadores" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
-=======
                   <Button fx:id="btn_concluir_cadastro" layoutX="139.0" layoutY="406.0" mnemonicParsing="false" onAction="#acaoBtnCadastrarJogadores" prefHeight="35.0" prefWidth="274.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 50 50 50 50; -fx-background-radius: 50 50 50 50; -fx-border-color: #3ddb8c;" text="Concluir Cadastro do Time" textFill="WHITE">
->>>>>>> d230cee9012b6f0b70f69b4c3c3cf50d5212b782
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Button>
 <<<<<<< HEAD
-                  <Button layoutX="449.0" layoutY="239.0" mnemonicParsing="false" onAction="#acaoBtnAdicionarJogadores" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
+                  <Button fx:id="btn_adicionar_jogador" layoutX="449.0" layoutY="239.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
 =======
                   <Button fx:id="btn_adicionar_jogador" layoutX="449.0" layoutY="239.0" mnemonicParsing="false" onAction="#acaoBtnAdicionarJogadores" prefHeight="37.0" prefWidth="41.0" style="-fx-background-color: white; -fx-border-radius: 5 5 5 5; -fx-background-radius: 5 5 5 5; -fx-border-color: #3ddb8c;" text="➔" textFill="#3ddb8c">
->>>>>>> d230cee9012b6f0b70f69b4c3c3cf50d5212b782
+>>>>>>> 1902adee45d5ce5732b9aff8099133153f1cff46
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>

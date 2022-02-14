@@ -6,7 +6,6 @@
 package dao;
 
 import classes.Jogadores;
-import classes.Time;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,8 +55,7 @@ public class JogadoresDao {
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
         
-        String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' ORDER BY nome_competidor AND fk_time = ?";
-
+        String SQL = "SELECT * FROM competidores where nome_competidor LIKE '"+nome+"%' AND fk_time = ?";
         try {
             pst = (PreparedStatement) conn.prepareStatement(SQL);
             pst.setInt(1, idTime);
@@ -70,7 +68,7 @@ public class JogadoresDao {
                 jogador.setNome_competidor(ps.getString("nome_competidor"));
                 jogador.setFk_time(ps.getInt("fk_time"));
                 
-                listaDeJogadores.add(jogador);    
+                listaDeJogadores.add(jogador);  
             }
             conexao.closeConexao();
             return listaDeJogadores;

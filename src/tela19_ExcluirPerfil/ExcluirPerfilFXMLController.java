@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela14_Perfil.Tela14Perfil;
 import tela4_CriarCampeonato.Tela04CriarCampeonato;
 
@@ -56,8 +57,12 @@ public class ExcluirPerfilFXMLController implements Initializable {
     private void fechaTelas(){
         Tela19ExcluirPerfil.getStage().close();
         Tela14Perfil.getStage().close();
-        Tela04CriarCampeonato.getStage().close();
         ApitoFinal.getStage().close();
+        if(Tela04CriarCampeonato.getStage() == null){
+            Tela10SelecionarCampeonato.getStage().close();
+        } else{
+            Tela04CriarCampeonato.getStage().close();
+        }
     }
 
     private void fechaTelaAtual(){
