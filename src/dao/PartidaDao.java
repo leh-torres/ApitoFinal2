@@ -106,10 +106,10 @@ public class PartidaDao {
                 partida.setHorario_part(rs.getString("horario_part"));
                 partida.setLocal_part(rs.getString("local_part"));
                 partida.setPlacar_part(rs.getString("placar_part"));
+                partida.setTime_vencedor(rs.getInt("time_vencedor"));
                 partida.setFk_compDinamico(rs.getInt("fk_comp"));
                 partida.setFk_time1Dinamico(rs.getInt("fk_time1"));
                 partida.setFk_time2Dinamico(rs.getInt("fk_time2"));
-                partida.setFk_momento_da_pontuacao(rs.getInt("fk_momento_da_pontuacao"));
                 arrayPartidas.add(partida);
             }
             conexao.closeConexao();
@@ -183,6 +183,135 @@ public class PartidaDao {
             System.out.println(e);
         }
         return false;
+    }
+
+    public boolean setPlacar(String placar, int id){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "UPDATE partida SET placar_part=? WHERE id_part=?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, placar);
+            ps.setInt(2,id);
+            retUpdate = ps.executeUpdate();
+            
+            if(retUpdate== 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            }
+            else{
+                System.out.println("Placar não atualizado");
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        return false;
+    }
+
+    public boolean setTimeVencedor(int idTime, int idPartida){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "UPDATE partida SET time_vencedor=? WHERE id_part=?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idTime);
+            ps.setInt(2,idPartida);
+            retUpdate = ps.executeUpdate();
+            
+            if(retUpdate== 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            }
+            else{
+                System.out.println("Time vencendor não atualizado");
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        return false;
+    }
+
+    public boolean setTime1(int idTime, int idPartida){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "UPDATE partida SET fk_time1=? WHERE id_part=?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idTime);
+            ps.setInt(2,idPartida);
+            retUpdate = ps.executeUpdate();
+            
+            if(retUpdate== 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            }
+            else{
+                System.out.println("Time não atualizado");
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        return false;
+    }
+
+    public boolean setTime2(int idTime, int idPartida){
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+
+        String SQL = "UPDATE partida SET fk_time2=? WHERE id_part=?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idTime);
+            ps.setInt(2,idPartida);
+            retUpdate = ps.executeUpdate();
+            
+            if(retUpdate== 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            }
+            else{
+                System.out.println("Time não atualizado");
+                return false;
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        
+        return false;
+    }
+
+    public String getPLacar(int idPartida){
+        Conexao conexaoBanco = new Conexao();
+        conn = conexaoBanco.getConnection();
+        
+        String SQL = "SELECT placar_part FROM partida WHERE id_part=?";
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setInt(1, idPartida);
+            rs = ps.executeQuery();
+            
+            if(rs.next()){
+                if(rs != null){
+                    return rs.getString("placar_part");
+                }
+            }
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, ex);
+        }
+        return null;
     }
     
 }

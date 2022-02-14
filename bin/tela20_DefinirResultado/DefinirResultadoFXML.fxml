@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela20_DefinirResultado.DefinirResultadoFXMLController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="1300.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 10 10; -fx-background-radius: 10 10 10 10;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="tela20_DefinirResultado.DefinirResultadoFXMLController">
    <children>
       <Pane layoutX="35.0" layoutY="35.0" prefHeight="88.0" prefWidth="1230.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 10 10 0 0; -fx-background-radius: 10 10 0 0;">
          <children>
@@ -79,7 +79,7 @@
                         <Font name="Corbel" size="17.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="txtNomeJogador2" layoutX="392.0" layoutY="222.0" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
+                  <TextField fx:id="txtNomeJogador2" layoutX="392.0" layoutY="222.0" onKeyReleased="#listaDePesquisa2" prefHeight="33.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5;">
                      <font>
                         <Font name="Corbel" size="17.0" />
                      </font>
@@ -143,13 +143,13 @@
                         <Image url="@../resources/Bola%20de%20Futebol.png" />
                      </image></ImageView>
                   <ListView fx:id="listViewJogador1" layoutX="64.0" layoutY="254.0" onMouseReleased="#capturarElemento1" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
-                  <ListView fx:id="listViewJogador2" layoutX="392.0" layoutY="255.0" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
+                  <ListView fx:id="listViewJogador2" layoutX="392.0" layoutY="255.0" onMouseReleased="#capturarElemento2" prefHeight="86.0" prefWidth="284.0" style="-fx-background-color: #EBF2F5; -fx-border-color: #c4cacd;" />
                   <Button layoutX="165.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnVoltar" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: white; -fx-border-radius: 50 0 0 50; -fx-background-radius: 50 0 0 50; -fx-border-color: #3ddb8c;" text="Voltar" textFill="#3ddb8c">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutX="382.0" layoutY="422.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0;" text="Avançar" textFill="WHITE">
+                  <Button layoutX="382.0" layoutY="422.0" mnemonicParsing="false" onAction="#btnAvancar" prefHeight="35.0" prefWidth="196.0" style="-fx-background-color: #3ddb8c; -fx-border-radius: 0 50 50 0; -fx-background-radius: 0 50 50 0;" text="Avançar" textFill="WHITE">
                      <font>
                         <Font name="Corbel Bold" size="17.0" />
                      </font>

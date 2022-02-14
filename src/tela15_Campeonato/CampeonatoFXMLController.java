@@ -55,6 +55,7 @@ public class CampeonatoFXMLController implements Initializable {
         
     } 
 
+
     /**
      * Método que limpa todos os ImageView
      */
@@ -95,8 +96,29 @@ public class CampeonatoFXMLController implements Initializable {
        imgTime13.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(3).getFk_time1Dinamico()));
        imgTime14.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(3).getFk_time2Dinamico()));
 
+       if(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor() != 0){
+           imgTime5.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor()));
+       }
 
-        //TO DO carregar imagens dos times ganhadores
+       if(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor() != 0){
+            imgTime6.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor()));
+       }
+
+       if(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor() != 0){
+            imgTime9.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor()));
+       }
+
+       if(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor() != 0){
+            imgTime10.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor()));
+       }
+
+       if(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor() != 0){
+            imgTime8.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor()));
+       }
+
+       if(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor() != 0){
+            imgTime9.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor()));
+       }
     }
 
     /**

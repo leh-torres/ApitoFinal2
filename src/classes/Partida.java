@@ -16,10 +16,10 @@ public class Partida {
     private String horario_part;
     private String local_part;
     private String placar_part;
+    private int time_vencedor;
     private static int fk_comp;
     private static int fk_time1;
     private static int fk_time2;
-    private int fk_momento_da_pontuacao;
 
 
     private int fk_compDinamico;
@@ -28,6 +28,14 @@ public class Partida {
 
     public int getId_part() {
         return id_part;
+    }
+
+    public int getTime_vencedor() {
+        return time_vencedor;
+    }
+
+    public void setTime_vencedor(int time_vencedor) {
+        this.time_vencedor = time_vencedor;
     }
 
     public void setId_part(int id_part) {
@@ -89,16 +97,6 @@ public class Partida {
     public static void setFk_time2(int fk_time2) {
         Partida.fk_time2 = fk_time2;
     }
-
-    
-    public int getFk_momento_da_pontuacao() {
-        return fk_momento_da_pontuacao;
-    }
-
-    public void setFk_momento_da_pontuacao(int fk_momento_da_pontuacao) {
-        this.fk_momento_da_pontuacao = fk_momento_da_pontuacao;
-    }
-
 
     public int getFk_time2Dinamico() {
         return fk_time2Dinamico;
