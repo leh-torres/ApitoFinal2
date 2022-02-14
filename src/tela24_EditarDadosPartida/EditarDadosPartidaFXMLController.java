@@ -8,6 +8,12 @@ package tela24_EditarDadosPartida;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
+import classes.Partida;
+import classes.Usuario;
+import dao.PartidaDao;
+import dao.UsuarioDao;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -29,18 +35,18 @@ public class EditarDadosPartidaFXMLController implements Initializable {
     @FXML
     private DatePicker datePickerEditarData;
 
-    private static int IdPartida;
+    private static Partida partida = new Partida();
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        
     }
 
-    public static void setIdPartida(int idPartida) {
-        IdPartida = idPartida;
+    public static void setPartida(Partida partidaPassada) {
+       partida = partidaPassada;
     }    
     
     /**
@@ -67,5 +73,28 @@ public class EditarDadosPartidaFXMLController implements Initializable {
             txtHorario.setEditable(false);
         }
 
+    }
+
+    
+    /**
+     * **Método para atulizar os campos escolhidos***
+     * @param event
+     * @throws Exception
+     */
+    @FXML
+    private void btnAtualiza(ActionEvent event) throws Exception{
+        PartidaDao partidaDao = new PartidaDao();
+
+        if(checkEditarLocal.isSelected()){
+            partidaDao.editarLocal(txtEditarLocal.getText(), partida.getId_part());
+        } 
+        if(checkEditarData.isSelected()){
+            partidaDao.editarData(datePickerEditarData.getEditor().getText(), partida.getId_part());
+        }
+        if(checkEditarHora.isSelected()){
+            partidaDao.editarHora(txtHorario.getText(), partida.getId_part());
+        }
+        
+        Tela24EditarDadosPartida.getStage().close();
     }
 }

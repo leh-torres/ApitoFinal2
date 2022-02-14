@@ -211,6 +211,7 @@ public class SelecionarPartidaController implements Initializable {
         if(Competicao.getListaPartidasDaCompeticao().get(6).getFk_time2Dinamico() != 0){
             time14.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(6).getFk_time2Dinamico()));
         }
+
     }
 
     /**
@@ -236,51 +237,62 @@ public class SelecionarPartidaController implements Initializable {
         PartidaDao partidaDao = new PartidaDao();
 
         if(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor() != 0){
+
             if(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(0).getFk_time1Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(0).getFk_time2Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(0).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
             }
+            
         }
 
         if(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor() != 0){
+            
             if(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(1).getFk_time1Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(1).getFk_time2Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(1).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
             }
         }
 
         if(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor() != 0){
+            
             if(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(2).getFk_time1Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(2).getFk_time2Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(2).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
             }
+
         }
 
         if(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor() != 0){
+            
             if(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(3).getFk_time1Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(3).getFk_time2Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(3).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
             }
+
         }
 
         if(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor() != 0){
+            
             if(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(4).getFk_time1Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(7).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(4).getFk_time2Dinamico()){
-                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(7).getId_part());
+                partidaDao.setTime1(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
             }
+
         }
 
         if(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor() != 0){
+            
             if(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(5).getFk_time1Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(7).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
             } else if(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor() == Competicao.getListaPartidasDaCompeticao().get(5).getFk_time2Dinamico()){
-                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(7).getId_part());
+                partidaDao.setTime2(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor(), Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
             }
+
         }
     }
     

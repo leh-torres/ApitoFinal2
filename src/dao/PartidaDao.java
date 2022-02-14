@@ -134,7 +134,6 @@ public class PartidaDao {
         Conexao conexao = new Conexao();
         conn = conexao.getConnection();
         String SQL = "UPDATE partida SET local_part = ? WHERE id_part = ?";
-        
         try {
             ps = (PreparedStatement)conn.prepareStatement(SQL);
             ps.setString(1, local);
@@ -146,6 +145,8 @@ public class PartidaDao {
                 conexao.closeConexao();
                 return true;
             } else{
+                conn.close();
+                conexao.closeConexao();
                 System.out.println("Local não atualizado");
             }
         } catch (Exception e) {
@@ -178,6 +179,31 @@ public class PartidaDao {
                 return true;
             } else{
                 System.out.println("Horario não atualizado");
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return false;
+    }
+
+    public boolean editarData(String data, int id){
+
+        Conexao conexao = new Conexao();
+        conn = conexao.getConnection();
+        String SQL = "UPDATE partida SET data_part = ? WHERE id_part = ?";
+        
+        try {
+            ps = (PreparedStatement)conn.prepareStatement(SQL);
+            ps.setString(1, data);
+            ps.setInt(2, id);
+            retUpdate = ps.executeUpdate();
+
+            if(retUpdate == 1){
+                conn.close();
+                conexao.closeConexao();
+                return true;
+            } else{
+                System.out.println("Data não atualizado");
             }
         } catch (Exception e) {
             System.out.println(e);

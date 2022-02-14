@@ -16,7 +16,7 @@ public class EstatisticasDao {
     public boolean cadastrarEstatistica(String nome, int valor, int idPartida){
         Conexao conexaoBanco = new Conexao();
         conn = conexaoBanco.getConnection();               
-        String SQL = "INSERT INTO estatistica(nome_estatistica, valor_estatistica, fk_part) VALUES (?,?,?)";
+        String SQL = "INSERT INTO estatistica(nome_estatistica, valor_estatistica, fk_partida) VALUES (?,?,?)";
 
             try {
                 ps = (PreparedStatement)conn.prepareStatement(SQL);

@@ -38,8 +38,8 @@ public class MomentoPartidaFXMLController implements Initializable {
     @FXML
     private ImageView logo_usuario;
 
+    private static Partida partida = new Partida();
     private Usuario usuario = new Usuario();
-    private Partida partida = new Partida();
     private TimeDao timeDao = new TimeDao();
     private PartidaDao partidaDao = new PartidaDao();
 
@@ -115,5 +115,9 @@ public class MomentoPartidaFXMLController implements Initializable {
     private void fecharTela(){
         Tela21MomentoPartida.getStage().close();
     }
+
+    public static void setPartida(Partida partidaPassada) {
+        partida = partidaPassada;
+    }    
     
 }

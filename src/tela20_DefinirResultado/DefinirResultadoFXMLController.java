@@ -31,6 +31,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import tela12_SelecionarPartida.Tela12SelecionarPartida;
+import tela21_MomentoPartida.MomentoPartidaFXMLController;
 import tela21_MomentoPartida.Tela21MomentoPartida;
 
 /**
@@ -753,6 +754,7 @@ public class DefinirResultadoFXMLController implements Initializable {
 
     @FXML
     private void btnAvancar(ActionEvent event) throws Exception{
+        MomentoPartidaFXMLController.setPartida(partida);
         Tela21MomentoPartida tela21 = new Tela21MomentoPartida();
         setPlacar();
         fechaTela();
@@ -776,16 +778,27 @@ public class DefinirResultadoFXMLController implements Initializable {
     }
 
     private void setPlacar(){
+        int qtd1, qtd2;
         PartidaDao partidaDao = new PartidaDao();
         String placar = qtdGols1 + " x " + qtdGols2;
 
-        String gols1 = qtdGols1 + "";
-        int qtdGols1 = Integer.parseInt(gols1);
+        if(qtdGols1 == 0){
+            String gols1 = 0 + "";
+            qtd1 = Integer.parseInt(gols1);
+        } else{
+            String gols1 = qtdGols1 + "";
+            qtd1 = Integer.parseInt(gols1);
+        }
 
-        String gols2 = qtdGols2 + "";
-        int qtdGols2 = Integer.parseInt(gols2);
+        if(qtdGols2 == 0){
+            String gols2 = 0 + "";
+            qtd2 = Integer.parseInt(gols2);
+        } else{
+            String gols2 = qtdGols2 + "";
+            qtd2 = Integer.parseInt(gols2);
+        }
 
-        if(qtdGols1 > qtdGols2){
+        if(qtd1 > qtd2){
             partidaDao.setPlacar(placar, partida.getId_part());
             partidaDao.setTimeVencedor(partida.getFk_time1Dinamico(), partida.getId_part());
         } else{

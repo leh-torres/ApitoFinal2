@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import javax.swing.JOptionPane;
+
 import classes.Competicao;
 import dao.TimeDao;
 import javafx.event.ActionEvent;
@@ -18,6 +20,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela22_MaisInfo.Tela22MaisInfo;
 import tela24_EditarDadosPartida.EditarDadosPartidaFXMLController;
 import tela24_EditarDadosPartida.Tela24EditarDadosPartida;
@@ -86,49 +89,49 @@ public class EditarPartidasFXMLController implements Initializable {
     //Botões centrais
     @FXML
     private void btnEditarDados1(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(0).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(0));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados2(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(1).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(1));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados3(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(2).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(2));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados4(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(3).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(3));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados5(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(4).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(4));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados6(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(5).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(5));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
 
     @FXML
     private void btnEditarDados7(ActionEvent event) throws Exception{
-        EditarDadosPartidaFXMLController.setIdPartida(Competicao.getListaPartidasDaCompeticao().get(6).getId_part());
+        EditarDadosPartidaFXMLController.setPartida(Competicao.getListaPartidasDaCompeticao().get(6));
         Tela24EditarDadosPartida tela24 = new Tela24EditarDadosPartida();
         tela24.start(new Stage());
     }
@@ -149,10 +152,10 @@ public class EditarPartidasFXMLController implements Initializable {
     }
     
     @FXML
-    private void acaoBtnVoltar() throws IOException{
-        Tela22MaisInfo tela22 = new Tela22MaisInfo();
+    private void acaoBtnVoltar() throws Exception{
+        Tela10SelecionarCampeonato tela10 = new Tela10SelecionarCampeonato();
         fecha();
-        tela22.start(new Stage());
+        tela10.start(new Stage());
     }
     
     private void fecha(){
