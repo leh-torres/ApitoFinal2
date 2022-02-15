@@ -71,6 +71,7 @@ public class JogadoresDao {
                 listaDeJogadores.add(jogador);  
                
             }
+        
             conexao.closeConexao();
             return listaDeJogadores;
 
