@@ -99,7 +99,7 @@ public class DefinirResultadoFXMLController implements Initializable {
         int i = 0;
 
         listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
-        
+
         if (listaJogadores.size() >= 24) {
             listaJogadores= null;
         }

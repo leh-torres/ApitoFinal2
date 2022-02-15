@@ -69,7 +69,7 @@ public class JogadoresDao {
                 jogador.setFk_time(ps.getInt("fk_time"));
                 
                 listaDeJogadores.add(jogador);  
-                JOptionPane.showMessageDialog(null, "id banco: " + listaDeJogadores.get(0).getId_competidor() );
+               
             }
             conexao.closeConexao();
             return listaDeJogadores;
