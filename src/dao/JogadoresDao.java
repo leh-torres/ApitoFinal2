@@ -71,9 +71,9 @@ public class JogadoresDao {
                 listaDeJogadores.add(jogador);  
                
             }
-        
             conexao.closeConexao();
             return listaDeJogadores;
+
 
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, ex);

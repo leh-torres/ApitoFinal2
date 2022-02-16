@@ -100,7 +100,12 @@ public class DefinirResultadoFXMLController implements Initializable {
     
         listaJogadores = jogadoresDao.getJogadores(txtNomeJogador1.getText(), partida.getFk_time1Dinamico());
 
-        if (listaJogadores.size() >= 24) {
+        for(int j = 0; j < listaJogadores.size(); j++){
+            System.out.println("nome jogador(" + j + "): " + listaJogadores.get(j).getNome_competidor());
+        }
+
+
+        if (listaJogadores.size() > 24) {
             listaJogadores= null;
         }
 
@@ -286,6 +291,17 @@ public class DefinirResultadoFXMLController implements Initializable {
                     listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
                     listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor(), listaJogadores.get(22).getNome_competidor());
                 break;
+            case 24:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
+                    listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor(), listaJogadores.get(22).getNome_competidor(),
+                    listaJogadores.get(23).getNome_competidor());
+                break;
         }
 
         while (i < listaJogadores.size()) {
@@ -404,6 +420,9 @@ public class DefinirResultadoFXMLController implements Initializable {
                     case 23:
                         idJogador1 = listaJogadores.get(linha).getId_competidor();
                     break;
+                    case 24:
+                        idJogador1 = listaJogadores.get(linha).getId_competidor();
+                    break;
                 }
                 cont++;
             }
@@ -418,7 +437,7 @@ public class DefinirResultadoFXMLController implements Initializable {
 
         listaJogadores = jogadoresDao.getJogadores(txtNomeJogador2.getText(), partida.getFk_time2Dinamico());
 
-        if (listaJogadores.size() >= 24) {
+        if (listaJogadores.size() > 24) {
             listaJogadores= null;
         }
 
@@ -604,6 +623,17 @@ public class DefinirResultadoFXMLController implements Initializable {
                     listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
                     listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor(), listaJogadores.get(22).getNome_competidor());
                 break;
+            case 24:
+                jogador = FXCollections.observableArrayList(listaJogadores.get(0).getNome_competidor(), listaJogadores.get(1).getNome_competidor(),
+                    listaJogadores.get(2).getNome_competidor(), listaJogadores.get(3).getNome_competidor(), listaJogadores.get(4).getNome_competidor(),
+                    listaJogadores.get(5).getNome_competidor(), listaJogadores.get(6).getNome_competidor(), listaJogadores.get(7).getNome_competidor(),
+                    listaJogadores.get(8).getNome_competidor(), listaJogadores.get(9).getNome_competidor(), listaJogadores.get(10).getNome_competidor(),
+                    listaJogadores.get(11).getNome_competidor(), listaJogadores.get(12).getNome_competidor(), listaJogadores.get(13).getNome_competidor(),
+                    listaJogadores.get(14).getNome_competidor(), listaJogadores.get(15).getNome_competidor(), listaJogadores.get(16).getNome_competidor(),
+                    listaJogadores.get(17).getNome_competidor(), listaJogadores.get(18).getNome_competidor(), listaJogadores.get(19).getNome_competidor(),
+                    listaJogadores.get(20).getNome_competidor(), listaJogadores.get(21).getNome_competidor(), listaJogadores.get(22).getNome_competidor(),
+                    listaJogadores.get(23).getNome_competidor());
+                break;
         }
 
         while (i < listaJogadores.size()) {
@@ -722,6 +752,10 @@ public class DefinirResultadoFXMLController implements Initializable {
                     case 23:
                         idJogador2 = listaJogadores.get(linha).getId_competidor();
                     break;
+
+                    case 24:
+                        idJogador2 = listaJogadores.get(linha).getId_competidor();
+                    break;
                 }
                 cont++;
             }
@@ -755,6 +789,8 @@ public class DefinirResultadoFXMLController implements Initializable {
     @FXML
     private void btnAvancar(ActionEvent event) throws Exception{
         MomentoPartidaFXMLController.setPartida(partida);
+        MomentoPartidaFXMLController.setGols1(qtdGols1);
+        MomentoPartidaFXMLController.setGols2(qtdGols2);
         Tela21MomentoPartida tela21 = new Tela21MomentoPartida();
         setPlacar();
         fechaTela();

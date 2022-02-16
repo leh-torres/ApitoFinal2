@@ -21,6 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+import tela10_SelecionarCampeonato.Tela10SelecionarCampeonato;
 import tela12_SelecionarPartida.Tela12SelecionarPartida;
 import tela20_DefinirResultado.Tela20DefinirResultados;
 
@@ -42,6 +43,7 @@ public class MomentoPartidaFXMLController implements Initializable {
     private Usuario usuario = new Usuario();
     private TimeDao timeDao = new TimeDao();
     private PartidaDao partidaDao = new PartidaDao();
+    private int gols1, gols2;
 
 
     /**
@@ -54,18 +56,18 @@ public class MomentoPartidaFXMLController implements Initializable {
 
         abrev1.setText("  " + timeDao.getAbrev(partida.getFk_time1Dinamico()));
         abrev2.setText("  " + timeDao.getAbrev(partida.getFk_time2Dinamico()));
-
-        setPlacar();
+        qtdGols1.setText(gols1+"");
+        qtdGols2.setText(gols2+"");
     } 
 
-    private void  setPlacar(){
-        String placar = partidaDao.getPLacar(partida.getId_part());
+    public static void setGols2(int gols2) {
+        int gols22 = gols2;
+        gols2 = gols22;
+    }
 
-        String golsTime1 = placar.substring(0, 1);
-        qtdGols1.setText(golsTime1);
-
-        String golsTime2 = placar.substring(3, 4);
-        qtdGols1.setText(golsTime2);
+    public static void setGols1(int gols1) {
+        int gols12 = gols1;
+        gols1 = gols12;
     }
     
     private void setEstatisticas(){

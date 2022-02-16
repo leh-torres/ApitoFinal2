@@ -113,11 +113,11 @@ public class CampeonatoFXMLController implements Initializable {
        }
 
        if(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor() != 0){
-            imgTime8.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor()));
+            imgTime7.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(4).getTime_vencedor()));
        }
 
        if(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor() != 0){
-            imgTime9.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor()));
+            imgTime8.setImage(timeDao.getImagem(Competicao.getListaPartidasDaCompeticao().get(5).getTime_vencedor()));
        }
     }
 

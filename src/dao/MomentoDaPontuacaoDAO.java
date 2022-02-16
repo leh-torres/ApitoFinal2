@@ -37,7 +37,6 @@ public class MomentoDaPontuacaoDAO {
 
 
             if(retUpdate == 1){
-                JOptionPane.showMessageDialog(null, "Cadastro Realizado com sucesso!");
                 conexaoBanco.closeConexao();
     
                 return true;
